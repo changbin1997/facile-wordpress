@@ -1,0 +1,634 @@
+@import "bootstrap.css";
+@import "icon.css";
+@import "vs2015.min.css";
+@import "light-color";
+@import "dark-color";
+
+// 文章头图
+@mixin thumbnail {
+  width: 100%;
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+  }
+  a:after {
+    content: '';
+    padding-bottom: 50%;
+    display: block;
+  }
+}
+
+// 通用的文章标题
+@mixin postTitle {
+  font-size: 28px;
+  font-weight: 700;
+  a {
+    transition: 0.3s;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+// 清除浮动
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// 通用的文章内容样式
+@mixin postContent {
+  p,li,a {
+    font-size: 16px;
+  }
+  h1,h2,h3,h4,h5,h6 {
+    font-weight: 700;
+    code {
+      padding: 0 4px;
+    }
+  }
+  h1 {
+    font-size: 28px;
+    * {
+      font-size: 28px;
+    }
+  }
+  h2 {
+    font-size: 21px;
+    * {
+      font-size: 21px;
+    }
+  }
+  h3 {
+    font-size: 18px;
+    * {
+      font-size: 18px;
+    }
+  }
+  h4,h5,h6 {
+    font-size: 16px;
+    * {
+      font-size: 16px;
+    }
+  }
+  img:not(.logo) {
+    max-width: 100%;
+    cursor: zoom-in;
+    border-radius: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  figure {
+    margin: 20px 0;
+  }
+  figcaption {
+    text-align: center;
+    color: #757575;
+    font-size: 15px;
+  }
+  p code,li code,td code {
+    font-size: 16px;
+    padding: 0 4px;
+  }
+  a {
+    font-weight: 700;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+  p {
+    margin: 20px 0;
+  }
+  blockquote {
+    border-left: 3px solid #333333;
+    margin: 20px 0;
+    padding: 0 0 0 20px;
+  }
+  table {
+    td,th {
+      min-width: 90px;
+    }
+  }
+  .table-responsive {
+    margin-bottom: 20px;
+    table {
+      margin-bottom: 0;
+    }
+  }
+  pre {
+    margin-bottom: 20px;
+    position: relative;
+    border-radius: 4px;
+    // 代码拷贝按钮
+    .copy-code-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      display: none;
+    }
+    &:hover .copy-code-btn {
+      display: block;
+    }
+    code {
+      font-size: 16px;
+      white-space: pre;
+      word-wrap: normal;
+      padding: 12px 16px;
+      &::-webkit-scrollbar {
+        height: 12px;
+        background: #F1F1F1;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #A8A8A8;
+      }
+    }
+  }
+  video {
+    width: 100%;
+  }
+}
+
+// 禁止滚动
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+a {
+  text-transform: none;
+}
+
+// 顶部横幅区导航
+header {
+  input[type="search"]:focus {
+    box-shadow: none;
+  }
+}
+
+// 面包屑导航
+.breadcrumb-nav {
+  .breadcrumb {
+    background: none;
+  }
+}
+
+// 文章列表
+.post-list {
+  .post {
+    // 文章头图
+    .featured-image {
+      @include thumbnail;
+    }
+    // 文章标题
+    .post-title {
+      @include postTitle;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    // 文章信息区域
+    .post-info {
+      display: flex;
+      justify-content: flex-start;
+      span {
+        display: flex;
+        align-items: center;
+      }
+    }
+    // 查看全文和查看评论区域
+    .more-link-wrapper {
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    // 文章列表全文显示
+    .full {
+      @include postContent;
+    }
+    // 小头图
+    .mini-header-image a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      &:after {
+        content: '';
+        padding-bottom: 75%;
+        display: block;
+      }
+    }
+    // 小头图模式的文章摘要区域
+    .header-image-small {
+      .content-box {
+        display: flex;
+        flex-direction: column;
+        flex: 1 auto;
+        .summary-box p {
+          max-height: 80px;
+          overflow-y: hidden;
+        }
+        .summary-box {
+          display: flex;
+          justify-content: flex-start;
+          flex: 1;
+        }
+        .more-link-wrapper {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}
+
+// 侧边栏
+.sidebar {
+  position: relative;
+  // 通用的侧边栏样式
+  section {
+    h3 {
+      font-size: 12px;
+      font-weight: 700;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        margin-bottom: 12px;;
+        a {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  //  facile最新评论
+  .facile-latest-comment {
+    img {
+      width: 42px;
+      height: 42px;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+    .media-body {
+      overflow: hidden;
+      p {
+        font-size: 12px;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+  // 默认的文章归档
+  .wp-block-archives-list {
+    @include clearfix;
+    li {
+      float: left;
+      width: 120px;
+    }
+  }
+  // 默认的最新评论
+  .wp-block-latest-comments {
+    padding: 0;
+    li {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 8px;
+      .avatar {
+        width: 42px;
+        height: 42px;
+        margin-right: 10px;
+      }
+      article {
+        footer, div {
+          margin: 0 !important;
+        }
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+  // 默认的日历组件
+  .wp-block-calendar {
+    table {
+      margin-bottom: 12px;
+      caption {
+        caption-side: top;
+        padding-top: 0;
+      }
+      th, td {
+        padding: 8px;
+      }
+      a {
+        font-weight: 700;
+      }
+    }
+    .wp-calendar-nav {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  // 默认的社交网站组件
+  .wp-social-link {
+    a {
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+
+// 返回顶部按钮
+#to-top-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+// 分类页的页头区域
+.archive-title {
+  h1 {
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+
+// 文章页和独立页面
+#post-page, #page-page {
+  // 文章头图
+  .featured-image {
+    @include thumbnail;
+  }
+  // 文章标题
+  .post-title {
+    @include postTitle;
+  }
+  // 文章信息区域
+  .post-info {
+    display: flex;
+    justify-content: flex-start;
+    span {
+      display: flex;
+      align-items: center;
+    }
+  }
+  // 文章内容
+  article {
+    .post-content {
+      @include postContent;
+    }
+  }
+  // 文章的分类和标签区域
+  .category-and-tag {
+    .post-category {
+      display: flex;
+      align-items: center;
+      a {
+        margin-right: 6px;
+      }
+    }
+    .post-tag {
+      display: flex;
+      align-items: center;
+      a {
+        margin-right: 6px;
+      }
+      a:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// 评论区
+#comments {
+  // 发表评论区
+  .comment-off {
+    margin-top: 24px;
+    h2 {
+      font-size: 21px;
+      font-weight: 700;
+    }
+  }
+  .comment-input {
+    margin-top: 24px;
+    h2 {
+      font-size: 21px;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+    .row {
+      div {
+        margin-bottom: 16px;
+        textarea {
+          height: 150px;
+        }
+      }
+    }
+    a {
+      font-weight: 700;
+    }
+    .logged-in-as {
+      margin: 0;
+    }
+  }
+  // 评论列表区
+  .comment-list {
+    margin-top: 24px;
+    h2 {
+      font-size: 21px;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    .comment-author {
+      .avatar {
+        float: left;
+        margin-right: 10px;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+      }
+      .comment-info {
+        // 评论者
+        .author {
+          font-size: 14px;
+        }
+        // 评论时间
+        .comment-time {
+          display: block;
+          font-size: 12px;
+        }
+      }
+      .comment-reply {
+        > span {
+          display: flex;
+          align-items: center;
+        }
+        a,i {
+          font-weight: 700;
+          font-size: 14px;
+        }
+      }
+    }
+    .comment-content {
+      margin-left: 52px;
+      @include postContent;
+      p {
+        margin-top: 0;
+        word-wrap: break-word;
+        word-break: break-all;
+      }
+      p,a,li,code,td {
+        font-size: 15px;
+      }
+    }
+    //  子评论
+    .children {
+      margin-left: 52px;
+      .children {
+        margin-left: 0;
+      }
+    }
+    // 评论回复表单区
+    .comment-input {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+// 图片灯箱
+#max-img-box {
+  display: none;
+  // 遮罩层
+  #max-img-bg {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1200;
+  }
+  // 图片灯箱功能按钮区
+  .max-img-features-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1203;
+    display: none;
+    button {
+      color: #FFFFFF;
+      text-shadow: 0 1px #333333, 1px 0 #333333, -1px 0 #333333, 0 -1px #333333;
+      font-size: 15px;
+      &:hover {
+        color: #F7E6D2;
+      }
+    }
+  }
+  // 图片描述
+  #img-info {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 16px;
+    text-shadow: 0 1px #333333, 1px 0 #333333, -1px 0 #333333, 0 -1px #333333;
+    z-index: 1203;
+    display: none;
+  }
+  // 图片
+  #max-img {
+    position: absolute;
+    cursor: move;
+    display: none;
+    z-index: 1201;
+  }
+}
+
+// 404页面
+#page-404 {
+  .text-404 {
+    font-size: 120px;
+    font-weight: 700;
+  }
+}
+
+
+// >= 576 且 <= 767
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  // 文章列表
+  .post-list {
+    .post {
+      // 文章标题
+      .post-title {
+        font-size: 18px;
+      }
+    }
+  }
+  // 文章页
+  #post-page, #page-page {
+    // 文章标题
+    .post-title {
+      @include postTitle;
+      font-size: 18px;
+    }
+  }
+}
+
+// <= 575
+@media screen and (max-width: 575px) {
+  // 文章列表
+  .post-list {
+    .post {
+      // 文章标题
+      .post-title {
+        font-size: 18px;
+      }
+    }
+  }
+  // 文章页
+  #post-page, #page-page {
+    // 文章标题
+    .post-title {
+      @include postTitle;
+      font-size: 18px;
+    }
+  }
+  // 评论区
+  #comments {
+    // 评论列表区
+    .comment-list {
+      // 子评论
+      .children {
+        margin-left: 21px;
+        .children {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
