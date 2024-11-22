@@ -41,10 +41,12 @@
                         <?php the_author(); ?>
                     </a>
                 </span>
-                <span class="ml-2" title="<?php _e('Views', 'facile'); ?>" data-toggle="tooltip" data-placement="top">
-                    <i class="icon-eye mr-2"></i>
-                    <?php echo display_post_views(); ?>
-                </span>
+                <?php if (get_theme_mod('enable_post_view_count', false)): ?>
+                    <span class="ml-2" title="<?php _e('Views', 'facile'); ?>" data-toggle="tooltip" data-placement="top">
+                        <i class="icon-eye mr-2"></i>
+                        <?php echo display_post_views(); ?>
+                    </span>
+                <?php endif; ?>
             </div>
         </header>
         <?php if (get_theme_mod('header_image_style', 'large') == 'small' && $imgUrl != null && get_theme_mod('post_list_options', 'excerpt') == 'excerpt'): ?>

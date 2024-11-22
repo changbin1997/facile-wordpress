@@ -73,36 +73,7 @@
                     <h4 class="mb-3" role="alert"><?php _e('No posts found!', 'facile'); ?></h4 >
                 </article>
             <?php endif; ?>
-            <nav class="page-nav my-5" aria-label="<?php _e('Pagination', 'facile'); ?>">
-                <?php
-                global $wp_query;
-                $total_pages = $wp_query->max_num_pages;
-                $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-                if ($total_pages > 1):
-                ?>
-                <ul class="pagination justify-content-center">
-                    <?php if ($paged > 1): ?>
-                        <li class="page-item">
-                            <a title="<?php _e('Previous Page (Left Arrow Key)', 'facile'); ?>" aria-label="<?php _e('Previous Page', 'facile'); ?>" data-toggle="tooltip" data-placement="top" class="page-link previous-page-link" href="<?php echo get_pagenum_link($paged - 1); ?>">
-                                <i class="icon-chevron-left"></i>
-                            </a>
-                        </li>
-                    <?php endif; ?>
-                    <?php for ($i = 1; $i <= $total_pages; $i++): ?>
-                        <li class="page-item <?php if ($i == $paged) echo 'active'; ?>">
-                            <a <?php if ($i == $paged) echo 'aria-current="page"'; ?> class="page-link" href="<?php echo get_pagenum_link($i); ?>"><?php echo $i; ?></a>
-                        </li>
-                    <?php endfor; ?>
-                    <?php if ($paged < $total_pages): ?>
-                        <li class="page-item">
-                            <a title="<?php _e('Next Page (Right Arrow Key)', 'facile'); ?>" aria-label="<?php _e('Next Page', 'facile'); ?>" data-toggle="tooltip" data-placement="top" class="page-link next-page-link" href="<?php echo get_pagenum_link($paged + 1); ?>">
-                                <i class="icon-chevron-right"></i>
-                            </a>
-                        </li>
-                    <?php endif; ?>
-                </ul>
-                <?php endif; ?>
-            </nav>  
+            <?php post_list_pagination(); ?>  
         </div>
         <?php get_sidebar(); ?>
     </div>

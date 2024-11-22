@@ -419,6 +419,25 @@ header {
   }
 }
 
+// 文章页的文章内容分页
+.post-content-pagination {
+  span, a {
+    padding: 8px 12px;
+    border: 1px solid #EEEEEE;
+    margin-right: 8px;
+    border-radius: 4px;
+    float: left;
+    &:hover {
+      background: #D9230F;
+      color: #FFFFFF;
+    }
+  }
+  .current {
+    background: #D9230F;
+    color: #FFFFFF;
+  }
+}
+
 // 评论区
 #comments {
   // 发表评论区

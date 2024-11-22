@@ -41,13 +41,13 @@
 // 暗色主题的单行代码配色
 @mixin codeColor {
   background: #000000 !important;
-  color: #F1D951 !important;
+  color: #f1d951 !important;
 }
 
 // 暗色主题的通用链接颜色
-$dark-link-color: #E47063;
+$dark-link-color: #e47063;
 // 暗色主题的通用文字颜色
-$dark-text-color: #D3D3D3;
+$dark-text-color: #d3d3d3;
 // 暗色主题的信息区域的文字颜色
 $dark-text-color2: #999999;
 
@@ -60,7 +60,8 @@ $dark-text-color2: #999999;
       @include codeColor;
     }
   }
-  ol, ul {
+  ol,
+  ul {
     li {
       color: $dark-text-color;
       > code {
@@ -68,18 +69,23 @@ $dark-text-color2: #999999;
       }
     }
   }
-  h1, h2, h3, h4, h5, h6 {
-    color: #FFFFFF !important;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #ffffff !important;
     code {
       @include codeColor;
     }
   }
   table {
-    background: #16161A;
+    background: #16161a;
 
     th {
-      color: #FFFFFF;
-      border: 1px solid #454D55;
+      color: #ffffff;
+      border: 1px solid #454d55;
 
       a {
         color: $dark-link-color;
@@ -101,7 +107,7 @@ $dark-text-color2: #999999;
         @include codeColor;
       }
 
-      border: 1px solid #454D55;
+      border: 1px solid #454d55;
     }
 
     tbody tr:nth-child(odd) {
@@ -116,7 +122,7 @@ $dark-text-color2: #999999;
     color: $dark-link-color;
   }
   hr {
-    background: #CCCCCC;
+    background: #cccccc;
   }
   pre {
     code {
@@ -136,19 +142,20 @@ $dark-text-color2: #999999;
 
 // 暗黑配色
 @mixin dark-color {
-  background-color: #0C0C0C;
+  background-color: #0c0c0c;
 
   // 顶部导航区域
   header {
     // 导航栏配色
     .navbar {
-      background-color: #16161A;
+      background-color: #16161a;
       border-color: #202025;
       .navbar-brand {
         color: #fff;
       }
 
-      .navbar-brand:hover, .navbar-brand:focus {
+      .navbar-brand:hover,
+      .navbar-brand:focus {
         color: #fff;
       }
 
@@ -156,7 +163,8 @@ $dark-text-color2: #999999;
         color: rgba(255, 255, 255, 0.75);
       }
 
-      .navbar-nav .nav-link:hover, .navbar-nav .nav-link:focus {
+      .navbar-nav .nav-link:hover,
+      .navbar-nav .nav-link:focus {
         color: #fff;
       }
 
@@ -188,19 +196,20 @@ $dark-text-color2: #999999;
         color: #fff;
       }
 
-      .navbar-text a:hover, .navbar-text a:focus {
+      .navbar-text a:hover,
+      .navbar-text a:focus {
         color: #fff;
       }
 
       // 搜索框
-      input[type="search"] {
-        background: #25252C;
-        color: #FFFFFF;
+      input[type='search'] {
+        background: #25252c;
+        color: #ffffff;
         transition: 0.3s;
-        border-color: #CF210E;
+        border-color: #cf210e;
 
         &:focus {
-          background: #16161A;
+          background: #16161a;
         }
       }
     }
@@ -255,7 +264,8 @@ $dark-text-color2: #999999;
     color: $dark-text-color;
   }
   // 评论数量和编辑链接颜色
-  .comment-count, .edit-link {
+  .comment-count,
+  .edit-link {
     color: $dark-link-color;
   }
   // 文章列表的阅读全文按钮配色
@@ -271,7 +281,7 @@ $dark-text-color2: #999999;
   // 翻页导航区
   .pagination {
     li:not(.active) a {
-      background: #16161A;
+      background: #16161a;
       color: $dark-text-color !important;
       border: none;
     }
@@ -284,7 +294,7 @@ $dark-text-color2: #999999;
   // 返回顶部按钮和移动设备的目录按钮配色
   #to-top-btn {
     background-color: #212529;
-    color: #FFFFFF !important;
+    color: #ffffff !important;
     border: none !important;
   }
 
@@ -322,7 +332,7 @@ $dark-text-color2: #999999;
         color: $dark-text-color;
       }
       hr {
-        background: #CCCCCC;
+        background: #cccccc;
       }
     }
     // 默认的标签云配色
@@ -346,12 +356,12 @@ $dark-text-color2: #999999;
         }
         td {
           color: $dark-text-color;
-          border-color: #454D55;
+          border-color: #454d55;
         }
         th {
           background: #212529;
           color: $dark-text-color;
-          border-color: #454D55;
+          border-color: #454d55;
         }
       }
       .wp-calendar-nav a {
@@ -371,7 +381,7 @@ $dark-text-color2: #999999;
           color: $dark-text-color;
         }
         #password {
-          background: #16161A;
+          background: #16161a;
           color: $dark-text-color;
         }
       }
@@ -379,8 +389,9 @@ $dark-text-color2: #999999;
 
     // 文章内的分类和标签图标颜色
     .category-and-tag {
-      i, span {
-        color: #D3D3D3;
+      i,
+      span {
+        color: #d3d3d3;
       }
     }
 
@@ -396,8 +407,20 @@ $dark-text-color2: #999999;
       }
 
       div {
-        color: #D3D3D3;
+        color: #d3d3d3;
       }
+    }
+  }
+
+  // 文章内容分页配色
+  .post-content-pagination {
+    a {
+      background: #16161a;
+      color: $dark-text-color;
+      border: none;
+    }
+    span {
+      border: none;
     }
   }
 
@@ -416,7 +439,7 @@ $dark-text-color2: #999999;
     .comment-info {
       // 评论者昵称的配色
       b {
-        color: #D3D3D3;
+        color: #d3d3d3;
       }
 
       // 评论时间配色
@@ -438,8 +461,9 @@ $dark-text-color2: #999999;
 
     // 回复链接的配色
     .comment-reply {
-      i, a {
-        color: #D3D3D3 !important;
+      i,
+      a {
+        color: #d3d3d3 !important;
       }
     }
 
@@ -448,8 +472,9 @@ $dark-text-color2: #999999;
       label {
         color: $dark-text-color;
       }
-      textarea, input {
-        background: #16161A;
+      textarea,
+      input {
+        background: #16161a;
         color: $dark-text-color;
         transition: 0.3s;
       }
@@ -478,7 +503,7 @@ $dark-text-color2: #999999;
 
   // 网站底部版权信息配色
   footer nav {
-    color: #F9F9F9;
+    color: #f9f9f9;
 
     a {
       color: $dark-link-color;

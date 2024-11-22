@@ -139,6 +139,9 @@
 .light-color .post-page .post-navigation a:hover {
   color: #D9230F;
 }
+.light-color .post-content-pagination a {
+  background: #FFFFFF;
+}
 .light-color #comments .comment-info b {
   color: #333333;
 }
@@ -333,6 +336,9 @@
   .auto-color .post-page .post-navigation a:hover {
     color: #D9230F;
   }
+  .auto-color .post-content-pagination a {
+    background: #FFFFFF;
+  }
   .auto-color #comments .comment-info b {
     color: #333333;
   }
@@ -389,22 +395,24 @@
   }
 }
 .dark-color {
-  background-color: #0C0C0C;
+  background-color: #0c0c0c;
 }
 .dark-color header .navbar {
-  background-color: #16161A;
+  background-color: #16161a;
   border-color: #202025;
 }
 .dark-color header .navbar .navbar-brand {
   color: #fff;
 }
-.dark-color header .navbar .navbar-brand:hover, .dark-color header .navbar .navbar-brand:focus {
+.dark-color header .navbar .navbar-brand:hover,
+.dark-color header .navbar .navbar-brand:focus {
   color: #fff;
 }
 .dark-color header .navbar .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.75);
 }
-.dark-color header .navbar .navbar-nav .nav-link:hover, .dark-color header .navbar .navbar-nav .nav-link:focus {
+.dark-color header .navbar .navbar-nav .nav-link:hover,
+.dark-color header .navbar .navbar-nav .nav-link:focus {
   color: #fff;
 }
 .dark-color header .navbar .navbar-nav .nav-link.disabled {
@@ -429,20 +437,21 @@
 .dark-color header .navbar .navbar-text a {
   color: #fff;
 }
-.dark-color header .navbar .navbar-text a:hover, .dark-color header .navbar .navbar-text a:focus {
+.dark-color header .navbar .navbar-text a:hover,
+.dark-color header .navbar .navbar-text a:focus {
   color: #fff;
 }
 .dark-color header .navbar input[type=search] {
-  background: #25252C;
-  color: #FFFFFF;
+  background: #25252c;
+  color: #ffffff;
   transition: 0.3s;
-  border-color: #CF210E;
+  border-color: #cf210e;
 }
 .dark-color header .navbar input[type=search]:focus {
-  background: #16161A;
+  background: #16161a;
 }
 .dark-color .breadcrumb-nav .breadcrumb a {
-  color: #E47063;
+  color: #e47063;
 }
 .dark-color .breadcrumb-nav .breadcrumb li {
   color: rgba(255, 255, 255, 0.75);
@@ -454,25 +463,26 @@
   background-color: #232323 !important;
 }
 .dark-color .post-title a {
-  color: #D3D3D3 !important;
+  color: #d3d3d3 !important;
 }
 .dark-color .post-title a:hover {
-  color: #E47063 !important;
+  color: #e47063 !important;
 }
 .dark-color .post-title a:focus {
-  color: #E47063 !important;
+  color: #e47063 !important;
 }
 .dark-color .post-info a {
-  color: #E47063;
+  color: #e47063;
 }
 .dark-color .post-info span {
   color: #999999;
 }
 .dark-color .text-color {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
-.dark-color .comment-count, .dark-color .edit-link {
-  color: #E47063;
+.dark-color .comment-count,
+.dark-color .edit-link {
+  color: #e47063;
 }
 .dark-color .more-link-wrapper .read-more {
   color: #fff;
@@ -496,50 +506,62 @@
   border-color: #d9230f;
 }
 .dark-color .fullText p {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .dark-color .fullText p > code {
   background: #000000 !important;
-  color: #F1D951 !important;
+  color: #f1d951 !important;
 }
-.dark-color .fullText ol li, .dark-color .fullText ul li {
-  color: #D3D3D3;
+.dark-color .fullText ol li,
+.dark-color .fullText ul li {
+  color: #d3d3d3;
 }
-.dark-color .fullText ol li > code, .dark-color .fullText ul li > code {
+.dark-color .fullText ol li > code,
+.dark-color .fullText ul li > code {
   background: #000000 !important;
-  color: #F1D951 !important;
+  color: #f1d951 !important;
 }
-.dark-color .fullText h1, .dark-color .fullText h2, .dark-color .fullText h3, .dark-color .fullText h4, .dark-color .fullText h5, .dark-color .fullText h6 {
-  color: #FFFFFF !important;
+.dark-color .fullText h1,
+.dark-color .fullText h2,
+.dark-color .fullText h3,
+.dark-color .fullText h4,
+.dark-color .fullText h5,
+.dark-color .fullText h6 {
+  color: #ffffff !important;
 }
-.dark-color .fullText h1 code, .dark-color .fullText h2 code, .dark-color .fullText h3 code, .dark-color .fullText h4 code, .dark-color .fullText h5 code, .dark-color .fullText h6 code {
+.dark-color .fullText h1 code,
+.dark-color .fullText h2 code,
+.dark-color .fullText h3 code,
+.dark-color .fullText h4 code,
+.dark-color .fullText h5 code,
+.dark-color .fullText h6 code {
   background: #000000 !important;
-  color: #F1D951 !important;
+  color: #f1d951 !important;
 }
 .dark-color .fullText table {
-  background: #16161A;
+  background: #16161a;
 }
 .dark-color .fullText table th {
-  color: #FFFFFF;
-  border: 1px solid #454D55;
+  color: #ffffff;
+  border: 1px solid #454d55;
 }
 .dark-color .fullText table th a {
-  color: #E47063;
+  color: #e47063;
 }
 .dark-color .fullText table th code {
   background: #000000 !important;
-  color: #F1D951 !important;
+  color: #f1d951 !important;
 }
 .dark-color .fullText table td {
-  color: #D3D3D3;
-  border: 1px solid #454D55;
+  color: #d3d3d3;
+  border: 1px solid #454d55;
 }
 .dark-color .fullText table td a {
-  color: #E47063;
+  color: #e47063;
 }
 .dark-color .fullText table td code {
   background: #000000 !important;
-  color: #F1D951 !important;
+  color: #f1d951 !important;
 }
 .dark-color .fullText table tbody tr:nth-child(odd) {
   background: #212529;
@@ -548,10 +570,10 @@
   background: #212529;
 }
 .dark-color .fullText a {
-  color: #E47063;
+  color: #e47063;
 }
 .dark-color .fullText hr {
-  background: #CCCCCC;
+  background: #cccccc;
 }
 .dark-color .fullText pre code::-webkit-scrollbar {
   background: #212529;
@@ -563,114 +585,126 @@
   color: #999999;
 }
 .dark-color .pagination li:not(.active) a {
-  background: #16161A;
-  color: #D3D3D3 !important;
+  background: #16161a;
+  color: #d3d3d3 !important;
   border: none;
 }
 .dark-color .pagination .active a {
-  color: #D3D3D3 !important;
+  color: #d3d3d3 !important;
 }
 .dark-color #to-top-btn {
   background-color: #212529;
-  color: #FFFFFF !important;
+  color: #ffffff !important;
   border: none !important;
 }
 .dark-color .sidebar section > h3 {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .dark-color .sidebar section li {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .dark-color .sidebar section li a {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .dark-color .sidebar section label {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .dark-color .sidebar .change-color label {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .dark-color .sidebar .facile-latest-comment p {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .dark-color .sidebar .blog-info a {
-  color: #E47063;
+  color: #e47063;
 }
 .dark-color .sidebar .blog-info p {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .dark-color .sidebar .blog-info hr {
-  background: #CCCCCC;
+  background: #cccccc;
 }
 .dark-color .sidebar .wp-block-tag-cloud .tag-cloud-link {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .dark-color .sidebar .wp-block-latest-comments time {
   color: #999999;
 }
 .dark-color .sidebar .wp-block-calendar caption {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .dark-color .sidebar .wp-block-calendar table a {
-  color: #E47063;
+  color: #e47063;
 }
 .dark-color .sidebar .wp-block-calendar table td {
-  color: #D3D3D3;
-  border-color: #454D55;
+  color: #d3d3d3;
+  border-color: #454d55;
 }
 .dark-color .sidebar .wp-block-calendar table th {
   background: #212529;
-  color: #D3D3D3;
-  border-color: #454D55;
+  color: #d3d3d3;
+  border-color: #454d55;
 }
 .dark-color .sidebar .wp-block-calendar .wp-calendar-nav a {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .dark-color .post-page .post-content p {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .dark-color .post-page .post-content p > code {
   background: #000000 !important;
-  color: #F1D951 !important;
+  color: #f1d951 !important;
 }
-.dark-color .post-page .post-content ol li, .dark-color .post-page .post-content ul li {
-  color: #D3D3D3;
+.dark-color .post-page .post-content ol li,
+.dark-color .post-page .post-content ul li {
+  color: #d3d3d3;
 }
-.dark-color .post-page .post-content ol li > code, .dark-color .post-page .post-content ul li > code {
+.dark-color .post-page .post-content ol li > code,
+.dark-color .post-page .post-content ul li > code {
   background: #000000 !important;
-  color: #F1D951 !important;
+  color: #f1d951 !important;
 }
-.dark-color .post-page .post-content h1, .dark-color .post-page .post-content h2, .dark-color .post-page .post-content h3, .dark-color .post-page .post-content h4, .dark-color .post-page .post-content h5, .dark-color .post-page .post-content h6 {
-  color: #FFFFFF !important;
+.dark-color .post-page .post-content h1,
+.dark-color .post-page .post-content h2,
+.dark-color .post-page .post-content h3,
+.dark-color .post-page .post-content h4,
+.dark-color .post-page .post-content h5,
+.dark-color .post-page .post-content h6 {
+  color: #ffffff !important;
 }
-.dark-color .post-page .post-content h1 code, .dark-color .post-page .post-content h2 code, .dark-color .post-page .post-content h3 code, .dark-color .post-page .post-content h4 code, .dark-color .post-page .post-content h5 code, .dark-color .post-page .post-content h6 code {
+.dark-color .post-page .post-content h1 code,
+.dark-color .post-page .post-content h2 code,
+.dark-color .post-page .post-content h3 code,
+.dark-color .post-page .post-content h4 code,
+.dark-color .post-page .post-content h5 code,
+.dark-color .post-page .post-content h6 code {
   background: #000000 !important;
-  color: #F1D951 !important;
+  color: #f1d951 !important;
 }
 .dark-color .post-page .post-content table {
-  background: #16161A;
+  background: #16161a;
 }
 .dark-color .post-page .post-content table th {
-  color: #FFFFFF;
-  border: 1px solid #454D55;
+  color: #ffffff;
+  border: 1px solid #454d55;
 }
 .dark-color .post-page .post-content table th a {
-  color: #E47063;
+  color: #e47063;
 }
 .dark-color .post-page .post-content table th code {
   background: #000000 !important;
-  color: #F1D951 !important;
+  color: #f1d951 !important;
 }
 .dark-color .post-page .post-content table td {
-  color: #D3D3D3;
-  border: 1px solid #454D55;
+  color: #d3d3d3;
+  border: 1px solid #454d55;
 }
 .dark-color .post-page .post-content table td a {
-  color: #E47063;
+  color: #e47063;
 }
 .dark-color .post-page .post-content table td code {
   background: #000000 !important;
-  color: #F1D951 !important;
+  color: #f1d951 !important;
 }
 .dark-color .post-page .post-content table tbody tr:nth-child(odd) {
   background: #212529;
@@ -679,10 +713,10 @@
   background: #212529;
 }
 .dark-color .post-page .post-content a {
-  color: #E47063;
+  color: #e47063;
 }
 .dark-color .post-page .post-content hr {
-  background: #CCCCCC;
+  background: #cccccc;
 }
 .dark-color .post-page .post-content pre code::-webkit-scrollbar {
   background: #212529;
@@ -694,87 +728,108 @@
   color: #999999;
 }
 .dark-color .post-page .post-content .custom-password-form label {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .dark-color .post-page .post-content .custom-password-form #password {
-  background: #16161A;
-  color: #D3D3D3;
+  background: #16161a;
+  color: #d3d3d3;
 }
-.dark-color .post-page .category-and-tag i, .dark-color .post-page .category-and-tag span {
-  color: #D3D3D3;
+.dark-color .post-page .category-and-tag i,
+.dark-color .post-page .category-and-tag span {
+  color: #d3d3d3;
 }
 .dark-color .post-page .post-category a {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .dark-color .post-page .post-navigation a {
-  color: #E47063;
+  color: #e47063;
 }
 .dark-color .post-page .post-navigation div {
-  color: #D3D3D3;
+  color: #d3d3d3;
+}
+.dark-color .post-content-pagination a {
+  background: #16161a;
+  color: #d3d3d3;
+  border: none;
+}
+.dark-color .post-content-pagination span {
+  border: none;
 }
 .dark-color #comments h2 {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .dark-color #comments a {
-  color: #E47063;
+  color: #e47063;
 }
 .dark-color #comments .comment-info b {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .dark-color #comments .comment-info .comment-time {
   color: #999999;
 }
 .dark-color #comments .comment-info .mx-2 {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .dark-color #comments .comment-content {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .dark-color #comments .comment-content p {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .dark-color #comments .comment-content p > code {
   background: #000000 !important;
-  color: #F1D951 !important;
+  color: #f1d951 !important;
 }
-.dark-color #comments .comment-content ol li, .dark-color #comments .comment-content ul li {
-  color: #D3D3D3;
+.dark-color #comments .comment-content ol li,
+.dark-color #comments .comment-content ul li {
+  color: #d3d3d3;
 }
-.dark-color #comments .comment-content ol li > code, .dark-color #comments .comment-content ul li > code {
+.dark-color #comments .comment-content ol li > code,
+.dark-color #comments .comment-content ul li > code {
   background: #000000 !important;
-  color: #F1D951 !important;
+  color: #f1d951 !important;
 }
-.dark-color #comments .comment-content h1, .dark-color #comments .comment-content h2, .dark-color #comments .comment-content h3, .dark-color #comments .comment-content h4, .dark-color #comments .comment-content h5, .dark-color #comments .comment-content h6 {
-  color: #FFFFFF !important;
+.dark-color #comments .comment-content h1,
+.dark-color #comments .comment-content h2,
+.dark-color #comments .comment-content h3,
+.dark-color #comments .comment-content h4,
+.dark-color #comments .comment-content h5,
+.dark-color #comments .comment-content h6 {
+  color: #ffffff !important;
 }
-.dark-color #comments .comment-content h1 code, .dark-color #comments .comment-content h2 code, .dark-color #comments .comment-content h3 code, .dark-color #comments .comment-content h4 code, .dark-color #comments .comment-content h5 code, .dark-color #comments .comment-content h6 code {
+.dark-color #comments .comment-content h1 code,
+.dark-color #comments .comment-content h2 code,
+.dark-color #comments .comment-content h3 code,
+.dark-color #comments .comment-content h4 code,
+.dark-color #comments .comment-content h5 code,
+.dark-color #comments .comment-content h6 code {
   background: #000000 !important;
-  color: #F1D951 !important;
+  color: #f1d951 !important;
 }
 .dark-color #comments .comment-content table {
-  background: #16161A;
+  background: #16161a;
 }
 .dark-color #comments .comment-content table th {
-  color: #FFFFFF;
-  border: 1px solid #454D55;
+  color: #ffffff;
+  border: 1px solid #454d55;
 }
 .dark-color #comments .comment-content table th a {
-  color: #E47063;
+  color: #e47063;
 }
 .dark-color #comments .comment-content table th code {
   background: #000000 !important;
-  color: #F1D951 !important;
+  color: #f1d951 !important;
 }
 .dark-color #comments .comment-content table td {
-  color: #D3D3D3;
-  border: 1px solid #454D55;
+  color: #d3d3d3;
+  border: 1px solid #454d55;
 }
 .dark-color #comments .comment-content table td a {
-  color: #E47063;
+  color: #e47063;
 }
 .dark-color #comments .comment-content table td code {
   background: #000000 !important;
-  color: #F1D951 !important;
+  color: #f1d951 !important;
 }
 .dark-color #comments .comment-content table tbody tr:nth-child(odd) {
   background: #212529;
@@ -783,10 +838,10 @@
   background: #212529;
 }
 .dark-color #comments .comment-content a {
-  color: #E47063;
+  color: #e47063;
 }
 .dark-color #comments .comment-content hr {
-  background: #CCCCCC;
+  background: #cccccc;
 }
 .dark-color #comments .comment-content pre code::-webkit-scrollbar {
   background: #212529;
@@ -797,49 +852,51 @@
 .dark-color #comments .comment-content blockquote {
   color: #999999;
 }
-.dark-color #comments .comment-reply i, .dark-color #comments .comment-reply a {
-  color: #D3D3D3 !important;
+.dark-color #comments .comment-reply i,
+.dark-color #comments .comment-reply a {
+  color: #d3d3d3 !important;
 }
 .dark-color #comments .comment-input label {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
-.dark-color #comments .comment-input textarea, .dark-color #comments .comment-input input {
-  background: #16161A;
-  color: #D3D3D3;
+.dark-color #comments .comment-input textarea,
+.dark-color #comments .comment-input input {
+  background: #16161a;
+  color: #d3d3d3;
   transition: 0.3s;
 }
 .dark-color #comments .comment-input .comment-user {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .dark-color #comments .comment-input .logged-in-as {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .dark-color .archive-description {
   color: #999999;
 }
 .dark-color .no-content {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .dark-color .no-content hr {
-  background: #D3D3D3;
+  background: #d3d3d3;
 }
 .dark-color footer nav {
-  color: #F9F9F9;
+  color: #f9f9f9;
 }
 .dark-color footer nav a {
-  color: #E47063;
+  color: #e47063;
 }
 .dark-color .archive-title h1 {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .dark-color .archive-page .archives h2 {
   background: #121212;
 }
 .dark-color .page-404 h1 {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .dark-color .page-404 h3 {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 .dark-color .page-404 #back-home-page {
   color: #fff;
@@ -860,22 +917,24 @@
 
 @media (prefers-color-scheme: dark) {
   .auto-color {
-    background-color: #0C0C0C;
+    background-color: #0c0c0c;
   }
   .auto-color header .navbar {
-    background-color: #16161A;
+    background-color: #16161a;
     border-color: #202025;
   }
   .auto-color header .navbar .navbar-brand {
     color: #fff;
   }
-  .auto-color header .navbar .navbar-brand:hover, .auto-color header .navbar .navbar-brand:focus {
+  .auto-color header .navbar .navbar-brand:hover,
+  .auto-color header .navbar .navbar-brand:focus {
     color: #fff;
   }
   .auto-color header .navbar .navbar-nav .nav-link {
     color: rgba(255, 255, 255, 0.75);
   }
-  .auto-color header .navbar .navbar-nav .nav-link:hover, .auto-color header .navbar .navbar-nav .nav-link:focus {
+  .auto-color header .navbar .navbar-nav .nav-link:hover,
+  .auto-color header .navbar .navbar-nav .nav-link:focus {
     color: #fff;
   }
   .auto-color header .navbar .navbar-nav .nav-link.disabled {
@@ -900,20 +959,21 @@
   .auto-color header .navbar .navbar-text a {
     color: #fff;
   }
-  .auto-color header .navbar .navbar-text a:hover, .auto-color header .navbar .navbar-text a:focus {
+  .auto-color header .navbar .navbar-text a:hover,
+  .auto-color header .navbar .navbar-text a:focus {
     color: #fff;
   }
   .auto-color header .navbar input[type=search] {
-    background: #25252C;
-    color: #FFFFFF;
+    background: #25252c;
+    color: #ffffff;
     transition: 0.3s;
-    border-color: #CF210E;
+    border-color: #cf210e;
   }
   .auto-color header .navbar input[type=search]:focus {
-    background: #16161A;
+    background: #16161a;
   }
   .auto-color .breadcrumb-nav .breadcrumb a {
-    color: #E47063;
+    color: #e47063;
   }
   .auto-color .breadcrumb-nav .breadcrumb li {
     color: rgba(255, 255, 255, 0.75);
@@ -925,25 +985,26 @@
     background-color: #232323 !important;
   }
   .auto-color .post-title a {
-    color: #D3D3D3 !important;
+    color: #d3d3d3 !important;
   }
   .auto-color .post-title a:hover {
-    color: #E47063 !important;
+    color: #e47063 !important;
   }
   .auto-color .post-title a:focus {
-    color: #E47063 !important;
+    color: #e47063 !important;
   }
   .auto-color .post-info a {
-    color: #E47063;
+    color: #e47063;
   }
   .auto-color .post-info span {
     color: #999999;
   }
   .auto-color .text-color {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
-  .auto-color .comment-count, .auto-color .edit-link {
-    color: #E47063;
+  .auto-color .comment-count,
+  .auto-color .edit-link {
+    color: #e47063;
   }
   .auto-color .more-link-wrapper .read-more {
     color: #fff;
@@ -967,50 +1028,62 @@
     border-color: #d9230f;
   }
   .auto-color .fullText p {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
   .auto-color .fullText p > code {
     background: #000000 !important;
-    color: #F1D951 !important;
+    color: #f1d951 !important;
   }
-  .auto-color .fullText ol li, .auto-color .fullText ul li {
-    color: #D3D3D3;
+  .auto-color .fullText ol li,
+  .auto-color .fullText ul li {
+    color: #d3d3d3;
   }
-  .auto-color .fullText ol li > code, .auto-color .fullText ul li > code {
+  .auto-color .fullText ol li > code,
+  .auto-color .fullText ul li > code {
     background: #000000 !important;
-    color: #F1D951 !important;
+    color: #f1d951 !important;
   }
-  .auto-color .fullText h1, .auto-color .fullText h2, .auto-color .fullText h3, .auto-color .fullText h4, .auto-color .fullText h5, .auto-color .fullText h6 {
-    color: #FFFFFF !important;
+  .auto-color .fullText h1,
+  .auto-color .fullText h2,
+  .auto-color .fullText h3,
+  .auto-color .fullText h4,
+  .auto-color .fullText h5,
+  .auto-color .fullText h6 {
+    color: #ffffff !important;
   }
-  .auto-color .fullText h1 code, .auto-color .fullText h2 code, .auto-color .fullText h3 code, .auto-color .fullText h4 code, .auto-color .fullText h5 code, .auto-color .fullText h6 code {
+  .auto-color .fullText h1 code,
+  .auto-color .fullText h2 code,
+  .auto-color .fullText h3 code,
+  .auto-color .fullText h4 code,
+  .auto-color .fullText h5 code,
+  .auto-color .fullText h6 code {
     background: #000000 !important;
-    color: #F1D951 !important;
+    color: #f1d951 !important;
   }
   .auto-color .fullText table {
-    background: #16161A;
+    background: #16161a;
   }
   .auto-color .fullText table th {
-    color: #FFFFFF;
-    border: 1px solid #454D55;
+    color: #ffffff;
+    border: 1px solid #454d55;
   }
   .auto-color .fullText table th a {
-    color: #E47063;
+    color: #e47063;
   }
   .auto-color .fullText table th code {
     background: #000000 !important;
-    color: #F1D951 !important;
+    color: #f1d951 !important;
   }
   .auto-color .fullText table td {
-    color: #D3D3D3;
-    border: 1px solid #454D55;
+    color: #d3d3d3;
+    border: 1px solid #454d55;
   }
   .auto-color .fullText table td a {
-    color: #E47063;
+    color: #e47063;
   }
   .auto-color .fullText table td code {
     background: #000000 !important;
-    color: #F1D951 !important;
+    color: #f1d951 !important;
   }
   .auto-color .fullText table tbody tr:nth-child(odd) {
     background: #212529;
@@ -1019,10 +1092,10 @@
     background: #212529;
   }
   .auto-color .fullText a {
-    color: #E47063;
+    color: #e47063;
   }
   .auto-color .fullText hr {
-    background: #CCCCCC;
+    background: #cccccc;
   }
   .auto-color .fullText pre code::-webkit-scrollbar {
     background: #212529;
@@ -1034,114 +1107,126 @@
     color: #999999;
   }
   .auto-color .pagination li:not(.active) a {
-    background: #16161A;
-    color: #D3D3D3 !important;
+    background: #16161a;
+    color: #d3d3d3 !important;
     border: none;
   }
   .auto-color .pagination .active a {
-    color: #D3D3D3 !important;
+    color: #d3d3d3 !important;
   }
   .auto-color #to-top-btn {
     background-color: #212529;
-    color: #FFFFFF !important;
+    color: #ffffff !important;
     border: none !important;
   }
   .auto-color .sidebar section > h3 {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
   .auto-color .sidebar section li {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
   .auto-color .sidebar section li a {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
   .auto-color .sidebar section label {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
   .auto-color .sidebar .change-color label {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
   .auto-color .sidebar .facile-latest-comment p {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
   .auto-color .sidebar .blog-info a {
-    color: #E47063;
+    color: #e47063;
   }
   .auto-color .sidebar .blog-info p {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
   .auto-color .sidebar .blog-info hr {
-    background: #CCCCCC;
+    background: #cccccc;
   }
   .auto-color .sidebar .wp-block-tag-cloud .tag-cloud-link {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
   .auto-color .sidebar .wp-block-latest-comments time {
     color: #999999;
   }
   .auto-color .sidebar .wp-block-calendar caption {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
   .auto-color .sidebar .wp-block-calendar table a {
-    color: #E47063;
+    color: #e47063;
   }
   .auto-color .sidebar .wp-block-calendar table td {
-    color: #D3D3D3;
-    border-color: #454D55;
+    color: #d3d3d3;
+    border-color: #454d55;
   }
   .auto-color .sidebar .wp-block-calendar table th {
     background: #212529;
-    color: #D3D3D3;
-    border-color: #454D55;
+    color: #d3d3d3;
+    border-color: #454d55;
   }
   .auto-color .sidebar .wp-block-calendar .wp-calendar-nav a {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
   .auto-color .post-page .post-content p {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
   .auto-color .post-page .post-content p > code {
     background: #000000 !important;
-    color: #F1D951 !important;
+    color: #f1d951 !important;
   }
-  .auto-color .post-page .post-content ol li, .auto-color .post-page .post-content ul li {
-    color: #D3D3D3;
+  .auto-color .post-page .post-content ol li,
+  .auto-color .post-page .post-content ul li {
+    color: #d3d3d3;
   }
-  .auto-color .post-page .post-content ol li > code, .auto-color .post-page .post-content ul li > code {
+  .auto-color .post-page .post-content ol li > code,
+  .auto-color .post-page .post-content ul li > code {
     background: #000000 !important;
-    color: #F1D951 !important;
+    color: #f1d951 !important;
   }
-  .auto-color .post-page .post-content h1, .auto-color .post-page .post-content h2, .auto-color .post-page .post-content h3, .auto-color .post-page .post-content h4, .auto-color .post-page .post-content h5, .auto-color .post-page .post-content h6 {
-    color: #FFFFFF !important;
+  .auto-color .post-page .post-content h1,
+  .auto-color .post-page .post-content h2,
+  .auto-color .post-page .post-content h3,
+  .auto-color .post-page .post-content h4,
+  .auto-color .post-page .post-content h5,
+  .auto-color .post-page .post-content h6 {
+    color: #ffffff !important;
   }
-  .auto-color .post-page .post-content h1 code, .auto-color .post-page .post-content h2 code, .auto-color .post-page .post-content h3 code, .auto-color .post-page .post-content h4 code, .auto-color .post-page .post-content h5 code, .auto-color .post-page .post-content h6 code {
+  .auto-color .post-page .post-content h1 code,
+  .auto-color .post-page .post-content h2 code,
+  .auto-color .post-page .post-content h3 code,
+  .auto-color .post-page .post-content h4 code,
+  .auto-color .post-page .post-content h5 code,
+  .auto-color .post-page .post-content h6 code {
     background: #000000 !important;
-    color: #F1D951 !important;
+    color: #f1d951 !important;
   }
   .auto-color .post-page .post-content table {
-    background: #16161A;
+    background: #16161a;
   }
   .auto-color .post-page .post-content table th {
-    color: #FFFFFF;
-    border: 1px solid #454D55;
+    color: #ffffff;
+    border: 1px solid #454d55;
   }
   .auto-color .post-page .post-content table th a {
-    color: #E47063;
+    color: #e47063;
   }
   .auto-color .post-page .post-content table th code {
     background: #000000 !important;
-    color: #F1D951 !important;
+    color: #f1d951 !important;
   }
   .auto-color .post-page .post-content table td {
-    color: #D3D3D3;
-    border: 1px solid #454D55;
+    color: #d3d3d3;
+    border: 1px solid #454d55;
   }
   .auto-color .post-page .post-content table td a {
-    color: #E47063;
+    color: #e47063;
   }
   .auto-color .post-page .post-content table td code {
     background: #000000 !important;
-    color: #F1D951 !important;
+    color: #f1d951 !important;
   }
   .auto-color .post-page .post-content table tbody tr:nth-child(odd) {
     background: #212529;
@@ -1150,10 +1235,10 @@
     background: #212529;
   }
   .auto-color .post-page .post-content a {
-    color: #E47063;
+    color: #e47063;
   }
   .auto-color .post-page .post-content hr {
-    background: #CCCCCC;
+    background: #cccccc;
   }
   .auto-color .post-page .post-content pre code::-webkit-scrollbar {
     background: #212529;
@@ -1165,87 +1250,108 @@
     color: #999999;
   }
   .auto-color .post-page .post-content .custom-password-form label {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
   .auto-color .post-page .post-content .custom-password-form #password {
-    background: #16161A;
-    color: #D3D3D3;
+    background: #16161a;
+    color: #d3d3d3;
   }
-  .auto-color .post-page .category-and-tag i, .auto-color .post-page .category-and-tag span {
-    color: #D3D3D3;
+  .auto-color .post-page .category-and-tag i,
+  .auto-color .post-page .category-and-tag span {
+    color: #d3d3d3;
   }
   .auto-color .post-page .post-category a {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
   .auto-color .post-page .post-navigation a {
-    color: #E47063;
+    color: #e47063;
   }
   .auto-color .post-page .post-navigation div {
-    color: #D3D3D3;
+    color: #d3d3d3;
+  }
+  .auto-color .post-content-pagination a {
+    background: #16161a;
+    color: #d3d3d3;
+    border: none;
+  }
+  .auto-color .post-content-pagination span {
+    border: none;
   }
   .auto-color #comments h2 {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
   .auto-color #comments a {
-    color: #E47063;
+    color: #e47063;
   }
   .auto-color #comments .comment-info b {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
   .auto-color #comments .comment-info .comment-time {
     color: #999999;
   }
   .auto-color #comments .comment-info .mx-2 {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
   .auto-color #comments .comment-content {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
   .auto-color #comments .comment-content p {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
   .auto-color #comments .comment-content p > code {
     background: #000000 !important;
-    color: #F1D951 !important;
+    color: #f1d951 !important;
   }
-  .auto-color #comments .comment-content ol li, .auto-color #comments .comment-content ul li {
-    color: #D3D3D3;
+  .auto-color #comments .comment-content ol li,
+  .auto-color #comments .comment-content ul li {
+    color: #d3d3d3;
   }
-  .auto-color #comments .comment-content ol li > code, .auto-color #comments .comment-content ul li > code {
+  .auto-color #comments .comment-content ol li > code,
+  .auto-color #comments .comment-content ul li > code {
     background: #000000 !important;
-    color: #F1D951 !important;
+    color: #f1d951 !important;
   }
-  .auto-color #comments .comment-content h1, .auto-color #comments .comment-content h2, .auto-color #comments .comment-content h3, .auto-color #comments .comment-content h4, .auto-color #comments .comment-content h5, .auto-color #comments .comment-content h6 {
-    color: #FFFFFF !important;
+  .auto-color #comments .comment-content h1,
+  .auto-color #comments .comment-content h2,
+  .auto-color #comments .comment-content h3,
+  .auto-color #comments .comment-content h4,
+  .auto-color #comments .comment-content h5,
+  .auto-color #comments .comment-content h6 {
+    color: #ffffff !important;
   }
-  .auto-color #comments .comment-content h1 code, .auto-color #comments .comment-content h2 code, .auto-color #comments .comment-content h3 code, .auto-color #comments .comment-content h4 code, .auto-color #comments .comment-content h5 code, .auto-color #comments .comment-content h6 code {
+  .auto-color #comments .comment-content h1 code,
+  .auto-color #comments .comment-content h2 code,
+  .auto-color #comments .comment-content h3 code,
+  .auto-color #comments .comment-content h4 code,
+  .auto-color #comments .comment-content h5 code,
+  .auto-color #comments .comment-content h6 code {
     background: #000000 !important;
-    color: #F1D951 !important;
+    color: #f1d951 !important;
   }
   .auto-color #comments .comment-content table {
-    background: #16161A;
+    background: #16161a;
   }
   .auto-color #comments .comment-content table th {
-    color: #FFFFFF;
-    border: 1px solid #454D55;
+    color: #ffffff;
+    border: 1px solid #454d55;
   }
   .auto-color #comments .comment-content table th a {
-    color: #E47063;
+    color: #e47063;
   }
   .auto-color #comments .comment-content table th code {
     background: #000000 !important;
-    color: #F1D951 !important;
+    color: #f1d951 !important;
   }
   .auto-color #comments .comment-content table td {
-    color: #D3D3D3;
-    border: 1px solid #454D55;
+    color: #d3d3d3;
+    border: 1px solid #454d55;
   }
   .auto-color #comments .comment-content table td a {
-    color: #E47063;
+    color: #e47063;
   }
   .auto-color #comments .comment-content table td code {
     background: #000000 !important;
-    color: #F1D951 !important;
+    color: #f1d951 !important;
   }
   .auto-color #comments .comment-content table tbody tr:nth-child(odd) {
     background: #212529;
@@ -1254,10 +1360,10 @@
     background: #212529;
   }
   .auto-color #comments .comment-content a {
-    color: #E47063;
+    color: #e47063;
   }
   .auto-color #comments .comment-content hr {
-    background: #CCCCCC;
+    background: #cccccc;
   }
   .auto-color #comments .comment-content pre code::-webkit-scrollbar {
     background: #212529;
@@ -1268,49 +1374,51 @@
   .auto-color #comments .comment-content blockquote {
     color: #999999;
   }
-  .auto-color #comments .comment-reply i, .auto-color #comments .comment-reply a {
-    color: #D3D3D3 !important;
+  .auto-color #comments .comment-reply i,
+  .auto-color #comments .comment-reply a {
+    color: #d3d3d3 !important;
   }
   .auto-color #comments .comment-input label {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
-  .auto-color #comments .comment-input textarea, .auto-color #comments .comment-input input {
-    background: #16161A;
-    color: #D3D3D3;
+  .auto-color #comments .comment-input textarea,
+  .auto-color #comments .comment-input input {
+    background: #16161a;
+    color: #d3d3d3;
     transition: 0.3s;
   }
   .auto-color #comments .comment-input .comment-user {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
   .auto-color #comments .comment-input .logged-in-as {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
   .auto-color .archive-description {
     color: #999999;
   }
   .auto-color .no-content {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
   .auto-color .no-content hr {
-    background: #D3D3D3;
+    background: #d3d3d3;
   }
   .auto-color footer nav {
-    color: #F9F9F9;
+    color: #f9f9f9;
   }
   .auto-color footer nav a {
-    color: #E47063;
+    color: #e47063;
   }
   .auto-color .archive-title h1 {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
   .auto-color .archive-page .archives h2 {
     background: #121212;
   }
   .auto-color .page-404 h1 {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
   .auto-color .page-404 h3 {
-    color: #D3D3D3;
+    color: #d3d3d3;
   }
   .auto-color .page-404 #back-home-page {
     color: #fff;
@@ -1782,6 +1890,22 @@ header input[type=search]:focus {
 }
 #post-page .category-and-tag .post-tag a:last-child, #page-page .category-and-tag .post-tag a:last-child {
   margin-right: 0;
+}
+
+.post-content-pagination span, .post-content-pagination a {
+  padding: 8px 12px;
+  border: 1px solid #EEEEEE;
+  margin-right: 8px;
+  border-radius: 4px;
+  float: left;
+}
+.post-content-pagination span:hover, .post-content-pagination a:hover {
+  background: #D9230F;
+  color: #FFFFFF;
+}
+.post-content-pagination .current {
+  background: #D9230F;
+  color: #FFFFFF;
 }
 
 #comments .comment-off {

@@ -11,7 +11,7 @@ function mytheme_customize_register($wp_customize) {
     $wp_customize->add_setting('theme_color_scheme', array(
         'default'   => 'auto-color',
         'transport' => 'refresh',
-        'sanitize_callback' => 'sanitize_select'
+        'sanitize_callback' => 'sanitize_key'
     ));
     // 默认的主题配色选择
     $wp_customize->add_control('theme_color_scheme_control', array(
@@ -88,7 +88,7 @@ function mytheme_customize_register($wp_customize) {
     $wp_customize->add_setting('post_list_options', array(
         'default'   => 'excerpt',
         'transport' => 'refresh',
-        'sanitize_callback' => 'sanitize_select'
+        'sanitize_callback' => 'sanitize_key'
     ));
     // 文章列表显示设置
     $wp_customize->add_control('post_list_options_control', array(
@@ -165,7 +165,7 @@ function mytheme_customize_register($wp_customize) {
     $wp_customize->add_setting('header_image_style', array(
         'default'   => 'large',
         'transport' => 'refresh',
-        'sanitize_callback' => 'sanitize_select'
+        'sanitize_callback' => 'sanitize_key'
     ));
     // 文章列表头图样式的 radio
     $wp_customize->add_control('header_image_style_control', array(
@@ -195,6 +195,21 @@ function mytheme_customize_register($wp_customize) {
         'description' => __('Supports syntax highlighting for over 30 languages, using the VS2015 theme. Disable this if you plan to use another plugin or do not need this feature.', 'facile')
     ));
 
+    // 文章阅读量统计和显示开关
+    $wp_customize->add_setting('enable_post_view_count', array(
+        'default'   => false,
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_checkbox'
+    ));
+    // 文章阅读量复选框
+    $wp_customize->add_control('enable_post_view_count_control', array(
+        'label'    => __('Post View Count', 'facile'),
+        'section'  => 'post_options_section',
+        'settings' => 'enable_post_view_count',
+        'type'     => 'checkbox',
+        'description' => __('Enable this option to display the view count on both the post list and individual post pages. The view count will increase each time a user visits the post. A cookie will also be set in the user\'s browser, ensuring that repeated visits within a short period of time from the same user will count as a single view.', 'facile')
+    ));
+
     // 评论相关的设置页
     $wp_customize->add_section('comment_options_section', array(
         'title'    => __('Comment Section Settings', 'facile'),
@@ -204,7 +219,7 @@ function mytheme_customize_register($wp_customize) {
     $wp_customize->add_setting('comment_date_format', array(
         'default'   => 'format_iso',
         'transport' => 'refresh',
-        'sanitize_callback' => 'sanitize_select'
+        'sanitize_callback' => 'sanitize_key'
     ));
     // 评论日期格式显示设置的 radio
     $wp_customize->add_control('comment_date_format_control', array(
@@ -225,7 +240,7 @@ function mytheme_customize_register($wp_customize) {
     $wp_customize->add_setting('comment_form_position', array(
         'default'   => 'below',
         'transport' => 'refresh',
-        'sanitize_callback' => 'sanitize_select'
+        'sanitize_callback' => 'sanitize_key'
     ));
     // 评论表单位置设置的 radio
     $wp_customize->add_control('comment_form_position_control', array(
