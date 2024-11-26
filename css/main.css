@@ -450,6 +450,12 @@
 .dark-color header .navbar input[type=search]:focus {
   background: #16161a;
 }
+.dark-color header .navbar .dropdown-menu {
+  background: #25252C;
+}
+.dark-color header .navbar .dropdown-menu a {
+  color: #d3d3d3;
+}
 .dark-color .breadcrumb-nav .breadcrumb a {
   color: #e47063;
 }
@@ -971,6 +977,12 @@
   }
   .auto-color header .navbar input[type=search]:focus {
     background: #16161a;
+  }
+  .auto-color header .navbar .dropdown-menu {
+    background: #25252C;
+  }
+  .auto-color header .navbar .dropdown-menu a {
+    color: #d3d3d3;
   }
   .auto-color .breadcrumb-nav .breadcrumb a {
     color: #e47063;
@@ -1729,6 +1741,16 @@ header input[type=search]:focus {
   opacity: 0.7;
 }
 
+footer .footer-menu {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+footer .footer-menu li {
+  display: inline-block;
+  margin-right: 8px;
+}
+
 .archive-title h1 {
   font-size: 16px;
   font-weight: 700;
@@ -2162,6 +2184,13 @@ header input[type=search]:focus {
   }
 }
 @media screen and (max-width: 575px) {
+  header .dropdown-menu {
+    max-width: 360px;
+  }
+  header .dropdown-menu .dropdown-item {
+    display: inline-block;
+    white-space: normal;
+  }
   .post-list .post .post-title {
     font-size: 18px;
   }

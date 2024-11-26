@@ -364,6 +364,19 @@ header {
   opacity: 0.7;
 }
 
+// 底部 footer 菜单
+footer {
+  .footer-menu {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    li {
+      display: inline-block;
+      margin-right: 8px;
+    }
+  }
+}
+
 // 分类页的页头区域
 .archive-title {
   h1 {
@@ -620,6 +633,14 @@ header {
 
 // <= 575
 @media screen and (max-width: 575px) {
+  header .dropdown-menu {
+    max-width: 360px;
+    .dropdown-item {
+      display: inline-block;
+      white-space: normal;
+    }
+  }
+
   // 文章列表
   .post-list {
     .post {

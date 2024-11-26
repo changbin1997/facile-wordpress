@@ -3,19 +3,19 @@ msgstr ""
 "Project-Id-Version: Facile\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-27 08:57+0000\n"
-"PO-Revision-Date: 2024-11-19 12:33+0000\n"
+"PO-Revision-Date: 2024-11-26 12:40+0000\n"
 "Last-Translator: Mr. Ma\n"
-"Language-Team: Chinese (China)\n"
+"Language-Team: 简体中文\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.6.11; wp-6.7\n"
+"X-Loco-Version: 2.6.11; wp-6.7.1\n"
 "X-Domain: facile"
 
-#: comments.php:13 content.php:73 content.php:116
+#: comments.php:13 content.php:75 content.php:118
 #, php-format
 msgid "%s Comment"
 msgid_plural "There are %1$s comments"
@@ -112,12 +112,12 @@ msgid ""
 "submit new comments, while the comment list displays published comments."
 msgstr "选择评论表单的位置：评论表单是用于提交新评论的区域，而评论列表是显示已发表评论的区域。"
 
-#: single.php:71
+#: single.php:84
 #, php-format
 msgid "Click to view posts in the %s category"
 msgstr "点击查看 %s 分类的文章"
 
-#: single.php:84
+#: single.php:97
 #, php-format
 msgid "Click to view posts with the %s tag"
 msgstr "点击查看包含 %s 标签的文章"
@@ -207,7 +207,7 @@ msgstr "显示指定数量的彩色标签，标签颜色随机。"
 msgid "Displays the specified number of recent comments."
 msgstr "显示最新的指定数量的评论。"
 
-#: content.php:80 content.php:123
+#: content.php:82 content.php:125
 msgid "Edit"
 msgstr "编辑"
 
@@ -292,6 +292,10 @@ msgstr "Facile主题配色模式切换"
 msgid "Follow System Theme"
 msgstr "跟随系统主题"
 
+#: inc/setup.php:33
+msgid "Footer Menu"
+msgstr "网站底部菜单"
+
 #: inc/customizer.php:132
 msgid ""
 "Global setting to show or hide featured images in the post list. If disabled,"
@@ -308,7 +312,7 @@ msgstr "文章头图全局开关，关闭后文章页面不会显示文章头图
 msgid "Go back to homepage"
 msgstr "返回首页"
 
-#: header.php:38 inc/helpers.php:74
+#: header.php:49 inc/helpers.php:74
 msgid "Home"
 msgstr "首页"
 
@@ -336,7 +340,7 @@ msgid ""
 "displayed."
 msgstr "如果没有设置文章头图，将自动使用文章中的第一张图片作为头图。如果文章中没有图片，则不显示头图。"
 
-#: functions.php:24
+#: functions.php:25
 msgid ""
 "If you encounter any issues, feel free to leave a message on my blog or "
 "report them on GitHub Issues."
@@ -385,20 +389,19 @@ msgstr "导航栏Logo图片"
 msgid "Navbar Settings"
 msgstr "导航栏设置"
 
-#: archive.php:98 index.php:44 search.php:61 inc/comments.php:170
-#: inc/comments.php:170
+#: inc/comments.php:170 inc/post.php:124
 msgid "Next Page"
 msgstr "下一页"
 
-#: archive.php:98 index.php:44 search.php:61
+#: inc/post.php:124
 msgid "Next Page (Right Arrow Key)"
 msgstr "下一页（右方向键）"
 
-#: single.php:111
+#: single.php:124
 msgid "Next Post"
 msgstr "下一篇"
 
-#: single.php:76
+#: single.php:89
 msgid "No categories selected"
 msgstr "未选择分类"
 
@@ -411,11 +414,11 @@ msgstr "无法查找到包含 <b>%s</b> 的文章！"
 msgid "No posts found!"
 msgstr "没有找到任何文章！"
 
-#: single.php:89
+#: single.php:102
 msgid "No tags added"
 msgstr "未添加标签"
 
-#: single.php:106 single.php:119
+#: single.php:119 single.php:132
 msgid "None"
 msgstr "没有了"
 
@@ -428,7 +431,11 @@ msgid ""
 "Only you can see this comment. It will be visible to others once approved."
 msgstr "当前评论只有您自己能看到，审核通过后才会公开显示。"
 
-#: archive.php:76 index.php:21 search.php:39 inc/comments.php:130
+#: inc/Facile_Nav_Walker.php:58
+msgid "Open Submenu"
+msgstr "展开子菜单"
+
+#: single.php:69 inc/comments.php:130 inc/post.php:80
 msgid "Pagination"
 msgstr "分页"
 
@@ -440,7 +447,7 @@ msgstr "密码"
 msgid "Pending Review"
 msgstr "评论审核中"
 
-#: single.php:66
+#: single.php:79
 msgid "Post Categories"
 msgstr "文章分类"
 
@@ -489,24 +496,27 @@ msgstr "包含 %s 标签的文章"
 msgid "Posts under the category %s"
 msgstr "分类 %s 下的文章"
 
-#: archive.php:86 index.php:32 search.php:49 inc/comments.php:137
-#: inc/comments.php:137
+#: inc/comments.php:137 inc/post.php:86
 msgid "Previous Page"
 msgstr "上一页"
 
-#: archive.php:86 index.php:32 search.php:49
+#: inc/post.php:86
 msgid "Previous Page (Left Arrow Key)"
 msgstr "上一页（左方向键）"
 
-#: single.php:98
+#: single.php:111
 msgid "Previous Post"
 msgstr "上一篇"
+
+#: inc/setup.php:32
+msgid "Primary Menu"
+msgstr "网站顶部导航栏菜单"
 
 #: content.php:34 page.php:29 single.php:47
 msgid "Publication Date"
 msgstr "发布日期"
 
-#: content.php:68 content.php:111
+#: content.php:70 content.php:113
 msgid "Read More"
 msgstr "阅读全文"
 
@@ -530,11 +540,11 @@ msgstr "右旋转90度"
 msgid "Save my name, email, and website for the next time I comment."
 msgstr "保存我的姓名、电子邮件和网站地址，以便下次评论时使用。"
 
-#: footer.php:26
+#: footer.php:38
 msgid "Scroll to Top"
 msgstr "返回顶部"
 
-#: 404.php:20 404.php:22 404.php:22 header.php:50 header.php:52 header.php:52
+#: 404.php:20 404.php:22 404.php:22 header.php:62 header.php:64 header.php:64
 msgid "Search"
 msgstr "搜索"
 
@@ -602,7 +612,7 @@ msgstr "标签云"
 msgid "Tag: "
 msgstr "标签："
 
-#: single.php:79
+#: single.php:92
 msgid "Tags"
 msgstr "标签"
 
@@ -668,19 +678,19 @@ msgstr "上传或选择一个图像作为导航栏的Logo，默认会使用网�
 msgid "Use First Image in Post as Featured Image"
 msgstr "使用文章中的第一张图片作为默认头图"
 
-#: functions.php:19
+#: functions.php:20
 msgid "View Documentation"
 msgstr "查看帮助文档"
 
-#: content.php:44 single.php:57
+#: content.php:45 single.php:58
 msgid "Views"
 msgstr "阅读量"
 
-#: functions.php:20
+#: functions.php:21
 msgid "Visit Github"
 msgstr "访问 Github"
 
-#: functions.php:21
+#: functions.php:22
 msgid "Visit the Developer's Blog"
 msgstr "访问开发者的博客"
 
@@ -688,7 +698,7 @@ msgstr "访问开发者的博客"
 msgid "Website"
 msgstr "网站"
 
-#: functions.php:17
+#: functions.php:18
 msgid "Welcome to Facile"
 msgstr "欢迎使用 Facile"
 

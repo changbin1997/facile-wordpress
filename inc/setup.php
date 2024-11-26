@@ -20,6 +20,17 @@ function theme_register_sidebar() {
 }
 add_action( 'widgets_init', 'theme_register_sidebar' );
 
+// 在 head 区域生成标签
 add_theme_support('title-tag');
 
+// 生成 RSS
 add_theme_support('automatic-feed-links');
+
+// 菜单
+function facile_register_menus() {
+    register_nav_menus(array(
+        'primary-menu' => __('Primary Menu', 'facile'),
+        'footer-menu'  => __('Footer Menu', 'facile'),
+    ));
+}
+add_action('after_setup_theme', 'facile_register_menus');

@@ -8,6 +8,7 @@ require_once get_template_directory() . '/inc/customizer.php';
 require_once get_template_directory() . '/inc/helpers.php';
 require_once get_template_directory() . '/inc/widgets/index.php';
 require_once get_template_directory() . '/inc/post.php';
+require_once get_template_directory() . '/inc/Facile_Nav_Walker.php';
 
 function welcome_content() {
     $screen = get_current_screen();

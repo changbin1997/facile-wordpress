@@ -1,5 +1,17 @@
 <footer>
     <div class="container py-3">
+        <?php if (has_nav_menu('footer-menu')): ?>
+            <nav class="text-center mb-1">
+                <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'footer-menu',
+                    'menu_class' => 'footer-menu',
+                    'depth' => 1
+                ));
+                ?>
+            </nav>
+        <?php endif; ?>
+
         <?php
         $cn_icp = get_option('cn_icp');  // 获取ICP备案号
         $cn_ga = get_option('cn_ga');  // 获取公安备案号
@@ -14,11 +26,11 @@
                 <?php endif;?>
             </nav>
         <?php endif;?>
-        <nav class="text-center">
-            Powered by
-            <a class="mx-1" href="https://wordpress.org/" target="_blank">WordPress</a>
-            Theme by
-            <a class="ml-1" href="https://www.misterma.com/" target="_blank">Facile</a>
+        
+        <nav class="text-center" aria-label="Copyright">
+            <a class="mx-1" href="https://github.com/changbin1997/facile-wordpress" target="_blank">Facile</a>
+            by
+            <a class="ml-1" href="https://www.misterma.com/" target="_blank">Mr. Ma</a>
         </nav>
     </div>
 </footer>

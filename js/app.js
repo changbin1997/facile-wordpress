@@ -17,6 +17,85 @@ $(() => {
     }
   });
 
+  // 移动设备的展开和收起子菜单
+  $('.navbar-nav .show-submenu').on('click', ev => {
+    ev.preventDefault();
+    ev.stopPropagation();
+    const menuId = $(ev.target).attr('aria-controls');
+    if ($(`#${menuId}`).attr('data-show') === 'false') {
+      $(`#${menuId}`).dropdown('show');
+      $(`#${menuId}`).attr('data-show', 'true');
+      $(ev.target).attr('aria-expanded', 'true');
+    }else {
+      $(`#${menuId}`).dropdown('hide');
+      $(`#${menuId}`).attr('data-show', 'false');
+      $(ev.target).attr('aria-expanded', 'false');
+    }
+  });
+
+  // 包含子菜单的项鼠标移入和移出
+  $('.navbar-nav .dropdown-toggle').hover(ev => {
+    if (window.innerWidth >= 768) {
+      // 展开菜单
+      const menuId = $(ev.target).attr('aria-controls');
+      $(`#${menuId}`).dropdown('show');
+      $(ev.target).attr('aria-expanded', 'true');
+      $(`#${menuId}`).attr('data-show', 'true');
+    }
+  }, ev => {
+    if (window.innerWidth >= 768) {
+      const menuId = $(ev.target).attr('aria-controls');
+      const timeout = setTimeout(() => {
+        $(`#${menuId}`).dropdown('hide');
+        $(ev.target).attr('aria-expanded', 'false');
+        $(`#${menuId}`).attr('data-show', 'false');
+      }, 100);
+
+      $(`#${menuId}`).on({
+        mouseenter: () => {
+          clearTimeout(timeout);
+        },
+        mouseleave: () => {
+          // 鼠标离开菜单列表后收起菜单
+          $(`#${menuId}`).dropdown('hide');
+          $(ev.target).attr('aria-expanded', 'false');
+          $(`#${menuId}`).attr('data-show', 'false');
+        }
+      });
+
+      $(`#${menuId} a`).on({
+        focusin: () => {
+          clearTimeout(timeout);
+        },
+        focusout: () => {
+          // 焦点离开菜单列表后收起菜单
+          setTimeout(() => {
+            if (!$(`#${menuId}`).has(':focus').length) {
+              $(`#${menuId}`).dropdown('hide');
+              $(ev.target).attr('aria-expanded', 'false');
+              $(`#${menuId}`).attr('data-show', 'false');
+            }
+          }, 0);
+        }
+      });
+    }
+  });
+
+  // 导航栏子菜单链接跳转
+  $('.navbar-nav .dropdown-menu a').on('click', ev => {
+    location.href = $(ev.target).attr('href');
+  });
+
+  // 包含子菜单的链接获取和失去焦点
+  $('.navbar-nav .dropdown-toggle').on({
+    focus: ev => {
+      $(ev.target).trigger('mouseover');
+    },
+    blur: ev => {
+      $(ev.target).trigger('mouseout');
+    }
+  });
+
   // 评论列表的回复对象的链接鼠标移入就高亮回复对象
   $('.comment-list .parent').hover(ev => {
     const color = $('.dark-color').length ? '#212529' : '#F7E6D2';

@@ -212,6 +212,14 @@ $dark-text-color2: #999999;
           background: #16161a;
         }
       }
+
+      // 导航栏下拉菜单
+      .dropdown-menu {
+        background: #25252C;
+        a {
+          color: $dark-text-color;
+        }
+      }
     }
   }
 

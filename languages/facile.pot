@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Facile\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-19 12:31+0000\n"
+"POT-Creation-Date: 2024-11-26 12:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -13,10 +13,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.6.11; wp-6.7\n"
+"X-Loco-Version: 2.6.11; wp-6.7.1\n"
 "X-Domain: facile"
 
-#: comments.php:13 content.php:73 content.php:116
+#: comments.php:13 content.php:75 content.php:118
 #, php-format
 msgid "%s Comment"
 msgid_plural "There are %1$s comments"
@@ -118,12 +118,12 @@ msgid ""
 "submit new comments, while the comment list displays published comments."
 msgstr ""
 
-#: single.php:71
+#: single.php:84
 #, php-format
 msgid "Click to view posts in the %s category"
 msgstr ""
 
-#: single.php:84
+#: single.php:97
 #, php-format
 msgid "Click to view posts with the %s tag"
 msgstr ""
@@ -213,7 +213,7 @@ msgstr ""
 msgid "Displays the specified number of recent comments."
 msgstr ""
 
-#: content.php:80 content.php:123
+#: content.php:82 content.php:125
 msgid "Edit"
 msgstr ""
 
@@ -292,6 +292,10 @@ msgstr ""
 msgid "Follow System Theme"
 msgstr ""
 
+#: inc/setup.php:33
+msgid "Footer Menu"
+msgstr ""
+
 #: inc/customizer.php:132
 msgid ""
 "Global setting to show or hide featured images in the post list. If disabled,"
@@ -308,7 +312,7 @@ msgstr ""
 msgid "Go back to homepage"
 msgstr ""
 
-#: header.php:38 inc/helpers.php:74
+#: header.php:49 inc/helpers.php:74
 msgid "Home"
 msgstr ""
 
@@ -336,7 +340,7 @@ msgid ""
 "displayed."
 msgstr ""
 
-#: functions.php:24
+#: functions.php:25
 msgid ""
 "If you encounter any issues, feel free to leave a message on my blog or "
 "report them on GitHub Issues."
@@ -385,20 +389,19 @@ msgstr ""
 msgid "Navbar Settings"
 msgstr ""
 
-#: archive.php:98 index.php:44 search.php:61 inc/comments.php:170
-#: inc/comments.php:170
+#: inc/comments.php:170 inc/post.php:124
 msgid "Next Page"
 msgstr ""
 
-#: archive.php:98 index.php:44 search.php:61
+#: inc/post.php:124
 msgid "Next Page (Right Arrow Key)"
 msgstr ""
 
-#: single.php:111
+#: single.php:124
 msgid "Next Post"
 msgstr ""
 
-#: single.php:76
+#: single.php:89
 msgid "No categories selected"
 msgstr ""
 
@@ -411,11 +414,11 @@ msgstr ""
 msgid "No posts found!"
 msgstr ""
 
-#: single.php:89
+#: single.php:102
 msgid "No tags added"
 msgstr ""
 
-#: single.php:106 single.php:119
+#: single.php:119 single.php:132
 msgid "None"
 msgstr ""
 
@@ -428,7 +431,11 @@ msgid ""
 "Only you can see this comment. It will be visible to others once approved."
 msgstr ""
 
-#: archive.php:76 index.php:21 search.php:39 inc/comments.php:130
+#: inc/Facile_Nav_Walker.php:58
+msgid "Open Submenu"
+msgstr ""
+
+#: single.php:69 inc/comments.php:130 inc/post.php:80
 msgid "Pagination"
 msgstr ""
 
@@ -440,7 +447,7 @@ msgstr ""
 msgid "Pending Review"
 msgstr ""
 
-#: single.php:66
+#: single.php:79
 msgid "Post Categories"
 msgstr ""
 
@@ -489,24 +496,27 @@ msgstr ""
 msgid "Posts under the category %s"
 msgstr ""
 
-#: archive.php:86 index.php:32 search.php:49 inc/comments.php:137
-#: inc/comments.php:137
+#: inc/comments.php:137 inc/post.php:86
 msgid "Previous Page"
 msgstr ""
 
-#: archive.php:86 index.php:32 search.php:49
+#: inc/post.php:86
 msgid "Previous Page (Left Arrow Key)"
 msgstr ""
 
-#: single.php:98
+#: single.php:111
 msgid "Previous Post"
+msgstr ""
+
+#: inc/setup.php:32
+msgid "Primary Menu"
 msgstr ""
 
 #: content.php:34 page.php:29 single.php:47
 msgid "Publication Date"
 msgstr ""
 
-#: content.php:68 content.php:111
+#: content.php:70 content.php:113
 msgid "Read More"
 msgstr ""
 
@@ -530,11 +540,11 @@ msgstr ""
 msgid "Save my name, email, and website for the next time I comment."
 msgstr ""
 
-#: footer.php:26
+#: footer.php:38
 msgid "Scroll to Top"
 msgstr ""
 
-#: 404.php:20 404.php:22 404.php:22 header.php:50 header.php:52 header.php:52
+#: 404.php:20 404.php:22 404.php:22 header.php:62 header.php:64 header.php:64
 msgid "Search"
 msgstr ""
 
@@ -600,7 +610,7 @@ msgstr ""
 msgid "Tag: "
 msgstr ""
 
-#: single.php:79
+#: single.php:92
 msgid "Tags"
 msgstr ""
 
@@ -665,19 +675,19 @@ msgstr ""
 msgid "Use First Image in Post as Featured Image"
 msgstr ""
 
-#: functions.php:19
+#: functions.php:20
 msgid "View Documentation"
 msgstr ""
 
-#: content.php:44 single.php:57
+#: content.php:45 single.php:58
 msgid "Views"
 msgstr ""
 
-#: functions.php:20
+#: functions.php:21
 msgid "Visit Github"
 msgstr ""
 
-#: functions.php:21
+#: functions.php:22
 msgid "Visit the Developer's Blog"
 msgstr ""
 
@@ -685,7 +695,7 @@ msgstr ""
 msgid "Website"
 msgstr ""
 
-#: functions.php:17
+#: functions.php:18
 msgid "Welcome to Facile"
 msgstr ""
 

@@ -33,18 +33,30 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item <?php if (is_home()) echo 'active'; ?>">
-                        <a <?php if (is_home()) echo 'aria-current="page"'; ?>  href="<?php echo esc_url(home_url()); ?>" class="nav-link"><?php _e('Home', 'facile'); ?></a>
-                    </li>
-                    <?php $pages = get_pages(array('sort_column' => 'menu_order',)); ?>
-                    <?php foreach ($pages as $page): ?>
-                        <li class="nav-item <?php if (is_page($page->ID)) echo 'active'; ?>">
-                            <a <?php if (is_page($page->ID)) echo 'aria-current="page"'; ?> href="<?php echo get_page_link($page->ID); ?>" class="nav-link"><?php echo $page->post_title; ?></a>
+                <?php if (has_nav_menu('primary-menu')): ?>
+                    <?php
+                    wp_nav_menu(array(
+                        'theme_location' => 'primary-menu',
+                        'menu_class' => 'navbar-nav mr-auto',
+                        'container' => false,
+                        'depth' => 2,
+                        'walker' => new Facile_Nav_Walker()
+                    ));    
+                    ?>
+                <?php else: ?>    
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item <?php if (is_home()) echo 'active'; ?>">
+                            <a <?php if (is_home()) echo 'aria-current="page"'; ?>  href="<?php echo esc_url(home_url()); ?>" class="nav-link"><?php _e('Home', 'facile'); ?></a>
                         </li>
-                    <?php endforeach; ?>
-                </ul>
-                <!--bootstrap4样式的 WordPress 搜索-->
+                        <?php $pages = get_pages(array('sort_column' => 'menu_order',)); ?>
+                        <?php foreach ($pages as $page): ?>
+                            <li class="nav-item <?php if (is_page($page->ID)) echo 'active'; ?>">
+                                <a <?php if (is_page($page->ID)) echo 'aria-current="page"'; ?> href="<?php echo get_page_link($page->ID); ?>" class="nav-link"><?php echo $page->post_title; ?></a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+                <!--搜索-->
                 <form role="search" class="form-inline my-2 my-lg-0" action="<?php echo esc_url(home_url('/')); ?>" method="get" >
                     <div class="input-group">
                         <input class="form-control" type="search" placeholder="<?php _e('Search', 'facile'); ?>" name="s" value="<?php echo get_search_query(); ?>" required>
