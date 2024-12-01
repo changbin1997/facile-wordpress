@@ -12,6 +12,20 @@ Theme Demo: [https://www.misterma.com/](https://www.misterma.com/)
 
 Theme Download: [https://github.com/changbin1997/facile-wordpress/releases](https://github.com/changbin1997/facile-wordpress/releases)
 
+## Screenshots
+
+Light theme:
+
+![Light Theme](screenshot.png)
+
+Dark theme:
+
+![Dark Theme](screenshots/dark.png)
+
+Large:
+
+![large](screenshots/large.png)
+
 ## Features
 
 * Responsive design for seamless viewing on all devices  

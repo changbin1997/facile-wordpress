@@ -1,13 +1,36 @@
 <?php
 
-// 为文章和页面启用特色图片支持
-function theme_setup() {
+add_action('after_setup_theme', function() {
+    // 加载翻译
+    load_theme_textdomain('facile', get_template_directory() . '/languages');
+
+    // 为文章和页面启用特色图片支持
     add_theme_support('post-thumbnails', array('post', 'page'));
-}
-add_action('after_setup_theme', 'theme_setup');
+
+    // 菜单
+    register_nav_menus(array(
+        'primary-menu' => __('Primary Menu', 'facile'),
+        'footer-menu'  => __('Footer Menu', 'facile')
+    ));
+
+    // 启用小部件的选择性刷新功能
+    add_theme_support('customize-selective-refresh-widgets');
+
+    // 启用编辑器样式
+    add_editor_style(array());
+
+    // 在 head 区域生成标签
+    add_theme_support('title-tag');
+
+    // 生成 RSS
+    add_theme_support('automatic-feed-links');
+
+    // 启用 HTML5 支持，使 WordPress 在输出评论表单、评论列表、图库和标题等时使用 HTML5 标签
+    add_theme_support('html5', array('comment-form', 'comment-list', 'gallery', 'caption'));
+});
 
 // 注册侧边栏
-function theme_register_sidebar() {
+add_action( 'widgets_init', function() {
     register_sidebar(array(
         'name' => '侧边栏',
         'id' => 'sidebar',
@@ -17,20 +40,4 @@ function theme_register_sidebar() {
         'before_title' => '<h3 class="widget-title mb-4">',
         'after_title' => '</h3>',
     ));
-}
-add_action( 'widgets_init', 'theme_register_sidebar' );
-
-// 在 head 区域生成标签
-add_theme_support('title-tag');
-
-// 生成 RSS
-add_theme_support('automatic-feed-links');
-
-// 菜单
-function facile_register_menus() {
-    register_nav_menus(array(
-        'primary-menu' => __('Primary Menu', 'facile'),
-        'footer-menu'  => __('Footer Menu', 'facile'),
-    ));
-}
-add_action('after_setup_theme', 'facile_register_menus');
+});

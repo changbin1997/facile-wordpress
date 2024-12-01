@@ -14,11 +14,17 @@ Facile 是一套简洁的 WordPress 和 Typecho 博客主题，也是我正在�
 
 ## 截图
 
-主题首页截图： 
+浅色模式：
 
-小头图模式：
+![浅色模式](screenshot.png)
 
 深色模式：
+
+![深色模式](screenshots/dark.png)
+
+大头图模式：
+
+![大头图模式](screenshots/large.png)
 
 ## 特点和功能
 
