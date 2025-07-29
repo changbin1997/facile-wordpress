@@ -16,9 +16,8 @@ function welcome_content() {
     <div class="notice notice-success is-dismissible">
         <h1><?php _e('Welcome to Facile', 'facile'); ?></h1>
         <p>
-            <a href="#" target="_blank" style="margin-right: 8px;"><?php _e('View Documentation', 'facile'); ?></a>
-            <a href="#" target="_blank" style="margin-right: 8px;"><?php _e('Visit Github', 'facile'); ?></a>
-            <a href="https://www.misterma.com/" target="_blank" style="margin-right: 8px;"><?php _e('Visit the Developer\'s Blog', 'facile'); ?></a>
+            <a href="https://www.misterma.com/archives/952/" target="_blank" style="margin-right: 8px;"><?php _e('View Documentation', 'facile'); ?></a>
+            <a href="https://github.com/changbin1997/facile-wordpress" target="_blank" style="margin-right: 8px;"><?php _e('Visit Github', 'facile'); ?></a>
         </p>
         <p>
             <?php _e('If you encounter any issues, feel free to leave a message on my blog or report them on GitHub Issues.', 'facile'); ?>

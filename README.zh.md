@@ -12,6 +12,8 @@ Facile 是一套简洁的 WordPress 和 Typecho 博客主题，也是我正在�
 
 主题下载地址：[https://github.com/changbin1997/facile-wordpress/releases](https://github.com/changbin1997/facile-wordpress/releases)
 
+主题使用帮助: [https://www.misterma.com/archives/951/](https://www.misterma.com/archives/951/)
+
 ## 截图
 
 浅色模式：
@@ -34,7 +36,7 @@ Facile 是一套简洁的 WordPress 和 Typecho 博客主题，也是我正在�
 * 代码高亮
 * 文章列表支持多种排版方式
 * 丰富的设置选项
-* 详细的帮助文档
+* 详细的 [帮助文档](https://www.misterma.com/archives/951/)
 * 长期维护
 
 ## 安装

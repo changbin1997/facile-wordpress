@@ -12,6 +12,8 @@ Theme Demo: [https://www.misterma.com/](https://www.misterma.com/)
 
 Theme Download: [https://github.com/changbin1997/facile-wordpress/releases](https://github.com/changbin1997/facile-wordpress/releases)
 
+User Guide: [https://www.misterma.com/archives/952/](https://www.misterma.com/archives/952/)
+
 ## Screenshots
 
 Light theme:
@@ -34,7 +36,7 @@ Large:
 * Built-in code highlighting for developers and tech enthusiasts  
 * Multiple layout options for post lists  
 * Extensive customization options to tailor the theme to your needs  
-* Comprehensive documentation to guide you through setup and usage  
+* Comprehensive [documentation](https://www.misterma.com/archives/952/) to guide you through setup and usage  
 * Actively maintained for long-term reliability  
 
 ## Installation  

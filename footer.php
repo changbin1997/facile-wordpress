@@ -30,7 +30,7 @@
         <nav class="text-center" aria-label="Copyright">
             <a class="mx-1" href="https://github.com/changbin1997/facile-wordpress" target="_blank">Facile</a>
             by
-            <a class="ml-1" href="https://www.misterma.com/" target="_blank">Mr. Ma</a>
+            <a class="ml-1" href="https://www.misterma.com/" target="_blank">Changbin</a>
         </nav>
     </div>
 </footer>

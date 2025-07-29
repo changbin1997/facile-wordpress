@@ -6,7 +6,7 @@ Version: 1.0
 License: MIT
 License URI: https://opensource.org/license/mit
 Theme URI: https://www.misterma.com
-Author: Mr. Ma
+Author: Changbin
 Author URI: https://www.misterma.com
 Tags: blog, two-columns, responsive-layout, accessibility-ready, dark-mode, light-mode, custom-colors, custom-background, custom-header, custom-logo, editor-style, translation-ready, featured-images, right-sidebar, flexible-header, code-highlighting
 
