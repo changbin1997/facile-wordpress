@@ -1,6 +1,24 @@
 <?php
 
-// 引入文件
+/**
+ * 引入主题前端资源文件
+ *
+ * 注册并加载主题所需的样式表和脚本文件。包括主题基础样式、Bootstrap 框架、
+ * 代码高亮库、剪贴板功能库以及主应用脚本。同时通过 wp_localize_script() 将
+ * 多语言翻译内容传递给前端 JavaScript，以支持国际化字符串显示。
+ *
+ * 注册的资源包括：
+ * - style: 主题 style.css 样式文件
+ * - main-css: 主题编译后的 main.css 样式表
+ * - jquery-js: 本地 jQuery 3.5.1 库
+ * - bootstrap-js: Bootstrap 4 框架的 JavaScript 文件
+ * - highlight-js: 代码高亮 highlight.pack.js 库
+ * - clipboard-js: 剪贴板操作 clipboard.min.js 库
+ * - app-js: 主题应用程序脚本文件
+ *
+ * @return void
+ * @since 1.0.0
+ */
 function theme_enqueue_assets() {
     // 引入 style.css 文件
     wp_enqueue_style('style', get_stylesheet_uri());

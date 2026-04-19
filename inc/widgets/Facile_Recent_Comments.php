@@ -1,7 +1,25 @@
 <?php
 
+/**
+ * Facile 最近评论小部件
+ *
+ * 继承 WP_Widget，用于在主题中显示最近的评论。支持自定义显示数量和小部件标题，
+ * 采用 Bootstrap 媒体对象样式展示评论者头像、名称和评论摘要。
+ *
+ * @package Facile
+ * @subpackage Widgets
+ * @since 1.0.0
+ */
 class Facile_Recent_Comments extends WP_Widget {
 
+    /**
+     * 构造函数
+     *
+     * 初始化小部件，注册小部件 ID、标题和描述。设置小部件选项包括
+     * 小部件可以有的自定义样式类等。
+     *
+     * @return void
+     */
     public function __construct() {
         parent::__construct(
             'Facile_Recent_Comments',
@@ -10,6 +28,18 @@ class Facile_Recent_Comments extends WP_Widget {
         );
     }
 
+    /**
+     * 输出小部件内容
+     *
+     * 从数据库获取指定数量的已批准评论，并按照 Bootstrap 媒体对象样式渲染
+     * 评论列表。每条评论显示评论者头像、名称和评论摘要。支持自定义标题显示。
+     *
+     * @param array $args     小部件容器参数，包含 before_widget、after_widget、
+     *                        before_title、after_title 等标签。
+     * @param array $instance 小部件实例数据，通常包含 'title' 和 'number' 两个索引。
+     *
+     * @return void
+     */
     public function widget( $args, $instance ) {
         $number = !empty($instance['number']) ? absint($instance['number']) : 5;
 
@@ -46,6 +76,16 @@ class Facile_Recent_Comments extends WP_Widget {
         echo $args['after_widget'];
     }
 
+    /**
+     * 输出小部件后台设置表单
+     *
+     * 生成小部件在 WordPress 后台小部件管理界面中的设置表单。包括标题和
+     * 要显示的评论数量两个输入字段。允许用户在后台自定义这些参数。
+     *
+     * @param array $instance 小部件实例数据，包含当前保存的设置值。
+     *
+     * @return void
+     */
     public function form($instance) {
         $number = !empty($instance['number']) ? absint($instance['number']) : 5;
         $title = !empty($instance['title']) ? $instance['title'] : '';
@@ -61,6 +101,17 @@ class Facile_Recent_Comments extends WP_Widget {
         <?php
     }
 
+    /**
+     * 保存小部件设置
+     *
+     * 处理小部件表单提交的数据。对用户输入进行验证和清理，确保数据安全。
+     * 评论数量使用 absint() 转换为正整数，标题使用 sanitize_text_field() 清理。
+     *
+     * @param array $new_instance 新提交的小部件实例数据。
+     * @param array $old_instance 之前保存的小部件实例数据。
+     *
+     * @return array 经过验证和清理后的小部件实例数据。
+     */
     public function update($new_instance, $old_instance) {
         $instance = array();
         $instance['number'] = (!empty($new_instance['number'])) ? absint($new_instance['number']) : 5;

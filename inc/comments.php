@@ -1,6 +1,16 @@
 <?php
 
-// 自定义评论回调函数
+/**
+ * 自定义评论回调函数
+ *
+ * WordPress 主题中用于渲染单个评论的回调函数。显示评论作者信息、头像、
+ * 评论日期、回复状态等，并支持嵌套回复。使用 Bootstrap 样式进行美化。
+ *
+ * @param WP_Comment $comment 评论对象
+ * @param array     $args    评论列表函数传递的参数数组
+ * @param int       $depth   评论的嵌套深度
+ * @return void
+ */
 function custom_comments_callback($comment, $args, $depth) {
     // 获取评论日期格式设置
     $date_format_option = get_theme_mod('comment_date_format', 'format_iso');
@@ -50,7 +60,15 @@ function custom_comments_callback($comment, $args, $depth) {
     <?php
 }
 
-// 自定义评论表单
+/**
+ * 自定义评论表单字段
+ *
+ * 过滤器钩子回调函数，用于自定义评论表单中的字段。修改默认的姓名、邮箱、
+ * 网站等输入字段，统一使用 Bootstrap 表单样式和自定义占位符文本。
+ *
+ * @param array $fields WordPress 默认的评论表单字段数组
+ * @return array 修改后的评论表单字段数组
+ */
 function custom_comment_form_fields($fields) {
     $commenter = wp_get_current_commenter();
     $req = get_option('require_name_email');
@@ -87,7 +105,15 @@ function custom_comment_form_fields($fields) {
 }
 add_filter('comment_form_default_fields', 'custom_comment_form_fields');
 
-// 自定义评论表单
+/**
+ * 自定义评论表单配置
+ *
+ * 过滤器钩子回调函数，用于修改评论表单的显示配置，包括标题、评论内容字段、
+ * 提交按钮等。使用 Bootstrap 栅格系统进行布局，并隐藏一些默认提示信息。
+ *
+ * @param array $args 评论表单的配置参数数组
+ * @return array 修改后的评论表单配置参数数组
+ */
 function custom_comment_form($args) {
     // 评论表单的标题
     $args['title_reply'] = '<h2>' . __('Leave a Comment', 'facile'); '</h2>';
@@ -121,7 +147,15 @@ function custom_comment_form($args) {
 }
 add_filter('comment_form_defaults', 'custom_comment_form');
 
-// 评论分页
+/**
+ * 输出评论分页导航
+ *
+ * 根据评论页码总数生成带有上一页、下一页和页码链接的分页导航。
+ * 采用 Bootstrap 分页样式，页码范围显示当前页前后 2 页，
+ * 支持键盘快捷键提示。若评论总数为 1 页则不输出任何内容。
+ *
+ * @return void
+ */
 function comment_pagination() {
     if (get_comment_pages_count() <= 1) {
         return;

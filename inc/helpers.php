@@ -1,6 +1,16 @@
 <?php
 
-// 评论日期时间格式化
+/**
+ * 格式化评论日期时间
+ *
+ * 根据指定的格式选项将时间戳转换为相应的日期时间字符串。
+ * 支持多种格式，包括标准格式、ISO 格式、英文格式和相对时间格式。
+ *
+ * @param string $option    日期格式类型
+ * @param int    $timestamp 要格式化的 Unix 时间戳
+ *
+ * @return string 格式化后的日期时间字符串
+ */
 function format_comment_date($option, $timestamp) {
     switch ($option) {
         case 'format_standard':
@@ -34,7 +44,16 @@ function format_comment_date($option, $timestamp) {
     }
 }
 
-// 获取文章内的第一张图片
+/**
+ * 获取内容中的第一张图片 URL
+ *
+ * 从给定的 HTML 内容中解析并提取第一张不在 code 标签内的图片 URL。
+ * 使用 DOMDocument 和 XPath 来安全地解析 HTML 结构。
+ *
+ * @param string $content HTML 内容字符串，通常为文章或评论的富文本内容
+ *
+ * @return string|null 第一张图片的 src 属性值，如果未找到则返回 null
+ */
 function get_first_image_url($content) {
     // 创建一个 DOMDocument 对象
     $doc = new DOMDocument();
@@ -64,7 +83,16 @@ function get_first_image_url($content) {
     return null;
 }
 
-// 面包屑导航
+/**
+ * 输出面包屑导航
+ *
+ * 在非首页位置生成并输出面包屑导航 HTML 标记。
+ * 自动根据当前页面类型（分类、标签、作者、存档、搜索、单页、单篇文章等）
+ * 生成相应的面包屑结构，包含所有必要的分类层级信息。
+ * 使用 Bootstrap breadcrumb 样式类。
+ *
+ * @return void
+ */
 function custom_breadcrumbs() {
     // 不在首页时才显示面包屑
     if (!is_front_page()) {
@@ -128,7 +156,15 @@ function custom_breadcrumbs() {
     }
 }
 
-// 根据语言显示文章日期格式
+/**
+ * 输出文章发布日期
+ *
+ * 根据当前网站语言设置输出相应格式的文章发布日期。
+ * 中文站点显示 "Y年n月j日" 格式，英文站点显示 "j M Y" 格式，
+ * 其他语言显示 "Y-m-d" 通用格式。输出的是语义化的 HTML time 标签。
+ *
+ * @return void
+ */
 function posted_on() {
     $locale = get_locale();
 

@@ -1,6 +1,14 @@
 <?php
 
-// 在文章页面记录浏览量的函数
+/**
+ * 记录单篇文章的浏览次数
+ *
+ * 当用户访问单篇文章时，通过 Cookie 判断是否已记录过浏览，
+ * 未记录过则增加文章的浏览量计数。
+ *
+ * @param int $post_id 文章 ID
+ * @return void
+ */
 function record_post_views($post_id) {
     if (!is_single() || empty($post_id)) {
         return;
@@ -16,7 +24,14 @@ function record_post_views($post_id) {
     }
 }
 
-// 在单篇文章页面调用记录浏览量的函数
+/**
+ * 钩子回调函数：记录文章浏览量
+ *
+ * 挂载到 'wp' 钩子，在 WordPress 加载完毕后调用，
+ * 用于统计单篇文章的浏览次数。
+ *
+ * @return void
+ */
 add_action('wp', 'track_post_views');
 function track_post_views() {
     if (is_single()) {
@@ -25,20 +40,41 @@ function track_post_views() {
     }
 }
 
-// 获取文章浏览量的函数
+/**
+ * 获取文章的浏览次数
+ *
+ * 从文章元数据中获取存储的浏览量，如果未设置则返回 0。
+ *
+ * @param int $post_id 文章 ID
+ * @return int 文章的浏览次数
+ */
 function get_post_views($post_id) {
     $views = (int) get_post_meta($post_id, 'post_views', true);
     return $views ? $views : 0;
 }
 
-// 在 content.php 中显示浏览量
+/**
+ * 输出文章浏览次数
+ *
+ * 获取当前全局文章对象的浏览次数，并过滤输出以增强安全性。
+ *
+ * @return string 文章的浏览次数字符串
+ */
 function display_post_views() {
     global $post;
     $views = get_post_views($post->ID);
     return esc_html($views);
 }
 
-// 删除文章后同时删除阅读量
+/**
+ * 钩子回调函数：删除文章时清除浏览次数数据
+ *
+ * 挂载到 'before_delete_post' 钩子，当删除文章类型的内容时，
+ * 同时删除对应的浏览量元数据。
+ *
+ * @param int $post_id 文章 ID
+ * @return void
+ */
 function delete_post_views($post_id) {
     if ('post' == get_post_type($post_id)) {
         delete_post_meta($post_id, 'post_views');
@@ -46,7 +82,15 @@ function delete_post_views($post_id) {
 }
 add_action('before_delete_post', 'delete_post_views');
 
-// 调整文章密码输入表单
+/**
+ * 自定义受密码保护文章的输入表单
+ *
+ * 替换 WordPress 默认的密码表单，使用 Bootstrap 样式类和
+ * 更好的用户体验设计。
+ *
+ * @param string $output 原始的密码输入表单 HTML
+ * @return string 自定义的密码输入表单 HTML
+ */
 function custom_password_form($output) {
     global $post;
     
@@ -67,7 +111,14 @@ function custom_password_form($output) {
 }
 add_filter('the_password_form', 'custom_password_form');
 
-// 文章列表分页
+/**
+ * 输出文章列表分页导航
+ *
+ * 根据文章总页数和当前页码生成分页导航，包含选项提示和键盘快捷键说明，
+ * 使用 Bootstrap 分页样式。
+ *
+ * @return void
+ */
 function post_list_pagination() {
     global $wp_query;
     $total_pages = $wp_query->max_num_pages;

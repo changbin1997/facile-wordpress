@@ -1,6 +1,14 @@
 <?php
 
-// 主题设置
+/**
+ * 注册主题自定义控制面板选项
+ *
+ * WordPress 主题自定义控制面板的回调函数。注册了主题配色、导航栏、文章、
+ * 评论、开发者等多个管理段面中的设置项，主要按需配置主题的外观和功能。
+ *
+ * @param WP_Customize_Manager $wp_customize WordPress 自定义控制面板对象
+ * @return void
+ */
 function mytheme_customize_register($wp_customize) {
     // 外观相关的设置页
     $wp_customize->add_section('theme_color_scheme_section', array(
@@ -293,7 +301,15 @@ function mytheme_customize_register($wp_customize) {
 }
 add_action('customize_register', 'mytheme_customize_register');
 
-// 在 body class 输出主题配色的 class
+/**
+ * 根据主题设置输出高类到 body 标签
+ *
+ * 过滤器钩子回调函数，根据用户的 Cookie 设置或主题配色设置，
+ * 向 body 标签添加对应的主题配色类名。IE 浏览器中自动改用浅色主题。
+ *
+ * @param array $classes body 标签的类名数组
+ * @return array 修改后的类名数组
+ */
 function theme_body_classes($classes) {
     // facile-theme-color cookie 是否存在
     if (isset($_COOKIE['facile-theme-color'])) {
@@ -314,7 +330,15 @@ function theme_body_classes($classes) {
 }
 add_filter('body_class', 'theme_body_classes');
 
-// 检查复选框设置
+/**
+ * 洗淇并验证复选框设置值
+ *
+ * 用于洗淇 WordPress 自定义控制面板中的复选框设置，
+ * 将仃然的值转换为采萄的布尔值。
+ *
+ * @param mixed $checked 复选框设置值
+ * @return bool 经验证后的布尔值，仃然不打选则返回 false
+ */
 function sanitize_checkbox($checked) {
     return ((isset($checked) && true == $checked) ? true : false);
 }
