@@ -194,13 +194,6 @@ $(() => {
     }
   });
 
-  // 文章内是否有表格
-  if ($('.post-content table').length > 0) {
-    // 把 wordpress 输出的表格替换为 bootstrap 的响应式表格
-    $('.post-content table').addClass('table table-bordered table-striped table-hover');
-    $('.post-content table').wrap('<div class="table-responsive"></div>');
-  }
-
   // 监听滚动条
   $(document).on('scroll', () => {
     // 返回顶部的按钮是否存在
