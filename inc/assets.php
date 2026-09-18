@@ -52,8 +52,8 @@ function theme_enqueue_assets() {
         'rotateLeft' => __('Rotate Left 90 Degrees', 'facile'),
         'rotateRight' => __('Rotate Right 90 Degrees', 'facile'),
         'closeImage' => __('Close Image', 'facile'),
-        'nextImage' => __('Next image (Right arrow key)'),
-        'previousImage' => __('Previous image (Left arrow key)')
+        'nextImage' => __('Next image (Right arrow key)', 'facile'),
+        'previousImage' => __('Previous image (Left arrow key)', 'facile')
     );
     wp_localize_script('app-js', 'facileTranslations', $translation);
 

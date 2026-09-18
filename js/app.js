@@ -20,13 +20,13 @@ $(() => {
   // 全局快捷键
   $(document).on('keyup', ev => {
     // 如果按下的是右方向键就跳转到下一页
-    if (ev.keyCode === 39) {
+    if (ev.keyCode === 39 || ev.key === 'ArrowRight') {
       if ($('.next-page-link').length && !lightbox.isShow) {
         location.href = $('.next-page-link').attr('href');
       }
     }
     // 如果按下的是左方向键就跳转到上一页
-    if (ev.keyCode === 37) {
+    if (ev.keyCode === 37 || ev.key === 'ArrowLeft') {
       if ($('.previous-page-link').length && !lightbox.isShow) {
         location.href = $('.previous-page-link').attr('href');
       }

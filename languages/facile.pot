@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Facile\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-26 12:39+0000\n"
+"POT-Creation-Date: 2026-09-18 11:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -23,68 +23,68 @@ msgid_plural "There are %1$s comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/helpers.php:29
+#: inc/helpers.php:39
 #, php-format
 msgid "%s day ago"
 msgid_plural "%s days ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/helpers.php:26
+#: inc/helpers.php:36
 #, php-format
 msgid "%s hour ago"
 msgid_plural "%s hours ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/helpers.php:23
+#: inc/helpers.php:33
 #, php-format
 msgid "%s minute ago"
 msgid_plural "%s minutes ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/widgets/Facile_Tag_Cloud.php:41
+#: inc/widgets/Facile_Tag_Cloud.php:73
 #, php-format
 msgid "%s posts"
 msgstr ""
 
-#: inc/helpers.php:20
+#: inc/helpers.php:30
 #, php-format
 msgid "%s second ago"
 msgid_plural "%s seconds ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/customizer.php:232
+#: inc/customizer.php:255
 msgid "2020-04-23 13:09"
 msgstr ""
 
-#: inc/customizer.php:231
+#: inc/customizer.php:254
 msgid "2020年04月23日 13:09"
 msgstr ""
 
-#: inc/setup.php:14
+#: inc/setup.php:37
 msgid "Add widgets to the sidebar"
 msgstr ""
 
-#: inc/customizer.php:78
+#: inc/customizer.php:86
 msgid ""
 "Adjust the height of the logo in the navbar (in pixels) to avoid overly "
 "large or small logos. Enter the number directly without adding px."
 msgstr ""
 
-#: inc/widgets/Facile_Theme_Color_Switcher.php:9
+#: inc/widgets/Facile_Theme_Color_Switcher.php:28
 msgid ""
 "Allows users to manually switch the color mode. The next time the user "
 "visits the site, their selected color mode will be displayed."
 msgstr ""
 
-#: inc/customizer.php:233
+#: inc/customizer.php:256
 msgid "April 23rd, 2020 at 01:09 pm"
 msgstr ""
 
-#: inc/helpers.php:97
+#: inc/helpers.php:125
 msgid "Archive"
 msgstr ""
 
@@ -92,11 +92,11 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: content.php:40 page.php:35 single.php:53 inc/comments.php:15
+#: content.php:40 page.php:35 single.php:53 inc/comments.php:25
 msgid "Author"
 msgstr ""
 
-#: inc/helpers.php:89
+#: inc/helpers.php:117
 msgid "Author: "
 msgstr ""
 
@@ -112,52 +112,56 @@ msgstr ""
 msgid "Browse posts by tags in the tag cloud section to the right or below"
 msgstr ""
 
-#: inc/customizer.php:255
+#. Author of the theme
+msgid "Changbin"
+msgstr ""
+
+#: inc/customizer.php:278
 msgid ""
 "Choose the position of the comment form: the comment form is where users "
 "submit new comments, while the comment list displays published comments."
 msgstr ""
 
-#: single.php:84
+#: single.php:86
 #, php-format
 msgid "Click to view posts in the %s category"
 msgstr ""
 
-#: single.php:97
+#: single.php:99
 #, php-format
 msgid "Click to view posts with the %s tag"
 msgstr ""
 
-#: inc/assets.php:37
+#: inc/assets.php:54
 msgid "Close Image"
 msgstr ""
 
-#: inc/comments.php:97
+#: inc/comments.php:123
 msgid "Comment Content"
 msgstr ""
 
-#: inc/customizer.php:226
+#: inc/customizer.php:249
 msgid "Comment Date and Time Display Format"
 msgstr ""
 
-#: inc/customizer.php:252
+#: inc/customizer.php:275
 msgid "Comment form above the comment list"
 msgstr ""
 
-#: inc/customizer.php:253
+#: inc/customizer.php:276
 msgid "Comment form below the comment list"
 msgstr ""
 
-#: inc/customizer.php:247
+#: inc/customizer.php:270
 msgid "Comment Form Position"
 msgstr ""
 
-#: inc/widgets/Facile_Recent_Comments.php:36
+#: inc/widgets/Facile_Recent_Comments.php:66
 #, php-format
 msgid "Comment on %s"
 msgstr ""
 
-#: inc/customizer.php:215
+#: inc/customizer.php:238
 msgid "Comment Section Settings"
 msgstr ""
 
@@ -165,51 +169,51 @@ msgstr ""
 msgid "Comments are closed"
 msgstr ""
 
-#: inc/assets.php:29
+#: inc/assets.php:46
 msgid "Copy Code"
 msgstr ""
 
-#: inc/assets.php:31
+#: inc/assets.php:48
 msgid "Copy Error"
 msgstr ""
 
-#: inc/assets.php:30
+#: inc/assets.php:47
 msgid "Copy Success"
 msgstr ""
 
-#: inc/customizer.php:261
+#: inc/customizer.php:284
 msgid "Custom code output settings."
 msgstr ""
 
-#: inc/customizer.php:287
+#: inc/customizer.php:310
 msgid "Custom HTML Output for the Footer Section"
 msgstr ""
 
-#: inc/customizer.php:272
+#: inc/customizer.php:295
 msgid "Custom HTML Output for the Head Section"
 msgstr ""
 
-#: inc/customizer.php:24 inc/widgets/Facile_Theme_Color_Switcher.php:30
+#: inc/customizer.php:32 inc/widgets/Facile_Theme_Color_Switcher.php:62
 msgid "Dark Theme"
 msgstr ""
 
-#: inc/customizer.php:260
+#: inc/customizer.php:283
 msgid "Developer Settings"
 msgstr ""
 
-#: inc/customizer.php:100
+#: inc/customizer.php:108
 msgid "Display full post in list"
 msgstr ""
 
-#: inc/customizer.php:101
+#: inc/customizer.php:109
 msgid "Display post excerpt in list"
 msgstr ""
 
-#: inc/widgets/Facile_Tag_Cloud.php:9
+#: inc/widgets/Facile_Tag_Cloud.php:28
 msgid "Displays a specified number of colored tags, with random tag colors."
 msgstr ""
 
-#: inc/widgets/Facile_Recent_Comments.php:9
+#: inc/widgets/Facile_Recent_Comments.php:27
 msgid "Displays the specified number of recent comments."
 msgstr ""
 
@@ -217,19 +221,23 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: inc/comments.php:67
+#: inc/comments.php:85
 msgid "Email Address"
 msgstr ""
 
-#: inc/customizer.php:45
+#: inc/customizer.php:53
 msgid "Enable Breadcrumb Navigation"
 msgstr ""
 
-#: inc/customizer.php:191
+#: inc/customizer.php:199
 msgid "Enable Code Block Highlighting"
 msgstr ""
 
-#: inc/customizer.php:210
+#: inc/customizer.php:214
+msgid "Enable MathJax Support"
+msgstr ""
+
+#: inc/customizer.php:233
 msgid ""
 "Enable this option to display the view count on both the post list and "
 "individual post pages. The view count will increase each time a user visits "
@@ -238,23 +246,23 @@ msgid ""
 "as a single view."
 msgstr ""
 
-#: inc/comments.php:98
+#: inc/comments.php:124
 msgid "Enter your comment here"
 msgstr ""
 
-#: inc/comments.php:68
+#: inc/comments.php:86
 msgid "Enter your email address (will not be published)"
 msgstr ""
 
-#: inc/comments.php:62
+#: inc/comments.php:80
 msgid "Enter your name or nickname"
 msgstr ""
 
-#: inc/post.php:59
+#: inc/post.php:103
 msgid "Enter your password"
 msgstr ""
 
-#: inc/comments.php:75
+#: inc/comments.php:93
 msgid "Enter your website or blog URL"
 msgstr ""
 
@@ -276,33 +284,33 @@ msgid ""
 "modern design."
 msgstr ""
 
-#: inc/widgets/Facile_Recent_Comments.php:8
+#: inc/widgets/Facile_Recent_Comments.php:26
 msgid "Facile Recent Comments"
 msgstr ""
 
-#: inc/widgets/Facile_Tag_Cloud.php:8
+#: inc/widgets/Facile_Tag_Cloud.php:27
 msgid "Facile Tag Cloud"
 msgstr ""
 
-#: inc/widgets/Facile_Theme_Color_Switcher.php:8
+#: inc/widgets/Facile_Theme_Color_Switcher.php:27
 msgid "Facile Theme Color Mode Switcher"
 msgstr ""
 
-#: inc/customizer.php:25
+#: inc/customizer.php:33
 msgid "Follow System Theme"
 msgstr ""
 
-#: inc/setup.php:33
+#: inc/setup.php:13
 msgid "Footer Menu"
 msgstr ""
 
-#: inc/customizer.php:132
+#: inc/customizer.php:140
 msgid ""
 "Global setting to show or hide featured images in the post list. If disabled,"
 " no featured images will be displayed in the list."
 msgstr ""
 
-#: inc/customizer.php:146
+#: inc/customizer.php:154
 msgid ""
 "Global setting to show or hide featured images on individual post pages. If "
 "disabled, no featured images will be shown on post pages."
@@ -312,96 +320,106 @@ msgstr ""
 msgid "Go back to homepage"
 msgstr ""
 
-#: header.php:49 inc/helpers.php:74
+#: header.php:49 inc/helpers.php:102
 msgid "Home"
 msgstr ""
 
-#: inc/customizer.php:291
+#: inc/customizer.php:314
 msgid ""
 "HTML at the bottom of the body will be output after the footer and before "
 "the closing body tag. This can be used for analytics JS or custom JS code."
 msgstr ""
 
-#: inc/customizer.php:276
+#: inc/customizer.php:299
 msgid ""
 "HTML in the head section will be output inside the head tag. This can be "
 "used for analytics JS or custom JS code."
 msgstr ""
 
 #. URI of the theme
+msgid "https://github.com/changbin1997/facile-wordpress"
+msgstr ""
+
 #. Author URI of the theme
 msgid "https://www.misterma.com"
 msgstr ""
 
-#: inc/customizer.php:161
+#: inc/customizer.php:169
 msgid ""
 "If no featured image is set, the first image in the post will be used as the "
 "default featured image. If no image is found, no featured image will be "
 "displayed."
 msgstr ""
 
-#: functions.php:25
+#: functions.php:23
 msgid ""
 "If you encounter any issues, feel free to leave a message on my blog or "
 "report them on GitHub Issues."
 msgstr ""
 
-#: inc/customizer.php:177
+#: inc/customizer.php:185
 msgid "Large (Image above title and excerpt)"
 msgstr ""
 
-#: inc/customizer.php:180
+#: inc/customizer.php:188
 msgid ""
 "Large images have a 18:9 aspect ratio, and small images have a 4:3 aspect "
 "ratio. Images that do not fit these ratios will be automatically cropped to "
 "match."
 msgstr ""
 
-#: inc/comments.php:93
+#: inc/comments.php:119
 msgid "Leave a Comment"
 msgstr ""
 
-#: inc/customizer.php:23 inc/widgets/Facile_Theme_Color_Switcher.php:24
+#: inc/customizer.php:31 inc/widgets/Facile_Theme_Color_Switcher.php:56
 msgid "Light Theme"
 msgstr ""
 
-#: inc/widgets/Facile_Tag_Cloud.php:60
+#: inc/widgets/Facile_Tag_Cloud.php:102
 msgid "Limit number of tags (0 for no limit)"
 msgstr ""
 
-#. Author of the theme
-msgid "Mr. Ma"
+#: inc/customizer.php:218
+msgid ""
+"MathJax is a math rendering library that supports LaTeX, MathML, and "
+"AsciiMath. When enabled, the theme checks each post for math written in any "
+"of these formats and loads MathJax from a CDN to display it."
 msgstr ""
 
-#: inc/comments.php:61
+#: inc/comments.php:79
 msgid "Name"
 msgstr ""
 
-#: inc/customizer.php:74
+#: inc/customizer.php:82
 msgid "Navbar Logo Height Limit"
 msgstr ""
 
-#: inc/customizer.php:60
+#: inc/customizer.php:68
 msgid "Navbar Logo Image"
 msgstr ""
 
-#: inc/customizer.php:33
+#: inc/customizer.php:41
 msgid "Navbar Settings"
 msgstr ""
 
-#: inc/comments.php:170 inc/post.php:124
+#: inc/assets.php:55
+msgid "Next image (Right arrow key)"
+msgstr ""
+
+#: inc/comments.php:204 inc/post.php:175
 msgid "Next Page"
 msgstr ""
 
-#: inc/post.php:124
+#: inc/post.php:175
 msgid "Next Page (Right Arrow Key)"
 msgstr ""
 
-#: single.php:124
+#: single.php:126
 msgid "Next Post"
 msgstr ""
 
-#: single.php:89
+#: single.php:91
 msgid "No categories selected"
 msgstr ""
 
@@ -414,60 +432,60 @@ msgstr ""
 msgid "No posts found!"
 msgstr ""
 
-#: single.php:102
+#: single.php:104
 msgid "No tags added"
 msgstr ""
 
-#: single.php:119 single.php:132
+#: single.php:121 single.php:134
 msgid "None"
 msgstr ""
 
-#: inc/widgets/Facile_Recent_Comments.php:58
+#: inc/widgets/Facile_Recent_Comments.php:98
 msgid "Number of comments to display"
 msgstr ""
 
-#: inc/comments.php:18
+#: inc/comments.php:28
 msgid ""
 "Only you can see this comment. It will be visible to others once approved."
 msgstr ""
 
-#: inc/Facile_Nav_Walker.php:58
+#: inc/Facile_Nav_Walker.php:109
 msgid "Open Submenu"
 msgstr ""
 
-#: single.php:69 inc/comments.php:130 inc/post.php:80
+#: single.php:71 inc/comments.php:164 inc/post.php:131
 msgid "Pagination"
 msgstr ""
 
-#: inc/post.php:58
+#: inc/post.php:102
 msgid "Password:"
 msgstr ""
 
-#: inc/comments.php:18
+#: inc/comments.php:28
 msgid "Pending Review"
 msgstr ""
 
-#: single.php:79
+#: single.php:81
 msgid "Post Categories"
 msgstr ""
 
-#: inc/customizer.php:113
+#: inc/customizer.php:121
 msgid "Post Excerpt Length (Characters or Words)"
 msgstr ""
 
-#: inc/customizer.php:95
+#: inc/customizer.php:103
 msgid "Post List Display"
 msgstr ""
 
-#: inc/customizer.php:172
+#: inc/customizer.php:180
 msgid "Post List Featured Image Style"
 msgstr ""
 
-#: inc/customizer.php:83
+#: inc/customizer.php:91
 msgid "Post Settings"
 msgstr ""
 
-#: inc/customizer.php:206
+#: inc/customizer.php:229
 msgid "Post View Count"
 msgstr ""
 
@@ -496,19 +514,23 @@ msgstr ""
 msgid "Posts under the category %s"
 msgstr ""
 
-#: inc/comments.php:137 inc/post.php:86
+#: inc/assets.php:56
+msgid "Previous image (Left arrow key)"
+msgstr ""
+
+#: inc/comments.php:171 inc/post.php:137
 msgid "Previous Page"
 msgstr ""
 
-#: inc/post.php:86
+#: inc/post.php:137
 msgid "Previous Page (Left Arrow Key)"
 msgstr ""
 
-#: single.php:111
+#: single.php:113
 msgid "Previous Post"
 msgstr ""
 
-#: inc/setup.php:32
+#: inc/setup.php:12
 msgid "Primary Menu"
 msgstr ""
 
@@ -520,23 +542,23 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: inc/widgets/Facile_Recent_Comments.php:30
+#: inc/widgets/Facile_Recent_Comments.php:60
 msgid "Recent Comments"
 msgstr ""
 
-#: inc/comments.php:22 inc/comments.php:39
+#: inc/comments.php:32 inc/comments.php:49
 msgid "Reply"
 msgstr ""
 
-#: inc/assets.php:35
+#: inc/assets.php:52
 msgid "Rotate Left 90 Degrees"
 msgstr ""
 
-#: inc/assets.php:36
+#: inc/assets.php:53
 msgid "Rotate Right 90 Degrees"
 msgstr ""
 
-#: inc/comments.php:82
+#: inc/comments.php:100
 msgid "Save my name, email, and website for the next time I comment."
 msgstr ""
 
@@ -548,15 +570,15 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: inc/helpers.php:100
+#: inc/helpers.php:128
 msgid "Search Results: "
 msgstr ""
 
-#: inc/customizer.php:18
+#: inc/customizer.php:26
 msgid "Select Theme Color Scheme"
 msgstr ""
 
-#: inc/customizer.php:117
+#: inc/customizer.php:125
 msgid ""
 "Sets the number of characters or words for post excerpts in the list. If "
 "WordPress is in Chinese, it will count characters; if in English, it will "
@@ -564,57 +586,57 @@ msgid ""
 "this limit."
 msgstr ""
 
-#: inc/customizer.php:216
+#: inc/customizer.php:239
 msgid "Settings related to the comment list and comment form."
 msgstr ""
 
-#: inc/customizer.php:84
+#: inc/customizer.php:92
 msgid "Settings related to the post list and post content."
 msgstr ""
 
-#: inc/customizer.php:34
+#: inc/customizer.php:42
 msgid "Settings related to the top navbar and breadcrumb navigation."
 msgstr ""
 
-#: inc/customizer.php:128
+#: inc/customizer.php:136
 msgid "Show Featured Image in Post List"
 msgstr ""
 
-#: inc/customizer.php:142
+#: inc/customizer.php:150
 msgid "Show Featured Image on Single Post Page"
 msgstr ""
 
-#: inc/customizer.php:178
+#: inc/customizer.php:186
 msgid "Small (Excerpt on the left, image on the right)"
 msgstr ""
 
-#: inc/post.php:60
+#: inc/post.php:104
 msgid "Submit"
 msgstr ""
 
-#: inc/comments.php:109
+#: inc/comments.php:135
 msgid "Submit Comment"
 msgstr ""
 
-#: inc/customizer.php:195
+#: inc/customizer.php:203
 msgid ""
 "Supports syntax highlighting for over 30 languages, using the VS2015 theme. "
 "Disable this if you plan to use another plugin or do not need this feature."
 msgstr ""
 
-#: inc/widgets/Facile_Tag_Cloud.php:38
+#: inc/widgets/Facile_Tag_Cloud.php:70
 msgid "Tag Cloud"
 msgstr ""
 
-#: inc/helpers.php:87
+#: inc/helpers.php:115
 msgid "Tag: "
 msgstr ""
 
-#: single.php:92
+#: single.php:94
 msgid "Tags"
 msgstr ""
 
-#: inc/customizer.php:236
+#: inc/customizer.php:259
 msgid ""
 "The \"Time Ago\" format will dynamically update based on the elapsed time: "
 "for under a minute, it will show seconds; for under an hour, it will show "
@@ -622,7 +644,7 @@ msgid ""
 "show days."
 msgstr ""
 
-#: inc/customizer.php:27
+#: inc/customizer.php:35
 msgid ""
 "The default color scheme of the theme when users visit the website. The "
 "\"Follow System Theme\" option will automatically switch between light and "
@@ -635,25 +657,25 @@ msgstr ""
 msgid "The page you are looking for does not exist!"
 msgstr ""
 
-#: inc/widgets/Facile_Theme_Color_Switcher.php:20
+#: inc/widgets/Facile_Theme_Color_Switcher.php:52
 msgid "Theme Color"
 msgstr ""
 
-#: inc/customizer.php:7
+#: inc/customizer.php:15
 msgid "Theme Color Scheme"
 msgstr ""
 
-#: inc/post.php:55
+#: inc/post.php:99
 msgid "This post is password protected. Enter the password to view it."
 msgstr ""
 
-#: inc/customizer.php:234
+#: inc/customizer.php:257
 msgid "Time Ago (3 days ago)"
 msgstr ""
 
-#: inc/widgets/Facile_Recent_Comments.php:54
-#: inc/widgets/Facile_Tag_Cloud.php:56
-#: inc/widgets/Facile_Theme_Color_Switcher.php:43
+#: inc/widgets/Facile_Recent_Comments.php:94
+#: inc/widgets/Facile_Tag_Cloud.php:98
+#: inc/widgets/Facile_Theme_Color_Switcher.php:85
 msgid "Title (Leave blank to hide)"
 msgstr ""
 
@@ -665,17 +687,17 @@ msgstr ""
 msgid "Try searching with different keywords"
 msgstr ""
 
-#: inc/customizer.php:63
+#: inc/customizer.php:71
 msgid ""
 "Upload or select an image to use as the logo in the navbar. By default, the "
 "site name will be used as the logo."
 msgstr ""
 
-#: inc/customizer.php:157
+#: inc/customizer.php:165
 msgid "Use First Image in Post as Featured Image"
 msgstr ""
 
-#: functions.php:20
+#: functions.php:19
 msgid "View Documentation"
 msgstr ""
 
@@ -683,23 +705,19 @@ msgstr ""
 msgid "Views"
 msgstr ""
 
-#: functions.php:21
+#: functions.php:20
 msgid "Visit Github"
 msgstr ""
 
-#: functions.php:22
-msgid "Visit the Developer's Blog"
-msgstr ""
-
-#: inc/comments.php:74
+#: inc/comments.php:92
 msgid "Website"
 msgstr ""
 
-#: functions.php:18
+#: functions.php:17
 msgid "Welcome to Facile"
 msgstr ""
 
-#: inc/customizer.php:49
+#: inc/customizer.php:57
 msgid ""
 "When enabled, breadcrumb navigation will appear below the navbar to help "
 "users understand the page hierarchy and their current location."
@@ -713,10 +731,10 @@ msgstr ""
 msgid "You must enter the post password to view and submit comments."
 msgstr ""
 
-#: inc/assets.php:33
+#: inc/assets.php:50
 msgid "Zoom In"
 msgstr ""
 
-#: inc/assets.php:34
+#: inc/assets.php:51
 msgid "Zoom Out"
 msgstr ""

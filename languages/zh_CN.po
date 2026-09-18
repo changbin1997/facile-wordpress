@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Facile\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-27 08:57+0000\n"
-"PO-Revision-Date: 2024-11-26 12:40+0000\n"
+"PO-Revision-Date: 2026-09-18 11:11+0000\n"
 "Last-Translator: Mr. Ma\n"
 "Language-Team: 简体中文\n"
 "Language: zh_CN\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.6.11; wp-6.7.1\n"
+"X-Loco-Version: 2.8.8; wp-7.1.1; php-7.4.9\n"
 "X-Domain: facile"
 
 #: comments.php:13 content.php:75 content.php:118
@@ -21,64 +21,64 @@ msgid "%s Comment"
 msgid_plural "There are %1$s comments"
 msgstr[0] "%s 条评论"
 
-#: inc/helpers.php:29
+#: inc/helpers.php:39
 #, php-format
 msgid "%s day ago"
 msgid_plural "%s days ago"
 msgstr[0] "%s天前"
 
-#: inc/helpers.php:26
+#: inc/helpers.php:36
 #, php-format
 msgid "%s hour ago"
 msgid_plural "%s hours ago"
 msgstr[0] "%s小时前"
 
-#: inc/helpers.php:23
+#: inc/helpers.php:33
 #, php-format
 msgid "%s minute ago"
 msgid_plural "%s minutes ago"
 msgstr[0] "%s分钟前"
 
-#: inc/widgets/Facile_Tag_Cloud.php:41
+#: inc/widgets/Facile_Tag_Cloud.php:73
 #, php-format
 msgid "%s posts"
 msgstr "%s篇文章"
 
-#: inc/helpers.php:20
+#: inc/helpers.php:30
 #, php-format
 msgid "%s second ago"
 msgid_plural "%s seconds ago"
 msgstr[0] "%s秒前"
 
-#: inc/customizer.php:232
+#: inc/customizer.php:255
 msgid "2020-04-23 13:09"
 msgstr "2020-04-23 13:09"
 
-#: inc/customizer.php:231
+#: inc/customizer.php:254
 msgid "2020年04月23日 13:09"
 msgstr "2020年04月23日 13:09"
 
-#: inc/setup.php:14
+#: inc/setup.php:37
 msgid "Add widgets to the sidebar"
 msgstr "添加小工具到侧边栏"
 
-#: inc/customizer.php:78
+#: inc/customizer.php:86
 msgid ""
 "Adjust the height of the logo in the navbar (in pixels) to avoid overly "
 "large or small logos. Enter the number directly without adding px."
 msgstr "调整导航栏Logo的高度（单位为像素），以避免Logo图片过大或过小。直接输入数字，不需加px。"
 
-#: inc/widgets/Facile_Theme_Color_Switcher.php:9
+#: inc/widgets/Facile_Theme_Color_Switcher.php:28
 msgid ""
 "Allows users to manually switch the color mode. The next time the user "
 "visits the site, their selected color mode will be displayed."
 msgstr "可以让用户手动切换配色模式，用户下次访问网站时，显示的就是用户选择的配色。"
 
-#: inc/customizer.php:233
+#: inc/customizer.php:256
 msgid "April 23rd, 2020 at 01:09 pm"
 msgstr "April 23rd, 2020 at 01:09 pm"
 
-#: inc/helpers.php:97
+#: inc/helpers.php:125
 msgid "Archive"
 msgstr "归档"
 
@@ -86,11 +86,11 @@ msgstr "归档"
 msgid "Archives"
 msgstr "归档"
 
-#: content.php:40 page.php:35 single.php:53 inc/comments.php:15
+#: content.php:40 page.php:35 single.php:53 inc/comments.php:25
 msgid "Author"
 msgstr "作者"
 
-#: inc/helpers.php:89
+#: inc/helpers.php:117
 msgid "Author: "
 msgstr "作者："
 
@@ -106,52 +106,56 @@ msgstr "在右侧或下方的文章分类区域选择分类查找"
 msgid "Browse posts by tags in the tag cloud section to the right or below"
 msgstr "在右侧或下方的标签云区域选择标签查找"
 
-#: inc/customizer.php:255
+#. Author of the theme
+msgid "Changbin"
+msgstr ""
+
+#: inc/customizer.php:278
 msgid ""
 "Choose the position of the comment form: the comment form is where users "
 "submit new comments, while the comment list displays published comments."
 msgstr "选择评论表单的位置：评论表单是用于提交新评论的区域，而评论列表是显示已发表评论的区域。"
 
-#: single.php:84
+#: single.php:86
 #, php-format
 msgid "Click to view posts in the %s category"
 msgstr "点击查看 %s 分类的文章"
 
-#: single.php:97
+#: single.php:99
 #, php-format
 msgid "Click to view posts with the %s tag"
 msgstr "点击查看包含 %s 标签的文章"
 
-#: inc/assets.php:37
+#: inc/assets.php:54
 msgid "Close Image"
 msgstr "关闭大图"
 
-#: inc/comments.php:97
+#: inc/comments.php:123
 msgid "Comment Content"
 msgstr "评论内容"
 
-#: inc/customizer.php:226
+#: inc/customizer.php:249
 msgid "Comment Date and Time Display Format"
 msgstr "评论日期时间显示格式"
 
-#: inc/customizer.php:252
+#: inc/customizer.php:275
 msgid "Comment form above the comment list"
 msgstr "评论表单在评论列表上方"
 
-#: inc/customizer.php:253
+#: inc/customizer.php:276
 msgid "Comment form below the comment list"
 msgstr "评论表单在评论列表下方"
 
-#: inc/customizer.php:247
+#: inc/customizer.php:270
 msgid "Comment Form Position"
 msgstr "评论表单位置"
 
-#: inc/widgets/Facile_Recent_Comments.php:36
+#: inc/widgets/Facile_Recent_Comments.php:66
 #, php-format
 msgid "Comment on %s"
 msgstr "发表在 %s 的评论"
 
-#: inc/customizer.php:215
+#: inc/customizer.php:238
 msgid "Comment Section Settings"
 msgstr "评论区设置"
 
@@ -159,51 +163,51 @@ msgstr "评论区设置"
 msgid "Comments are closed"
 msgstr "评论已关闭"
 
-#: inc/assets.php:29
+#: inc/assets.php:46
 msgid "Copy Code"
 msgstr "拷贝代码"
 
-#: inc/assets.php:31
+#: inc/assets.php:48
 msgid "Copy Error"
 msgstr "拷贝失败"
 
-#: inc/assets.php:30
+#: inc/assets.php:47
 msgid "Copy Success"
 msgstr "拷贝成功"
 
-#: inc/customizer.php:261
+#: inc/customizer.php:284
 msgid "Custom code output settings."
 msgstr "自定义代码输出设置"
 
-#: inc/customizer.php:287
+#: inc/customizer.php:310
 msgid "Custom HTML Output for the Footer Section"
 msgstr "自定义 body 底部输出的 HTML"
 
-#: inc/customizer.php:272
+#: inc/customizer.php:295
 msgid "Custom HTML Output for the Head Section"
 msgstr "自定义 head 区域输出的 HTML"
 
-#: inc/customizer.php:24 inc/widgets/Facile_Theme_Color_Switcher.php:30
+#: inc/customizer.php:32 inc/widgets/Facile_Theme_Color_Switcher.php:62
 msgid "Dark Theme"
 msgstr "深色主题"
 
-#: inc/customizer.php:260
+#: inc/customizer.php:283
 msgid "Developer Settings"
 msgstr "开发者设置"
 
-#: inc/customizer.php:100
+#: inc/customizer.php:108
 msgid "Display full post in list"
 msgstr "文章列表直接显示全文"
 
-#: inc/customizer.php:101
+#: inc/customizer.php:109
 msgid "Display post excerpt in list"
 msgstr "文章列表显示内容摘要和文章头图"
 
-#: inc/widgets/Facile_Tag_Cloud.php:9
+#: inc/widgets/Facile_Tag_Cloud.php:28
 msgid "Displays a specified number of colored tags, with random tag colors."
 msgstr "显示指定数量的彩色标签，标签颜色随机。"
 
-#: inc/widgets/Facile_Recent_Comments.php:9
+#: inc/widgets/Facile_Recent_Comments.php:27
 msgid "Displays the specified number of recent comments."
 msgstr "显示最新的指定数量的评论。"
 
@@ -211,19 +215,23 @@ msgstr "显示最新的指定数量的评论。"
 msgid "Edit"
 msgstr "编辑"
 
-#: inc/comments.php:67
+#: inc/comments.php:85
 msgid "Email Address"
 msgstr "电子邮件地址"
 
-#: inc/customizer.php:45
+#: inc/customizer.php:53
 msgid "Enable Breadcrumb Navigation"
 msgstr "启用面包屑导航"
 
-#: inc/customizer.php:191
+#: inc/customizer.php:199
 msgid "Enable Code Block Highlighting"
 msgstr "启用代码块高亮显示"
 
-#: inc/customizer.php:210
+#: inc/customizer.php:214
+msgid "Enable MathJax Support"
+msgstr "MathJax支持"
+
+#: inc/customizer.php:233
 msgid ""
 "Enable this option to display the view count on both the post list and "
 "individual post pages. The view count will increase each time a user visits "
@@ -234,23 +242,23 @@ msgstr ""
 "开启后在文章列表和文章页会显示阅读量，用户访问文章时，阅读量也会增加，同时也会在用户浏览器写入一个 "
 "Cookie，用户短时间内多次访问同一篇文章也只会记录一次阅读。"
 
-#: inc/comments.php:98
+#: inc/comments.php:124
 msgid "Enter your comment here"
 msgstr "请在此处输入评论内容"
 
-#: inc/comments.php:68
+#: inc/comments.php:86
 msgid "Enter your email address (will not be published)"
 msgstr "请输入您的电子邮件地址（不会公开）"
 
-#: inc/comments.php:62
+#: inc/comments.php:80
 msgid "Enter your name or nickname"
 msgstr "请输入您的姓名或昵称"
 
-#: inc/post.php:59
+#: inc/post.php:103
 msgid "Enter your password"
 msgstr "请在此处输入文章密码"
 
-#: inc/comments.php:75
+#: inc/comments.php:93
 msgid "Enter your website or blog URL"
 msgstr "请输入您的网站或博客地址"
 
@@ -276,33 +284,33 @@ msgstr ""
 "包含浅色和深色模式，能够根据用户的系统配色自动切换。主题提供多种文章列表布局，丰富的侧边栏组件，并内置代码高亮功能，支持超过 30 "
 "种编程语言的语法高亮。Facile 还支持多语言翻译、图片灯箱集成以及阅读量统计显示，适合追求简洁现代设计的博客用户。"
 
-#: inc/widgets/Facile_Recent_Comments.php:8
+#: inc/widgets/Facile_Recent_Comments.php:26
 msgid "Facile Recent Comments"
 msgstr "Facile最新评论"
 
-#: inc/widgets/Facile_Tag_Cloud.php:8
+#: inc/widgets/Facile_Tag_Cloud.php:27
 msgid "Facile Tag Cloud"
 msgstr "Facile标签云"
 
-#: inc/widgets/Facile_Theme_Color_Switcher.php:8
+#: inc/widgets/Facile_Theme_Color_Switcher.php:27
 msgid "Facile Theme Color Mode Switcher"
 msgstr "Facile主题配色模式切换"
 
-#: inc/customizer.php:25
+#: inc/customizer.php:33
 msgid "Follow System Theme"
 msgstr "跟随系统主题"
 
-#: inc/setup.php:33
+#: inc/setup.php:13
 msgid "Footer Menu"
 msgstr "网站底部菜单"
 
-#: inc/customizer.php:132
+#: inc/customizer.php:140
 msgid ""
 "Global setting to show or hide featured images in the post list. If disabled,"
 " no featured images will be displayed in the list."
 msgstr "文章头图全局开关，关闭后文章列表不会显示文章头图。"
 
-#: inc/customizer.php:146
+#: inc/customizer.php:154
 msgid ""
 "Global setting to show or hide featured images on individual post pages. If "
 "disabled, no featured images will be shown on post pages."
@@ -312,96 +320,108 @@ msgstr "文章头图全局开关，关闭后文章页面不会显示文章头图
 msgid "Go back to homepage"
 msgstr "返回首页"
 
-#: header.php:49 inc/helpers.php:74
+#: header.php:49 inc/helpers.php:102
 msgid "Home"
 msgstr "首页"
 
-#: inc/customizer.php:291
+#: inc/customizer.php:314
 msgid ""
 "HTML at the bottom of the body will be output after the footer and before "
 "the closing body tag. This can be used for analytics JS or custom JS code."
 msgstr "body 底部的 HTML 会在 footer 之后 body 尾部之前输出，您可以用来定义网站统计分析的 JS 或自定义 JS。"
 
-#: inc/customizer.php:276
+#: inc/customizer.php:299
 msgid ""
 "HTML in the head section will be output inside the head tag. This can be "
 "used for analytics JS or custom JS code."
 msgstr "head 区域的 HTML 会在 head 标签内输出，您可以用来定义网站统计分析的 JS 或自定义 JS。"
 
 #. URI of the theme
+msgid "https://github.com/changbin1997/facile-wordpress"
+msgstr ""
+
 #. Author URI of the theme
 msgid "https://www.misterma.com"
 msgstr "https://www.misterma.com"
 
-#: inc/customizer.php:161
+#: inc/customizer.php:169
 msgid ""
 "If no featured image is set, the first image in the post will be used as the "
 "default featured image. If no image is found, no featured image will be "
 "displayed."
 msgstr "如果没有设置文章头图，将自动使用文章中的第一张图片作为头图。如果文章中没有图片，则不显示头图。"
 
-#: functions.php:25
+#: functions.php:23
 msgid ""
 "If you encounter any issues, feel free to leave a message on my blog or "
 "report them on GitHub Issues."
 msgstr "在使用过程中遇到问题或 BUG 可以到我的博客留言，也可以到 GitHub Issues 反馈。"
 
-#: inc/customizer.php:177
+#: inc/customizer.php:185
 msgid "Large (Image above title and excerpt)"
 msgstr "大图（头图在上方，标题和摘要在下方）"
 
-#: inc/customizer.php:180
+#: inc/customizer.php:188
 msgid ""
 "Large images have a 18:9 aspect ratio, and small images have a 4:3 aspect "
 "ratio. Images that do not fit these ratios will be automatically cropped to "
 "match."
 msgstr "大图的长宽比为 18:9，小图的长宽比为 4:3。若图片长宽比不符合要求，主题将自动裁剪以适配。"
 
-#: inc/comments.php:93
+#: inc/comments.php:119
 msgid "Leave a Comment"
 msgstr "发表评论"
 
-#: inc/customizer.php:23 inc/widgets/Facile_Theme_Color_Switcher.php:24
+#: inc/customizer.php:31 inc/widgets/Facile_Theme_Color_Switcher.php:56
 msgid "Light Theme"
 msgstr "浅色主题"
 
-#: inc/widgets/Facile_Tag_Cloud.php:60
+#: inc/widgets/Facile_Tag_Cloud.php:102
 msgid "Limit number of tags (0 for no limit)"
 msgstr "标签数量限制（0为不限制）"
 
-#. Author of the theme
-msgid "Mr. Ma"
-msgstr "Mr. Ma"
+#: inc/customizer.php:218
+msgid ""
+"MathJax is a math rendering library that supports LaTeX, MathML, and "
+"AsciiMath. When enabled, the theme checks each post for math written in any "
+"of these formats and loads MathJax from a CDN to display it."
+msgstr ""
+"MathJax 是一个数学公式渲染库，可支持 LaTeX、MathML、AsciiMath 的渲染。启用后如果检测到文章内有 MathJax "
+"支持的语言就会通过在线 CDN 加载 MathJax 库渲染。"
 
-#: inc/comments.php:61
+#: inc/comments.php:79
 msgid "Name"
 msgstr "称呼"
 
-#: inc/customizer.php:74
+#: inc/customizer.php:82
 msgid "Navbar Logo Height Limit"
 msgstr "导航栏Logo高度限制"
 
-#: inc/customizer.php:60
+#: inc/customizer.php:68
 msgid "Navbar Logo Image"
 msgstr "导航栏Logo图片"
 
-#: inc/customizer.php:33
+#: inc/customizer.php:41
 msgid "Navbar Settings"
 msgstr "导航栏设置"
 
-#: inc/comments.php:170 inc/post.php:124
+#: inc/assets.php:55
+msgid "Next image (Right arrow key)"
+msgstr "下一张图片（右方向键）"
+
+#: inc/comments.php:204 inc/post.php:175
 msgid "Next Page"
 msgstr "下一页"
 
-#: inc/post.php:124
+#: inc/post.php:175
 msgid "Next Page (Right Arrow Key)"
 msgstr "下一页（右方向键）"
 
-#: single.php:124
+#: single.php:126
 msgid "Next Post"
 msgstr "下一篇"
 
-#: single.php:89
+#: single.php:91
 msgid "No categories selected"
 msgstr "未选择分类"
 
@@ -414,60 +434,60 @@ msgstr "无法查找到包含 <b>%s</b> 的文章！"
 msgid "No posts found!"
 msgstr "没有找到任何文章！"
 
-#: single.php:102
+#: single.php:104
 msgid "No tags added"
 msgstr "未添加标签"
 
-#: single.php:119 single.php:132
+#: single.php:121 single.php:134
 msgid "None"
 msgstr "没有了"
 
-#: inc/widgets/Facile_Recent_Comments.php:58
+#: inc/widgets/Facile_Recent_Comments.php:98
 msgid "Number of comments to display"
 msgstr "要显示的评论数量"
 
-#: inc/comments.php:18
+#: inc/comments.php:28
 msgid ""
 "Only you can see this comment. It will be visible to others once approved."
 msgstr "当前评论只有您自己能看到，审核通过后才会公开显示。"
 
-#: inc/Facile_Nav_Walker.php:58
+#: inc/Facile_Nav_Walker.php:109
 msgid "Open Submenu"
 msgstr "展开子菜单"
 
-#: single.php:69 inc/comments.php:130 inc/post.php:80
+#: single.php:71 inc/comments.php:164 inc/post.php:131
 msgid "Pagination"
 msgstr "分页"
 
-#: inc/post.php:58
+#: inc/post.php:102
 msgid "Password:"
 msgstr "密码"
 
-#: inc/comments.php:18
+#: inc/comments.php:28
 msgid "Pending Review"
 msgstr "评论审核中"
 
-#: single.php:79
+#: single.php:81
 msgid "Post Categories"
 msgstr "文章分类"
 
-#: inc/customizer.php:113
+#: inc/customizer.php:121
 msgid "Post Excerpt Length (Characters or Words)"
 msgstr "文章列表的内容摘要字数或单词数"
 
-#: inc/customizer.php:95
+#: inc/customizer.php:103
 msgid "Post List Display"
 msgstr "文章列表显示"
 
-#: inc/customizer.php:172
+#: inc/customizer.php:180
 msgid "Post List Featured Image Style"
 msgstr "文章列表的头图样式"
 
-#: inc/customizer.php:83
+#: inc/customizer.php:91
 msgid "Post Settings"
 msgstr "文章相关设置"
 
-#: inc/customizer.php:206
+#: inc/customizer.php:229
 msgid "Post View Count"
 msgstr "文章阅读量统计"
 
@@ -496,19 +516,23 @@ msgstr "包含 %s 标签的文章"
 msgid "Posts under the category %s"
 msgstr "分类 %s 下的文章"
 
-#: inc/comments.php:137 inc/post.php:86
+#: inc/assets.php:56
+msgid "Previous image (Left arrow key)"
+msgstr "上一张图片（左方向键）"
+
+#: inc/comments.php:171 inc/post.php:137
 msgid "Previous Page"
 msgstr "上一页"
 
-#: inc/post.php:86
+#: inc/post.php:137
 msgid "Previous Page (Left Arrow Key)"
 msgstr "上一页（左方向键）"
 
-#: single.php:111
+#: single.php:113
 msgid "Previous Post"
 msgstr "上一篇"
 
-#: inc/setup.php:32
+#: inc/setup.php:12
 msgid "Primary Menu"
 msgstr "网站顶部导航栏菜单"
 
@@ -520,23 +544,23 @@ msgstr "发布日期"
 msgid "Read More"
 msgstr "阅读全文"
 
-#: inc/widgets/Facile_Recent_Comments.php:30
+#: inc/widgets/Facile_Recent_Comments.php:60
 msgid "Recent Comments"
 msgstr "最新评论"
 
-#: inc/comments.php:22 inc/comments.php:39
+#: inc/comments.php:32 inc/comments.php:49
 msgid "Reply"
 msgstr "回复"
 
-#: inc/assets.php:35
+#: inc/assets.php:52
 msgid "Rotate Left 90 Degrees"
 msgstr "左旋转90度"
 
-#: inc/assets.php:36
+#: inc/assets.php:53
 msgid "Rotate Right 90 Degrees"
 msgstr "右旋转90度"
 
-#: inc/comments.php:82
+#: inc/comments.php:100
 msgid "Save my name, email, and website for the next time I comment."
 msgstr "保存我的姓名、电子邮件和网站地址，以便下次评论时使用。"
 
@@ -548,15 +572,15 @@ msgstr "返回顶部"
 msgid "Search"
 msgstr "搜索"
 
-#: inc/helpers.php:100
+#: inc/helpers.php:128
 msgid "Search Results: "
 msgstr "搜索结果："
 
-#: inc/customizer.php:18
+#: inc/customizer.php:26
 msgid "Select Theme Color Scheme"
 msgstr "选择主题配色"
 
-#: inc/customizer.php:117
+#: inc/customizer.php:125
 msgid ""
 "Sets the number of characters or words for post excerpts in the list. If "
 "WordPress is in Chinese, it will count characters; if in English, it will "
@@ -566,57 +590,57 @@ msgstr ""
 "设置文章列表的内容摘要字数或单词数。当 WordPress "
 "语言为中文时，会以字数截取，语言为英文时，会以单词数截取。在文章编辑页手动设置的文章摘要不受字数或单词数限制。"
 
-#: inc/customizer.php:216
+#: inc/customizer.php:239
 msgid "Settings related to the comment list and comment form."
 msgstr "评论列表和评论表单相关的设置。"
 
-#: inc/customizer.php:84
+#: inc/customizer.php:92
 msgid "Settings related to the post list and post content."
 msgstr "文章列表和文章内容相关的设置。"
 
-#: inc/customizer.php:34
+#: inc/customizer.php:42
 msgid "Settings related to the top navbar and breadcrumb navigation."
 msgstr "顶部导航栏和面包屑导航相关的设置。"
 
-#: inc/customizer.php:128
+#: inc/customizer.php:136
 msgid "Show Featured Image in Post List"
 msgstr "在文章列表显示文章头图"
 
-#: inc/customizer.php:142
+#: inc/customizer.php:150
 msgid "Show Featured Image on Single Post Page"
 msgstr "在文章页显示文章头图"
 
-#: inc/customizer.php:178
+#: inc/customizer.php:186
 msgid "Small (Excerpt on the left, image on the right)"
 msgstr "小图（摘要在左侧，图片在右侧）"
 
-#: inc/post.php:60
+#: inc/post.php:104
 msgid "Submit"
 msgstr "提交"
 
-#: inc/comments.php:109
+#: inc/comments.php:135
 msgid "Submit Comment"
 msgstr "提交评论"
 
-#: inc/customizer.php:195
+#: inc/customizer.php:203
 msgid ""
 "Supports syntax highlighting for over 30 languages, using the VS2015 theme. "
 "Disable this if you plan to use another plugin or do not need this feature."
 msgstr "支持 30 多种语言的代码高亮显示，使用 VS2015 主题风格。如果您希望使用其他插件或不需要此功能，可以禁用主题自带的高亮显示。"
 
-#: inc/widgets/Facile_Tag_Cloud.php:38
+#: inc/widgets/Facile_Tag_Cloud.php:70
 msgid "Tag Cloud"
 msgstr "标签云"
 
-#: inc/helpers.php:87
+#: inc/helpers.php:115
 msgid "Tag: "
 msgstr "标签："
 
-#: single.php:92
+#: single.php:94
 msgid "Tags"
 msgstr "标签"
 
-#: inc/customizer.php:236
+#: inc/customizer.php:259
 msgid ""
 "The \"Time Ago\" format will dynamically update based on the elapsed time: "
 "for under a minute, it will show seconds; for under an hour, it will show "
@@ -624,7 +648,7 @@ msgid ""
 "show days."
 msgstr "时间间隔会根据实际间隔变化：不到一分钟的单位为秒，超过一分钟但不足一小时的单位为分钟，超过一小时但不足一天的单位为小时，超过一天的单位为天。"
 
-#: inc/customizer.php:27
+#: inc/customizer.php:35
 msgid ""
 "The default color scheme of the theme when users visit the website. The "
 "\"Follow System Theme\" option will automatically switch between light and "
@@ -638,25 +662,25 @@ msgstr ""
 msgid "The page you are looking for does not exist!"
 msgstr "您访问的页面不存在！"
 
-#: inc/widgets/Facile_Theme_Color_Switcher.php:20
+#: inc/widgets/Facile_Theme_Color_Switcher.php:52
 msgid "Theme Color"
 msgstr "主题配色"
 
-#: inc/customizer.php:7
+#: inc/customizer.php:15
 msgid "Theme Color Scheme"
 msgstr "主题配色"
 
-#: inc/post.php:55
+#: inc/post.php:99
 msgid "This post is password protected. Enter the password to view it."
 msgstr "文章受密码保护，输入密码后才能查看。"
 
-#: inc/customizer.php:234
+#: inc/customizer.php:257
 msgid "Time Ago (3 days ago)"
 msgstr "时间间隔（3天前）"
 
-#: inc/widgets/Facile_Recent_Comments.php:54
-#: inc/widgets/Facile_Tag_Cloud.php:56
-#: inc/widgets/Facile_Theme_Color_Switcher.php:43
+#: inc/widgets/Facile_Recent_Comments.php:94
+#: inc/widgets/Facile_Tag_Cloud.php:98
+#: inc/widgets/Facile_Theme_Color_Switcher.php:85
 msgid "Title (Leave blank to hide)"
 msgstr "标题（留空不显示标题）"
 
@@ -668,17 +692,17 @@ msgstr "导航菜单"
 msgid "Try searching with different keywords"
 msgstr "更换关键字重新搜索"
 
-#: inc/customizer.php:63
+#: inc/customizer.php:71
 msgid ""
 "Upload or select an image to use as the logo in the navbar. By default, the "
 "site name will be used as the logo."
 msgstr "上传或选择一个图像作为导航栏的Logo，默认会使用网站名称作为Logo。"
 
-#: inc/customizer.php:157
+#: inc/customizer.php:165
 msgid "Use First Image in Post as Featured Image"
 msgstr "使用文章中的第一张图片作为默认头图"
 
-#: functions.php:20
+#: functions.php:19
 msgid "View Documentation"
 msgstr "查看帮助文档"
 
@@ -686,23 +710,19 @@ msgstr "查看帮助文档"
 msgid "Views"
 msgstr "阅读量"
 
-#: functions.php:21
+#: functions.php:20
 msgid "Visit Github"
 msgstr "访问 Github"
 
-#: functions.php:22
-msgid "Visit the Developer's Blog"
-msgstr "访问开发者的博客"
-
-#: inc/comments.php:74
+#: inc/comments.php:92
 msgid "Website"
 msgstr "网站"
 
-#: functions.php:18
+#: functions.php:17
 msgid "Welcome to Facile"
 msgstr "欢迎使用 Facile"
 
-#: inc/customizer.php:49
+#: inc/customizer.php:57
 msgid ""
 "When enabled, breadcrumb navigation will appear below the navbar to help "
 "users understand the page hierarchy and their current location."
@@ -716,10 +736,10 @@ msgstr "您可以尝试："
 msgid "You must enter the post password to view and submit comments."
 msgstr "输入文章密码后才能查看和发送评论。"
 
-#: inc/assets.php:33
+#: inc/assets.php:50
 msgid "Zoom In"
 msgstr "放大"
 
-#: inc/assets.php:34
+#: inc/assets.php:51
 msgid "Zoom Out"
 msgstr "缩小"
