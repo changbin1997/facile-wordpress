@@ -32,9 +32,6 @@ function theme_enqueue_assets() {
     // 引入本地的 Bootstrap JS 文件
     wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/js/bootstrap.bundle.min.js', null, false, true);
 
-    // 引入代码高亮的 highlight.pack.js
-    wp_enqueue_script('highlight-js', get_template_directory_uri() . '/js/highlight.pack.js', null, false, true);
-
     // 引入用于拷贝代码的 clipboard.min.js
     wp_enqueue_script('clipboard-js', get_template_directory_uri() . '/js/clipboard.min.js', null, false, true);
     // 引入 app.js（以 ES Module 方式加载）

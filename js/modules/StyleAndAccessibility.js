@@ -66,6 +66,21 @@ export default class StyleAndAccessibility {
    * 主题配色相关的功能
    */
   themeColorInit() {
+
+    // 如果存在跟随系统配色，先判断浏览器是否支持该系统配色媒体查询
+    if ($('.auto-color').length) {
+      // 判断浏览器是否支持 prefers-color-scheme 媒体查询
+      let supportAutoColor = false;
+      if (window.matchMedia) {
+        const darkColor = window.matchMedia('(prefers-color-scheme: dark)');
+        // 不支持该媒体特性的浏览器会把查询解析为 "not all"
+        supportAutoColor = darkColor.media !== 'not all';
+      }
+      // 浏览器不支持跟随系统配色时，把 .auto-color 替换为 .light-color
+      if (!supportAutoColor) {
+        $('.auto-color').removeClass('auto-color').addClass('light-color');
+      }
+    }
     // 根据当前的主题配色设置主题配色组件的选中状态
     if ($('#light-color').length && $('#dark-color').length) {
       // 浅色
