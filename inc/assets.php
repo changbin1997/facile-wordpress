@@ -37,8 +37,7 @@ function theme_enqueue_assets() {
 
     // 引入用于拷贝代码的 clipboard.min.js
     wp_enqueue_script('clipboard-js', get_template_directory_uri() . '/js/clipboard.min.js', null, false, true);
-
-    // 引入 app.js
+    // 引入 app.js（以 ES Module 方式加载）
     wp_enqueue_script('app-js', get_template_directory_uri() . '/js/app.js', null, false, true);
 
     // 一些通过 JS 显示的翻译内容
@@ -52,9 +51,32 @@ function theme_enqueue_assets() {
         'zoomOut' => __('Zoom Out', 'facile'),
         'rotateLeft' => __('Rotate Left 90 Degrees', 'facile'),
         'rotateRight' => __('Rotate Right 90 Degrees', 'facile'),
-        'closeImage' => __('Close Image', 'facile')
+        'closeImage' => __('Close Image', 'facile'),
+        'nextImage' => __('Next image (Right arrow key)'),
+        'previousImage' => __('Previous image (Left arrow key)')
     );
     wp_localize_script('app-js', 'facileTranslations', $translation);
+
+    // 主题路径
+    wp_localize_script( 'app-js', 'themeConfig', array(
+        'themeUri' => get_stylesheet_directory_uri()
+    ));
 }
 
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_assets' );
+
+/**
+ * 让 app.js 以 type="module" 的方式加载
+ *
+ * @param string $tag    渲染输出的 script 标签
+ * @param string $handle 脚本句柄
+ * @param string $src    脚本地址
+ * @return string
+ */
+function facile_app_js_load_as_module( $tag, $handle, $src ) {
+    if ( 'app-js' === $handle ) {
+        $tag = '<script type="module" src="' . esc_url( $src ) . '"></script>';
+    }
+    return $tag;
+}
+add_filter( 'script_loader_tag', 'facile_app_js_load_as_module', 10, 3 );

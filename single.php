@@ -61,9 +61,11 @@ get_header();
                                 </span>
                             <?php endif; ?>
                         </div>
+
                         <div class="post-content mt-4">
                             <?php the_content(); ?>
                         </div>
+                        
                         <?php
                         wp_link_pages(array(
                             'before' => '<nav class="post-content-pagination my-4 clearfix" aria-label="' . __('Pagination', 'facile') . '">',

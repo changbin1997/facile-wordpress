@@ -203,6 +203,21 @@ function mytheme_customize_register($wp_customize) {
         'description' => __('Supports syntax highlighting for over 30 languages, using the VS2015 theme. Disable this if you plan to use another plugin or do not need this feature.', 'facile')
     ));
 
+    // MathJax 支持开关
+    $wp_customize->add_setting('enable_mathjax', array(
+        'default'   => false,
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_checkbox'
+    ));
+    // MathJax 支持开关的复选框
+    $wp_customize->add_control('enable_mathjax_control', array(
+        'label'    => __('Enable MathJax Support', 'facile'),
+        'section'  => 'post_options_section',
+        'settings' => 'enable_mathjax',
+        'type'     => 'checkbox',
+        'description' => __('MathJax is a math rendering library that supports LaTeX, MathML, and AsciiMath. When enabled, the theme checks each post for math written in any of these formats and loads MathJax from a CDN to display it.', 'facile')
+    ));
+
     // 文章阅读量统计和显示开关
     $wp_customize->add_setting('enable_post_view_count', array(
         'default'   => false,
@@ -326,6 +341,17 @@ function theme_body_classes($classes) {
         }
         $classes[] = $color;
     }
+
+    // 代码高亮开启时添加 enable-highlight class
+    if (get_theme_mod('enable_code_highlight', true)) {
+        $classes[] = 'enable-highlight';
+    }
+
+    // MathJax 支持开启时添加 mathjax-enable class
+    if (get_theme_mod('enable_mathjax', false)) {
+        $classes[] = 'mathjax-enable';
+    }
+
     return $classes;
 }
 add_filter('body_class', 'theme_body_classes');

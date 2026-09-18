@@ -17,7 +17,7 @@
     <?php wp_head(); ?>
     <?php echo wp_kses_post(get_theme_mod('custom_head_html', '')); ?>
 </head>
-<body <?php body_class(); ?> data-codehighlight="<?php echo esc_attr(get_theme_mod('enable_code_highlight', true)); ?>">
+<body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <header role="banner" class="sticky-top">
     <nav class="navbar navbar-expand-lg">

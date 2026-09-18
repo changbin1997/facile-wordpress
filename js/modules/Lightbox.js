@@ -1,0 +1,595 @@
+
+export default class Lightbox {
+  imgCount = 0;  // 图片总数量
+  imgIndex = null;
+  srcImgSize = {width: 0, height: 0};  // 图片真实尺寸
+  imgElSize = {width: 0, height: 0, left: 0, top: 0};  // 文章内的图片元素尺寸和位置
+  isShow = false;  // 图片灯箱是否开启
+  maxImgSize = {width: 0, height: 0};  // 图片灯箱内显示的图片大小
+  allowMove = false;  // 图片是否可以拖动
+  direction = 0;  // 图片旋转角度
+  imgEl = null;  // 图片元素，切换图片时用于加载图片
+  pageUrl = '';  // 当前页面地址，用于检测页面跳转
+  pageUrlTimer = null;  // 检测页面地址变化的定时器
+  pageChangeHandler = null;  // 监听浏览器返回/前进的事件处理函数
+
+  /**
+   * 计算图片灯箱内显示的图片尺寸
+   * @returns {{targetHeight: number, targetWidth: number}} 返回图片灯箱内使用的图片宽度和高度
+   */
+  calculateImgSize() {
+    // 默认使用原始尺寸
+    let targetWidth = this.srcImgSize.width;
+    let targetHeight = this.srcImgSize.height;
+    if (this.srcImgSize.width > window.innerWidth || this.srcImgSize.height > window.innerHeight) {
+      // 计算宽高各自的缩放比例
+      const widthRatio = window.innerWidth / this.srcImgSize.width;
+      const heightRatio = window.innerHeight / this.srcImgSize.height;
+      // 取较小的缩放比例，保证宽高都不超出
+      const scale = Math.min(widthRatio, heightRatio);
+
+      targetWidth = Math.round(this.srcImgSize.width * scale);
+      targetHeight = Math.round(this.srcImgSize.height * scale);
+    }
+
+    return {targetHeight, targetWidth};
+  }
+
+  /**
+   * 初始化
+   */
+  init() {
+    // 如果文章内没有图片
+    if ($('.post-content img').length < 1) return;
+    // 获取图片总数量
+    this.imgCount = $('.post-content img').length;
+    // 给文章中的图片添加一个索引
+    for (let i = 0;i < this.imgCount;i ++) {
+      $('.post-content img').eq(i).attr('data-index', i);
+    }
+
+    this.imgEl = new Image();
+
+    // 浏览器返回/前进时关闭图片灯箱
+    if (this.pageChangeHandler) {
+      window.removeEventListener('popstate', this.pageChangeHandler);
+    }
+    this.pageChangeHandler = () => {
+      this.closeByPageChange();
+    };
+    window.addEventListener('popstate', this.pageChangeHandler);
+
+    // 文章内的图片点击
+    $('.post-content img').on('click', ev => {
+      // 显示图片灯箱
+      this.show(ev);
+
+      // 鼠标拖动初始化
+      this.mouseMove();
+
+      // 手指拖动初始化
+      this.touchMove();
+
+      // 图片缩放初始化
+      this.zoom();
+
+      // 图片旋转初始化
+      this.rotate();
+
+      // 关闭图片灯箱点击
+      $('#max-img-box .close-img').on('click', ev => {
+        ev.stopPropagation();
+        this.hide();
+      });
+
+      // 更换下一张图片点击
+      $('#max-img-box .next-image').on('click', ev => {
+        ev.stopPropagation();
+        // 如果当前是最后一张图片就不再往后切换
+        if (this.imgIndex === this.imgCount - 1) return false;
+        // 当前图片索引+1
+        this.imgIndex ++;
+        // 切换图片
+        this.changeImg();
+      });
+
+      // 更换上一张图片点击
+      $('#max-img-box .previous-image').on('click', ev => {
+        ev.stopPropagation();
+        // 如果是第一张图片就不再往前切换
+        if (this.imgIndex === 0) return false;
+        // 当前图片索引-1
+        this.imgIndex --;
+        // 切换图片
+        this.changeImg();
+      });
+
+      // 键盘事件
+      $('#max-img-box').on('keydown', ev => {
+        // ESC 关闭
+        if (ev.keyCode === 27 || ev.key === 'Escape') {
+          $('#max-img-box .close-img').click();
+        }
+        // 右方向键更换图片
+        if (ev.keyCode === 39 || ev.key === 'ArrowRight') {
+          $('#max-img-box .next-image').click();
+        }
+        // 左方向键更换图片
+        if (ev.keyCode === 37 || ev.key === 'ArrowLeft') {
+          $('#max-img-box .previous-image').click();
+        }
+      });
+
+      // 图片灯箱的背景区域点击
+      $('#max-img-box').on('click', () => {
+        $('#max-img-box .close-img').click();
+      });
+
+      // 避免点击图片冒泡
+      $('#max-img').on('click', ev => {
+        ev.stopPropagation();
+      });
+    });
+  }
+
+  /**
+   * 获取文章内的图片尺寸和位置
+   * @param el
+   */
+  getImgElSize(el) {
+    this.imgElSize.width = el.width();
+    this.imgElSize.height = el.height();
+    this.imgElSize.left = el.offset().left;
+    this.imgElSize.top = el.offset().top;
+  }
+
+  /**
+   * 显示图片灯箱
+   * @param ev event 事件对象
+   */
+  show(ev) {
+    let newImgUrl = '';  // 存储要显示的图片的 URL
+    // 获取当前点击的图片的 URL
+    if ($(ev.target).hasClass('load-img')) {
+      newImgUrl = $(ev.target).attr('data-src');
+    }else {
+      newImgUrl = $(ev.target).attr('src');
+    }
+
+    // 加载图片
+    this.imgEl.src = newImgUrl;
+    this.imgEl.alt = $(ev.target).attr('alt');
+
+    // 获取图片真实尺寸
+    this.srcImgSize.width = this.imgEl.naturalWidth;
+    this.srcImgSize.height = this.imgEl.naturalHeight;
+    // 获取当前点击的图片尺寸和位置
+    this.getImgElSize($(ev.target));
+    // 获取当前点击的图片索引
+    this.imgIndex = Number($(ev.target).attr('data-index'));
+    // 图片灯箱HTML
+    const lightboxHtml = `
+    <div id="max-img-box" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="img-alt" aria-describedby="img-counter">
+      <p id="img-counter" aria-live="polite">${this.imgIndex + 1}/${this.imgCount}</p>
+      <div class="btn-bar">
+        <button type="button" class="btn zoom-in-btn" aria-label="${facileTranslations.zoomIn}" title="${facileTranslations.zoomIn}">
+          <i class="icon-zoom-in"></i>
+        </button>
+        <button type="button" class="btn zoom-out-btn" aria-label="${facileTranslations.zoomOut}" title="${facileTranslations.zoomOut}">
+          <i class="icon-zoom-out"></i>
+        </button>
+        <button type="button" class="btn rotate-left-btn" aria-label="${facileTranslations.rotateLeft}" title="${facileTranslations.rotateLeft}">
+          <i class="icon-undo"></i>
+        </button>
+        <button type="button" class="btn rotate-right-btn" aria-label="${facileTranslations.rotateRight}" title="${facileTranslations.rotateRight}">
+          <i class="icon-redo"></i>
+        </button>
+        <button type="button" class="btn close-img" aria-label="${facileTranslations.closeImage}" title="${facileTranslations.closeImage}">
+          <i class="icon-cancel-circle"></i>
+        </button>
+      </div>
+      <a href="javascript:;" aria-label="${facileTranslations.previousImage}" title="${facileTranslations.previousImage}" class="previous-image" role="button">
+        <i class="icon-chevron-left"></i>
+      </a>
+      <a href="javascript:;" aria-label="${facileTranslations.nextImage}" title="${facileTranslations.nextImage}" class="next-image" role="button">
+        <i class="icon-chevron-right"></i>
+      </a>
+      <p id="img-alt" aria-live="polite">${this.imgEl.alt}</p>
+      <div class="loading-animation">
+        <div class="spinner-border text-light" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    </div>
+    `;
+    // 把图片灯箱HTML插入到页面
+    $('body').append(lightboxHtml);
+
+    // 创建一张图片
+    const imgEl = document.createElement('img');
+    imgEl.src = this.imgEl.src;
+    imgEl.alt = this.imgEl.alt;
+    imgEl.setAttribute('id', 'max-img');
+    imgEl.className = 'shadow';
+    // 让图片的尺寸和位置和原图保持一致
+    imgEl.style.top = `${this.imgElSize.top}px`;
+    imgEl.style.left = `${this.imgElSize.left}px`;
+    imgEl.style.width = `${this.imgElSize.width}px`;
+    imgEl.style.height = `${this.imgElSize.height}px`;
+    // 把图片插入到页面
+    $('body').append(imgEl);
+
+    // 计算图片灯箱内的图片尺寸
+    const {targetHeight, targetWidth} = this.calculateImgSize();
+    this.maxImgSize.width = targetWidth;
+    this.maxImgSize.height = targetHeight;
+
+    // 把图片移动到页面中心，同时改变大小
+    $('#max-img').animate({
+      width: targetWidth,
+      height: targetHeight,
+      top: $(document).scrollTop() + window.innerHeight / 2 - targetHeight / 2,
+      left: window.innerWidth / 2 - targetWidth / 2
+    }, 250, () => {
+      // 移动完成后把图片节点移动到灯箱内
+      $('#max-img-box').append($('#max-img'));
+      // 重新设置定位
+      $('#max-img').css('top', window.innerHeight / 2 - targetHeight / 2);
+    });
+
+    // 显示图片灯箱背景
+    $('#max-img-box').fadeIn(250);
+    // 禁止滚动
+    $('body').addClass('stop-scrolling');
+    // 聚焦到图片灯箱
+    $('#max-img-box').focus();
+    // 把图片灯箱状态设置为开启
+    this.isShow = true;
+    // 开始检测页面地址变化，页面跳转时自动关闭图片灯箱
+    this.startPageUrlCheck();
+
+    // 图片加载完成后隐藏加载动画
+    this.imgEl.onload = () => {
+      $('#max-img-box .loading-animation').addClass('d-none');
+      // 如果当前点击的文章内的图片还没有加载就顺便加载
+      if ($(ev.target).hasClass('load-img')) {
+        $(ev.target).attr('src', this.imgEl.src);
+      }
+      // 如果灯箱内的图片尺寸不正确就重新设置尺寸和位置
+      if ($('#max-img').width() < 1 || $('#max-img').height() < 1) {
+        // 重新获取图片的真实尺寸
+        this.srcImgSize.width = this.imgEl.naturalWidth;
+        this.srcImgSize.height = this.imgEl.naturalHeight;
+        // 计算图片灯箱内的图片尺寸
+        const {targetHeight, targetWidth} = this.calculateImgSize();
+        // 重新设置尺寸和位置
+        $('#max-img').css({
+          width: targetWidth,
+          height: targetHeight,
+          top: window.innerHeight / 2 - targetHeight / 2,
+          left: window.innerWidth / 2 - targetWidth / 2
+        });
+      }
+    };
+  }
+
+  /**
+   * 重置图片角度
+   */
+  resetDirection() {
+    this.direction = 0;
+    $('#max-img').css('transform', `rotate(${this.direction}deg)`);
+  }
+
+  /**
+   * 关闭图片灯箱
+   * @param {boolean} forceFade 是否直接淡出，页面跳转后文章内的图片可能已经不存在，需要直接淡出
+   */
+  hide(forceFade) {
+    // 如果图片灯箱没有开启就不处理
+    if (!this.isShow) return;
+    // 重置图片角度
+    this.resetDirection();
+    // 恢复图片的鼠标样式和禁止拖动
+    $('#max-img-box #max-img').css('cursor', 'default');
+    this.allowMove = false;
+    // 文章内的图片存在并且可见时让图片回到文章内的位置
+    if (!forceFade && this.canAnimateToImgEl()) {
+      // 淡出图片灯箱背景
+      $('#max-img-box').fadeOut(250, () => {
+        // 隐藏完成后移除图片灯箱
+        $('#max-img-box').remove();
+        // 恢复页面滚动条
+        $('body').removeClass('stop-scrolling');
+      });
+      // 获取图片灯箱内的图片top
+      const targetTop = $('#max-img').offset().top;
+      // 把图片节点移出到 body
+      $('body').append($('#max-img'));
+      // 重新设置定位
+      $('#max-img').css('top', targetTop);
+      // 把图片还原到页面中的位置和大小
+      $('#max-img').animate({
+        width: this.imgElSize.width,
+        height: this.imgElSize.height,
+        top: this.imgElSize.top,
+        left: this.imgElSize.left
+      }, 250, () => {
+        // 完成后移除图片
+        $('#max-img').remove();
+      });
+    }else {
+      // 文章内的图片不可见或者页面已经跳转时直接淡出
+      $('#max-img-box').fadeOut(250, () => {
+        // 隐藏完成后移除图片灯箱
+        $('#max-img-box').remove();
+        // 移除灯箱内的图片，避免图片残留
+        $('#max-img').remove();
+        // 恢复页面滚动条
+        $('body').removeClass('stop-scrolling');
+      });
+    }
+    // 把图片灯箱状态设置为关闭
+    this.isShow = false;
+    // 停止检测页面地址变化
+    this.stopPageUrlCheck();
+  }
+
+  /**
+   * 检测文章内对应的图片是否存在并且可见
+   * @returns {boolean} 图片存在并且可见就返回 true
+   */
+  canAnimateToImgEl() {
+    // 文章内没有图片就不能执行返回动画
+    if ($('.post-content img').length < 1) return false;
+    // 当前显示的图片在文章内不存在就不能执行返回动画
+    const imgEl = $('.post-content img').eq(this.imgIndex);
+    if (imgEl.length < 1) return false;
+    // 图片或它的父元素不可见（比如在选项卡、折叠框内）就不能执行返回动画
+    if (!imgEl.is(':visible')) return false;
+    // 图片没有尺寸和位置就不能执行返回动画
+    if (imgEl.width() < 1 || imgEl.height() < 1) return false;
+    return true;
+  }
+
+  /**
+   * 开始检测页面地址变化
+   */
+  startPageUrlCheck() {
+    // 记录当前页面地址
+    this.pageUrl = window.location.href;
+    // 移除上一次的定时器，避免重复创建
+    this.stopPageUrlCheck();
+    // 定时检测页面地址是否改变，PJAX 无刷新跳转会改变页面地址
+    this.pageUrlTimer = setInterval(() => {
+      this.closeByPageChange();
+    }, 500);
+  }
+
+  /**
+   * 停止检测页面地址变化
+   */
+  stopPageUrlCheck() {
+    if (this.pageUrlTimer) {
+      clearInterval(this.pageUrlTimer);
+      this.pageUrlTimer = null;
+    }
+  }
+
+  /**
+   * 页面地址改变时关闭图片灯箱
+   */
+  closeByPageChange() {
+    // 页面地址没有改变就不处理
+    if (window.location.href === this.pageUrl) return;
+    // 页面正在跳转，如果图片灯箱开启就直接淡出关闭
+    if (this.isShow) {
+      this.hide(true);
+    }
+  }
+
+  /**
+   * 图片旋转初始化
+   */
+  rotate() {
+    // 图片左旋转点击
+    $('#max-img-box .rotate-left-btn').on('click', ev => {
+      ev.stopPropagation();
+      this.direction -= 90;
+      // 设置过渡时间
+      $('#max-img').css('transition', '0.25s');
+      $('#max-img').css('transform', `rotate(${this.direction}deg)`);
+      // 清除过渡
+      setTimeout(function () {
+        $('#max-img').css('transition', '0s');
+      }, 250);
+    });
+
+    // 图片右旋转点击
+    $('#max-img-box .rotate-right-btn').on('click', ev => {
+      ev.stopPropagation();
+      this.direction += 90;
+      // 设置过渡时间
+      $('#max-img').css('transition', '0.25s');
+      $('#max-img').css('transform', `rotate(${this.direction}deg)`);
+      // 清除过渡
+      setTimeout(function () {
+        $('#max-img').css('transition', '0s');
+      }, 250);
+    });
+  }
+
+  /**
+   * 图片缩放初始化
+   */
+  zoom() {
+    // 放大按钮点击
+    $('#max-img-box .zoom-in-btn').on('click', ev => {
+      ev.stopPropagation();
+      // 每次放大 20%
+      const targetWidth = $('#max-img-box #max-img').width() + this.maxImgSize.width / 5;
+      const targetHeight = $('#max-img-box #max-img').height() + this.maxImgSize.height / 5;
+      // 放大
+      $('#max-img-box #max-img').animate({
+        width: targetWidth,
+        height: targetHeight
+      }, 250, () => {
+        // 如果图片超出了可视区
+        if (
+            $('#max-img-box #max-img').offset().left + $('#max-img-box #max-img').width() >= window.innerWidth ||
+            $('#max-img-box #max-img').offset().top + $('#max-img-box #max-img').height() >= $(document).scrollTop() + window.innerHeight
+        ) {
+          // 把图片的鼠标样式设置为可拖动
+          $('#max-img-box #max-img').css('cursor', 'move');
+          this.allowMove = true;
+        }
+      });
+    });
+
+    // 缩小按钮点击
+    $('#max-img-box .zoom-out-btn').on('click', ev => {
+      ev.stopPropagation();
+      // 如果当前图片尺寸是初始大小就不再缩小
+      if (
+          $('#max-img-box #max-img').width() === this.maxImgSize.width &&
+          $('#max-img-box #max-img').height() === this.maxImgSize.height
+      ) return;
+      // 还原到初始大小和位置
+      $('#max-img-box #max-img').animate({
+        width: this.maxImgSize.width,
+        height: this.maxImgSize.height,
+        top: window.innerHeight / 2 - this.maxImgSize.height / 2,
+        left: window.innerWidth / 2 - this.maxImgSize.width / 2
+      }, 250, () => {
+        // 恢复图片的鼠标样式和禁止拖动
+        $('#max-img-box #max-img').css('cursor', 'default');
+        this.allowMove = false;
+      });
+    });
+  }
+
+  /**
+   * 图片鼠标拖动
+   */
+  mouseMove() {
+    $('#max-img').on('mousedown', ev => {
+      ev.preventDefault();
+      ev.stopPropagation();
+      // 是否允许拖动
+      if (!this.allowMove) return false;
+      const X = ev.clientX - ev.target.offsetLeft;
+      const Y = ev.clientY - ev.target.offsetTop;
+      // 开始拖动
+      $('#max-img-box').on('mousemove', ev => {
+        $('#max-img').css({
+          left: ev.clientX - X,
+          top: ev.clientY - Y
+        });
+      });
+      // 停止拖动
+      $('#max-img-box').on('mouseup', ev => {
+        ev.stopPropagation();
+        $('#max-img-box').off('mousemove');
+      });
+    });
+  }
+
+  /**
+   * 图片手指拖动
+   */
+  touchMove() {
+    $('#max-img').on('touchstart', ev => {
+      ev.preventDefault();
+      ev.stopPropagation();
+      // 是否允许拖动
+      if (!this.allowMove) return false;
+      const X = ev.touches[0].pageX - ev.target.offsetLeft;
+      const Y = ev.touches[0].pageY - ev.target.offsetTop;
+      // 开始拖动
+      $('#max-img-box').on('touchmove', ev => {
+        ev.preventDefault();
+        $('#max-img').css({
+          left: ev.touches[0].pageX - X,
+          top: ev.touches[0].pageY - Y
+        });
+        return false;
+      });
+      // 停止拖动
+      $('#max-img-box').on('touchend', ev => {
+        ev.stopPropagation();
+        $('#max-img-box').off('touchmove');
+      });
+    });
+  }
+
+  /**
+   * 更换图片
+   */
+  changeImg() {
+    // 恢复图片的鼠标样式和禁止拖动
+    $('#max-img-box #max-img').css('cursor', 'default');
+    this.allowMove = false;
+    // 重置图片角度
+    this.resetDirection();
+    // 隐藏灯箱内的图片
+    $('#max-img').hide();
+    // 显示动画
+    $('#max-img-box .loading-animation').removeClass('d-none');
+
+    let newImgUrl = '';  // 存储要显示的图片的 URL
+    // 获取要显示的图片的 URL
+    if ($('.post-content img').eq(this.imgIndex).hasClass('load-img')) {
+      newImgUrl = $('.post-content img').eq(this.imgIndex).attr('data-src');
+    }else {
+      newImgUrl = $('.post-content img').eq(this.imgIndex).attr('src');
+    }
+    // 加载图片
+    this.imgEl.src = newImgUrl;
+    this.imgEl.alt = $('.post-content img').eq(this.imgIndex).attr('alt');
+    // 设置图片 alt 文字显示
+    $('#img-alt').html(this.imgEl.alt);
+    // 重新设置当前图片的序号和总数量
+    $('#max-img-box #img-counter').html(`${this.imgIndex + 1}/${this.imgCount}`);
+
+    // 图片加载完成
+    this.imgEl.onload = () => {
+      // 获取图片的真实尺寸
+      this.srcImgSize.width = this.imgEl.naturalWidth;
+      this.srcImgSize.height = this.imgEl.naturalHeight;
+      // 如果文章内的图片还没有加载就顺便加载文章内的图片
+      if ($('.post-content img').eq(this.imgIndex).hasClass('load-img')) {
+        $('.post-content img').eq(this.imgIndex).attr('src', newImgUrl);
+      }
+      // 重新获取当前显示的图片在文章内的尺寸和位置
+      this.getImgElSize($('.post-content img').eq(this.imgIndex));
+      // 计算图片灯箱内的新图片的尺寸
+      const {targetHeight, targetWidth} = this.calculateImgSize();
+      this.maxImgSize.width = targetWidth;
+      this.maxImgSize.height = targetHeight;
+      // 隐藏加载动画
+      $('#max-img-box .loading-animation').addClass('d-none');
+      // 显示灯箱内的图片
+      $('#max-img').show();
+      // 给图片添加动画
+      $('#max-img').addClass('change-img-animation');
+
+      // 在下一帧执行
+      requestAnimationFrame(() => {
+        // 设置图片 src 和 alt
+        $('#max-img').attr({
+          src: this.imgEl.src,
+          alt: this.imgEl.alt
+        });
+        $('#max-img').css({
+          width: targetWidth,
+          height: targetHeight,
+          left: window.innerWidth / 2 - targetWidth / 2,
+          top: window.innerHeight / 2 - targetHeight / 2
+        });
+        setTimeout(() => {
+          $('#max-img').removeClass('change-img-animation');
+        }, 250);
+      });
+    }
+  }
+}
