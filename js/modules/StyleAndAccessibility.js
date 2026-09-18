@@ -71,14 +71,34 @@ export default class StyleAndAccessibility {
     if ($('.auto-color').length) {
       // 判断浏览器是否支持 prefers-color-scheme 媒体查询
       let supportAutoColor = false;
+      let darkColor = null;
       if (window.matchMedia) {
-        const darkColor = window.matchMedia('(prefers-color-scheme: dark)');
+        darkColor = window.matchMedia('(prefers-color-scheme: dark)');
         // 不支持该媒体特性的浏览器会把查询解析为 "not all"
         supportAutoColor = darkColor.media !== 'not all';
       }
       // 浏览器不支持跟随系统配色时，把 .auto-color 替换为 .light-color
       if (!supportAutoColor) {
         $('.auto-color').removeClass('auto-color').addClass('light-color');
+      } else {
+        // 支持时监听系统配色改变，同步切换配色单选框的选中状态
+        const syncThemeColorRadio = () => {
+          // 切换配色组件为侧边栏组件，可能不存在；仅当仍处于跟随系统配色时同步
+          if ($('#light-color').length && $('#dark-color').length && $('.auto-color').length) {
+            if (darkColor.matches) {
+              $('#dark-color').prop('checked', true);
+            } else {
+              $('#light-color').prop('checked', true);
+            }
+          }
+        };
+        // 用 prop 设置选中状态不会触发 change 事件，因此不会写配色 cookie
+        if (darkColor.addEventListener) {
+          darkColor.addEventListener('change', syncThemeColorRadio);
+        } else if (darkColor.addListener) {
+          // 兼容旧版 Safari 等仅支持 addListener 的浏览器
+          darkColor.addListener(syncThemeColorRadio);
+        }
       }
     }
     // 根据当前的主题配色设置主题配色组件的选中状态
