@@ -3,8 +3,8 @@ Requires at least: 5.0
 Tested up to: 6.6
 Requires PHP: 5.6
 Version: 1.0
-License: MIT
-License URI: https://opensource.org/license/mit
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Theme URI: https://www.misterma.com
 Author: Changbin
 Author URI: https://www.misterma.com
