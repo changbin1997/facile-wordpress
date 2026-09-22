@@ -57,16 +57,7 @@
                     </ul>
                 <?php endif; ?>
                 <!--搜索-->
-                <form role="search" class="form-inline my-2 my-lg-0" action="<?php echo esc_url(home_url('/')); ?>" method="get" >
-                    <div class="input-group">
-                        <input class="form-control" type="search" placeholder="<?php _e('Search', 'facile'); ?>" name="s" value="<?php echo get_search_query(); ?>" required>
-                        <div class="input-group-append">
-                            <button class="btn btn-primary my-sm-0" type="submit" data-toggle="tooltip" data-placement="bottom" title="<?php _e('Search', 'facile'); ?>" aria-label="<?php _e('Search', 'facile'); ?>">
-                                <i class="icon-search"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
+                <?php get_search_form(array('aria_label' => __('Search', 'facile'))); ?>
             </div>
         </div>
     </nav>

@@ -26,7 +26,7 @@ add_action('after_setup_theme', function() {
     add_theme_support('automatic-feed-links');
 
     // 启用 HTML5 支持，使 WordPress 在输出评论表单、评论列表、图库和标题等时使用 HTML5 标签
-    add_theme_support('html5', array('comment-form', 'comment-list', 'gallery', 'caption'));
+    add_theme_support('html5', array('comment-form', 'comment-list', 'gallery', 'caption', 'search-form'));
 });
 
 // 注册侧边栏

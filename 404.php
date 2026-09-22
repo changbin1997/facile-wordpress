@@ -15,16 +15,7 @@ get_header();
     </div>
     <div class="mt-5 row">
         <div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-12">
-            <form action="<?php echo esc_url(home_url('/')); ?>" method="get" role="search">
-                <div class="input-group">
-                    <input class="form-control" type="search" placeholder="<?php _e('Search', 'facile'); ?>" required name="s">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary my-sm-0" type="submit" aria-label="<?php _e('Search', 'facile'); ?>" title="<?php _e('Search', 'facile'); ?>" data-toggle="tooltip" data-placement="bottom">
-                            <i class="icon-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
+            <?php get_search_form(array('aria_label' => __('Search', 'facile'))); ?>
         </div>
     </div>
     <div class="text-center mt-3">
