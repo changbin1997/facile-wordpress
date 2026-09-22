@@ -401,6 +401,14 @@ $dark-text-color2: #999999;
       span {
         color: #d3d3d3;
       }
+      // 标签和分类的下拉菜单配色
+      .dropdown-menu {
+        background: #25252C;
+        color: $dark-text-color;
+        a {
+          color: $dark-text-color;
+        }
+      }
     }
 
     // 文章页的分类链接颜色

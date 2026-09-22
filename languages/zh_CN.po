@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Facile\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-27 08:57+0000\n"
-"PO-Revision-Date: 2026-09-18 11:11+0000\n"
+"PO-Revision-Date: 2026-09-22 10:30+0000\n"
 "Last-Translator: Mr. Ma\n"
 "Language-Team: 简体中文\n"
 "Language: zh_CN\n"
@@ -116,17 +116,17 @@ msgid ""
 "submit new comments, while the comment list displays published comments."
 msgstr "选择评论表单的位置：评论表单是用于提交新评论的区域，而评论列表是显示已发表评论的区域。"
 
-#: single.php:86
+#: inc/post.php:262
 #, php-format
 msgid "Click to view posts in the %s category"
 msgstr "点击查看 %s 分类的文章"
 
-#: single.php:99
+#: inc/post.php:318
 #, php-format
 msgid "Click to view posts with the %s tag"
 msgstr "点击查看包含 %s 标签的文章"
 
-#: inc/assets.php:54
+#: inc/assets.php:51
 msgid "Close Image"
 msgstr "关闭大图"
 
@@ -163,15 +163,15 @@ msgstr "评论区设置"
 msgid "Comments are closed"
 msgstr "评论已关闭"
 
-#: inc/assets.php:46
+#: inc/assets.php:43
 msgid "Copy Code"
 msgstr "拷贝代码"
 
-#: inc/assets.php:48
+#: inc/assets.php:45
 msgid "Copy Error"
 msgstr "拷贝失败"
 
-#: inc/assets.php:47
+#: inc/assets.php:44
 msgid "Copy Success"
 msgstr "拷贝成功"
 
@@ -405,7 +405,7 @@ msgstr "导航栏Logo图片"
 msgid "Navbar Settings"
 msgstr "导航栏设置"
 
-#: inc/assets.php:55
+#: inc/assets.php:52
 msgid "Next image (Right arrow key)"
 msgstr "下一张图片（右方向键）"
 
@@ -417,11 +417,11 @@ msgstr "下一页"
 msgid "Next Page (Right Arrow Key)"
 msgstr "下一页（右方向键）"
 
-#: single.php:126
+#: single.php:109
 msgid "Next Post"
 msgstr "下一篇"
 
-#: single.php:91
+#: inc/post.php:247
 msgid "No categories selected"
 msgstr "未选择分类"
 
@@ -434,11 +434,11 @@ msgstr "无法查找到包含 <b>%s</b> 的文章！"
 msgid "No posts found!"
 msgstr "没有找到任何文章！"
 
-#: single.php:104
+#: inc/post.php:303
 msgid "No tags added"
 msgstr "未添加标签"
 
-#: single.php:121 single.php:134
+#: single.php:104 single.php:117
 msgid "None"
 msgstr "没有了"
 
@@ -467,7 +467,7 @@ msgstr "密码"
 msgid "Pending Review"
 msgstr "评论审核中"
 
-#: single.php:81
+#: single.php:82
 msgid "Post Categories"
 msgstr "文章分类"
 
@@ -516,7 +516,7 @@ msgstr "包含 %s 标签的文章"
 msgid "Posts under the category %s"
 msgstr "分类 %s 下的文章"
 
-#: inc/assets.php:56
+#: inc/assets.php:53
 msgid "Previous image (Left arrow key)"
 msgstr "上一张图片（左方向键）"
 
@@ -528,7 +528,7 @@ msgstr "上一页"
 msgid "Previous Page (Left Arrow Key)"
 msgstr "上一页（左方向键）"
 
-#: single.php:113
+#: single.php:96
 msgid "Previous Post"
 msgstr "上一篇"
 
@@ -552,11 +552,11 @@ msgstr "最新评论"
 msgid "Reply"
 msgstr "回复"
 
-#: inc/assets.php:52
+#: inc/assets.php:49
 msgid "Rotate Left 90 Degrees"
 msgstr "左旋转90度"
 
-#: inc/assets.php:53
+#: inc/assets.php:50
 msgid "Rotate Right 90 Degrees"
 msgstr "右旋转90度"
 
@@ -636,7 +636,7 @@ msgstr "标签云"
 msgid "Tag: "
 msgstr "标签："
 
-#: single.php:94
+#: single.php:86
 msgid "Tags"
 msgstr "标签"
 
@@ -702,6 +702,14 @@ msgstr "上传或选择一个图像作为导航栏的Logo，默认会使用网�
 msgid "Use First Image in Post as Featured Image"
 msgstr "使用文章中的第一张图片作为默认头图"
 
+#: inc/post.php:274
+msgid "View all %d categories"
+msgstr "查看所有 %d 个分类"
+
+#: inc/post.php:330
+msgid "View all %d tags"
+msgstr "查看所有 %d 个标签"
+
 #: functions.php:19
 msgid "View Documentation"
 msgstr "查看帮助文档"
@@ -736,10 +744,10 @@ msgstr "您可以尝试："
 msgid "You must enter the post password to view and submit comments."
 msgstr "输入文章密码后才能查看和发送评论。"
 
-#: inc/assets.php:50
+#: inc/assets.php:47
 msgid "Zoom In"
 msgstr "放大"
 
-#: inc/assets.php:51
+#: inc/assets.php:48
 msgid "Zoom Out"
 msgstr "缩小"

@@ -230,3 +230,114 @@ function addBootstrapTableClasses($html) {
     return $newHtml;
 }
 add_filter('the_content', 'addBootstrapTableClasses');
+/**
+ * 输出文章分类
+ *
+ * 统计所有分类名称的字符总数（按字符数而非字节数计算），
+ * 不超过 25 个字符时直接输出分类链接；
+ * 超过 25 个字符时输出 Bootstrap 下拉菜单，避免分类与标签同行时换行。
+ *
+ * @return void
+ */
+function display_post_categories() {
+    $categories = get_the_category();
+
+    // 没有分类时输出提示
+    if (!$categories) {
+        echo '<span>' . __('No categories selected', 'facile') . '</span>';
+        return;
+    }
+
+    // 计算所有分类名称的字符总数
+    $total_chars = 0;
+    foreach ($categories as $category) {
+        $total_chars += mb_strlen($category->name, 'UTF-8');
+    }
+
+    // 字符总数不超过 25 时，按原方式直接输出分类链接
+    if ($total_chars <= 25) {
+        foreach ($categories as $category) {
+            printf(
+                '<a data-toggle="tooltip" data-placement="top" title="%s" href="%s">%s</a>',
+                esc_attr(sprintf(__('Click to view posts in the %s category', 'facile'), $category->name)),
+                esc_url(get_category_link($category->term_id)),
+                esc_html($category->name)
+            );
+        }
+        return;
+    }
+
+    // 超过 25 时，使用下拉菜单输出所有分类
+    $count = count($categories);
+    printf(
+        '<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">%s</a>',
+        sprintf(__('View all %d categories', 'facile'), $count)
+    );
+    echo '<div class="dropdown-menu">';
+
+    foreach ($categories as $category) {
+        printf(
+            '<a class="dropdown-item" href="%s">%s</a>',
+            esc_url(get_category_link($category->term_id)),
+            esc_html($category->name)
+        );
+    }
+
+    echo '</div>';
+}
+
+/**
+ * 输出文章标签
+ *
+ * 统计所有标签名称的字符总数（按字符数而非字节数计算），
+ * 不超过 25 个字符时直接输出标签链接；
+ * 超过 25 个字符时输出 Bootstrap 下拉菜单，避免分类与标签同行时换行。
+ *
+ * @return void
+ */
+function display_post_tags() {
+    $tags = get_the_tags();
+
+    // 没有标签时输出提示
+    if (!$tags) {
+        echo '<span>' . __('No tags added', 'facile') . '</span>';
+        return;
+    }
+
+    // 计算所有标签名称的字符总数
+    $total_chars = 0;
+    foreach ($tags as $tag) {
+        $total_chars += mb_strlen($tag->name, 'UTF-8');
+    }
+
+    // 字符总数不超过 25 时，按原方式直接输出标签链接
+    if ($total_chars <= 25) {
+        foreach ($tags as $tag) {
+            printf(
+                '<a class="badge badge-dark" data-toggle="tooltip" data-placement="top" title="%s" href="%s">%s</a>',
+                esc_attr(sprintf(__('Click to view posts with the %s tag', 'facile'), $tag->name)),
+                esc_url(get_tag_link($tag->term_id)),
+                esc_html($tag->name)
+            );
+        }
+        return;
+    }
+
+    // 超过 25 时，使用下拉菜单输出所有标签
+    $count = count($tags);
+    printf(
+        '<a class="badge badge-dark dropdown-toggle" href="javascript:;" data-toggle="dropdown" aria-expanded="false">%s</a>',
+        sprintf(__('View all %d tags', 'facile'), $count)
+    );
+    echo '<div class="dropdown-menu">';
+
+    foreach ($tags as $tag) {
+        printf(
+            '<a class="dropdown-item" href="%s">%s</a>',
+            esc_url(get_tag_link($tag->term_id)),
+            esc_html($tag->name)
+        );
+    }
+
+    echo '</div>';
+}

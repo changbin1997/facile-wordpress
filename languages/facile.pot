@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Facile\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-18 11:06+0000\n"
+"POT-Creation-Date: 2026-09-22 10:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -122,17 +122,17 @@ msgid ""
 "submit new comments, while the comment list displays published comments."
 msgstr ""
 
-#: single.php:86
+#: inc/post.php:262
 #, php-format
 msgid "Click to view posts in the %s category"
 msgstr ""
 
-#: single.php:99
+#: inc/post.php:318
 #, php-format
 msgid "Click to view posts with the %s tag"
 msgstr ""
 
-#: inc/assets.php:54
+#: inc/assets.php:51
 msgid "Close Image"
 msgstr ""
 
@@ -169,15 +169,15 @@ msgstr ""
 msgid "Comments are closed"
 msgstr ""
 
-#: inc/assets.php:46
+#: inc/assets.php:43
 msgid "Copy Code"
 msgstr ""
 
-#: inc/assets.php:48
+#: inc/assets.php:45
 msgid "Copy Error"
 msgstr ""
 
-#: inc/assets.php:47
+#: inc/assets.php:44
 msgid "Copy Success"
 msgstr ""
 
@@ -403,7 +403,7 @@ msgstr ""
 msgid "Navbar Settings"
 msgstr ""
 
-#: inc/assets.php:55
+#: inc/assets.php:52
 msgid "Next image (Right arrow key)"
 msgstr ""
 
@@ -415,11 +415,11 @@ msgstr ""
 msgid "Next Page (Right Arrow Key)"
 msgstr ""
 
-#: single.php:126
+#: single.php:109
 msgid "Next Post"
 msgstr ""
 
-#: single.php:91
+#: inc/post.php:247
 msgid "No categories selected"
 msgstr ""
 
@@ -432,11 +432,11 @@ msgstr ""
 msgid "No posts found!"
 msgstr ""
 
-#: single.php:104
+#: inc/post.php:303
 msgid "No tags added"
 msgstr ""
 
-#: single.php:121 single.php:134
+#: single.php:104 single.php:117
 msgid "None"
 msgstr ""
 
@@ -465,7 +465,7 @@ msgstr ""
 msgid "Pending Review"
 msgstr ""
 
-#: single.php:81
+#: single.php:82
 msgid "Post Categories"
 msgstr ""
 
@@ -514,7 +514,7 @@ msgstr ""
 msgid "Posts under the category %s"
 msgstr ""
 
-#: inc/assets.php:56
+#: inc/assets.php:53
 msgid "Previous image (Left arrow key)"
 msgstr ""
 
@@ -526,7 +526,7 @@ msgstr ""
 msgid "Previous Page (Left Arrow Key)"
 msgstr ""
 
-#: single.php:113
+#: single.php:96
 msgid "Previous Post"
 msgstr ""
 
@@ -550,11 +550,11 @@ msgstr ""
 msgid "Reply"
 msgstr ""
 
-#: inc/assets.php:52
+#: inc/assets.php:49
 msgid "Rotate Left 90 Degrees"
 msgstr ""
 
-#: inc/assets.php:53
+#: inc/assets.php:50
 msgid "Rotate Right 90 Degrees"
 msgstr ""
 
@@ -632,7 +632,7 @@ msgstr ""
 msgid "Tag: "
 msgstr ""
 
-#: single.php:94
+#: single.php:86
 msgid "Tags"
 msgstr ""
 
@@ -697,6 +697,14 @@ msgstr ""
 msgid "Use First Image in Post as Featured Image"
 msgstr ""
 
+#: inc/post.php:274
+msgid "View all %d categories"
+msgstr ""
+
+#: inc/post.php:330
+msgid "View all %d tags"
+msgstr ""
+
 #: functions.php:19
 msgid "View Documentation"
 msgstr ""
@@ -731,10 +739,10 @@ msgstr ""
 msgid "You must enter the post password to view and submit comments."
 msgstr ""
 
-#: inc/assets.php:50
+#: inc/assets.php:47
 msgid "Zoom In"
 msgstr ""
 
-#: inc/assets.php:51
+#: inc/assets.php:48
 msgid "Zoom Out"
 msgstr ""

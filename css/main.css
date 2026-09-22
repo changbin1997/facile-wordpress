@@ -744,6 +744,13 @@
 .dark-color .post-page .category-and-tag span {
   color: #d3d3d3;
 }
+.dark-color .post-page .category-and-tag .dropdown-menu {
+  background: #25252C;
+  color: #d3d3d3;
+}
+.dark-color .post-page .category-and-tag .dropdown-menu a {
+  color: #d3d3d3;
+}
 .dark-color .post-page .post-category a {
   color: #d3d3d3;
 }
@@ -1272,6 +1279,13 @@
 .auto-color .post-page .category-and-tag span {
     color: #d3d3d3;
   }
+  .auto-color .post-page .category-and-tag .dropdown-menu {
+    background: #25252C;
+    color: #d3d3d3;
+  }
+  .auto-color .post-page .category-and-tag .dropdown-menu a {
+    color: #d3d3d3;
+  }
   .auto-color .post-page .post-category a {
     color: #d3d3d3;
   }
@@ -1563,7 +1577,7 @@ header input[type=search]:focus {
   font-size: 16px;
   padding: 0 4px;
 }
-.post-list .post .full a {
+.post-list .post .full a:not(.wp-block-button__link) {
   font-weight: 700;
   word-wrap: break-word;
   word-break: break-all;
@@ -1844,7 +1858,7 @@ footer .footer-menu li {
   font-size: 16px;
   padding: 0 4px;
 }
-#post-page article .post-content a, #page-page article .post-content a {
+#post-page article .post-content a:not(.wp-block-button__link), #page-page article .post-content a:not(.wp-block-button__link) {
   font-weight: 700;
   word-wrap: break-word;
   word-break: break-all;
@@ -1896,14 +1910,31 @@ footer .footer-menu li {
 #post-page article .post-content video, #page-page article .post-content video {
   width: 100%;
 }
-#post-page .category-and-tag .post-category, #page-page .category-and-tag .post-category {
+#post-page article .post-content .wp-caption, #page-page article .post-content .wp-caption {
+  max-width: 100%;
+}
+#post-page article .post-content .alignleft, #page-page article .post-content .alignleft {
+  margin-right: 16px;
+}
+#post-page .category-and-tag, #page-page .category-and-tag {
+  width: 100%;
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+}
+#post-page .category-and-tag .post-category, #page-page .category-and-tag .post-category {
+  max-width: 50%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 #post-page .category-and-tag .post-category a, #page-page .category-and-tag .post-category a {
   margin-right: 6px;
 }
 #post-page .category-and-tag .post-tag, #page-page .category-and-tag .post-tag {
+  max-width: 50%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
   display: flex;
   align-items: center;
 }
@@ -2047,7 +2078,7 @@ footer .footer-menu li {
   font-size: 16px;
   padding: 0 4px;
 }
-#comments .comment-list .comment-content a {
+#comments .comment-list .comment-content a:not(.wp-block-button__link) {
   font-weight: 700;
   word-wrap: break-word;
   word-break: break-all;

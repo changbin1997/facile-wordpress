@@ -99,7 +99,7 @@
     font-size: 16px;
     padding: 0 4px;
   }
-  a {
+  a:not(.wp-block-button__link) {
     font-weight: 700;
     word-wrap: break-word;
     word-break: break-all;
@@ -408,18 +408,36 @@ footer {
   article {
     .post-content {
       @include postContent;
+      // WordPress 的一些特有的排版
+      .wp-caption {
+        max-width: 100%;
+      }
+      .alignleft {
+        margin-right: 16px;
+      }
     }
   }
   // 文章的分类和标签区域
   .category-and-tag {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    // 分类
     .post-category {
-      display: flex;
-      align-items: center;
+      max-width: 50%;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
       a {
         margin-right: 6px;
       }
     }
+    // 标签
     .post-tag {
+      max-width: 50%;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
       display: flex;
       align-items: center;
       a {

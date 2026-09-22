@@ -62,7 +62,7 @@ get_header();
                             <?php endif; ?>
                         </div>
 
-                        <div class="post-content mt-4">
+                        <div class="post-content mt-4 clearfix">
                             <?php the_content(); ?>
                         </div>
                         
@@ -77,32 +77,15 @@ get_header();
                             'current' => max(1, get_query_var('page')),
                         ));
                         ?>
-                        <div class="category-and-tag clearfix my-4">
-                            <div class="post-category float-left" role="group" aria-label="<?php _e('Post Categories', 'facile'); ?>">
+
+                        <div class="category-and-tag my-4">
+                            <div class="post-category" role="group" aria-label="<?php _e('Post Categories', 'facile'); ?>">
                                 <i class="icon-folder-open mr-1" aria-hidden="true"></i>
-                                <?php $categories = get_the_category(); ?>
-                                <?php if (count($categories)): ?>
-                                    <?php foreach ($categories as $category): ?>
-                                        <a data-toggle="tooltip" data-placement="top" title="<?php printf(__('Click to view posts in the %s category', 'facile'), esc_html($category->name)); ?>" href="<?php echo esc_url(get_category_link($category->term_id)); ?>">
-                                            <?php echo esc_html($category->name); ?>
-                                        </a>
-                                    <?php endforeach; ?>
-                                <?php else: ?>
-                                    <span><?php _e('No categories selected', 'facile'); ?></span>
-                                <?php endif; ?>
+                                <?php display_post_categories(); ?>
                             </div>
-                            <div class="post-tag float-right" role="group" aria-label="<?php _e('Tags', 'facile'); ?>">
+                            <div class="post-tag" role="group" aria-label="<?php _e('Tags', 'facile'); ?>">
                                 <i class="icon-price-tag mr-1" aria-hidden="true"></i>
-                                <?php $tags = get_the_tags(); ?>
-                                <?php if ($tags != false): ?>
-                                    <?php foreach ($tags as $tag): ?>
-                                        <a class="badge badge-dark" data-toggle="tooltip" data-placement="top" title="<?php printf(__('Click to view posts with the %s tag', 'facile'), esc_html($tag->name)); ?>" href="<?php echo esc_url(get_tag_link($tag->term_id)); ?>">
-                                            <?php echo esc_html($tag->name); ?>
-                                        </a>
-                                    <?php endforeach; ?>
-                                <?php else: ?>
-                                    <span><?php _e('No tags added', 'facile'); ?></span>
-                                <?php endif; ?>
+                                <?php display_post_tags(); ?>
                             </div>
                         </div>
                     </article>
