@@ -34,6 +34,7 @@ Facile 是一套简洁的 WordPress 和 Typecho 博客主题，也是我正在�
 * 无障碍适配（Accessibility）
 * 包含浅色和深色两套配色（可根据系统主题配色自动调节）
 * 代码高亮
+* 支持 MathJax 数学公式渲染
 * 文章列表支持多种排版方式
 * 丰富的设置选项
 * 详细的 [帮助文档](https://www.misterma.com/archives/951/)

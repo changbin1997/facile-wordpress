@@ -34,6 +34,7 @@ Large:
 * Accessibility support to ensure an inclusive experience  
 * Light and dark color schemes with automatic adjustment based on system settings  
 * Built-in code highlighting for developers and tech enthusiasts  
+* MathJax support for rendering mathematical formulas
 * Multiple layout options for post lists  
 * Extensive customization options to tailor the theme to your needs  
 * Comprehensive [documentation](https://www.misterma.com/archives/952/) to guide you through setup and usage  
