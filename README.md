@@ -14,6 +14,8 @@ Theme Download: [https://github.com/changbin1997/facile-wordpress/releases](http
 
 User Guide: [https://www.misterma.com/archives/952/](https://www.misterma.com/archives/952/)
 
+If you encounter any issues or bugs while using the theme, you can leave a message on [my blog](https://www.misterma.com/archives/952/), or report them on [GitHub Issues](https://github.com/changbin1997/facile-wordpress/issues).
+
 ## Screenshots
 
 Light theme:

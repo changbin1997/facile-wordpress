@@ -14,6 +14,8 @@ Facile 是一套简洁的 WordPress 和 Typecho 博客主题，也是我正在�
 
 主题使用帮助: [https://www.misterma.com/archives/951/](https://www.misterma.com/archives/951/)
 
+如果您在使用过程中遇到问题或 BUG，可以到 [我的博客](https://www.misterma.com/archives/951/) 留言，也可以到 [Github Issues](https://github.com/changbin1997/facile-wordpress/issues) 反馈。
+
 ## 截图
 
 浅色模式：
