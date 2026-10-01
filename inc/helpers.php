@@ -160,7 +160,7 @@ function custom_breadcrumbs() {
  * 输出文章发布日期
  *
  * 根据当前网站语言设置输出相应格式的文章发布日期。
- * 中文站点显示 "Y年n月j日" 格式，英文站点显示 "j M Y" 格式，
+ * 中文和日文站点显示 "Y年n月j日" 格式，英文站点显示 "j M Y" 格式，
  * 其他语言显示 "Y-m-d" 通用格式。输出的是语义化的 HTML time 标签。
  *
  * @return void
@@ -170,6 +170,9 @@ function posted_on() {
 
     if (strpos($locale, 'zh') === 0) {
         // 中文日期格式
+        $date_format = 'Y年n月j日';
+    } elseif (strpos($locale, 'ja') === 0) {
+        // 日语日期格式
         $date_format = 'Y年n月j日';
     } elseif (strpos($locale, 'en') === 0) {
         // 英文日期格式

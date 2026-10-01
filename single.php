@@ -42,18 +42,21 @@ get_header();
                             <?php endif; ?>
                         <?php endif; ?>
                         <div class="post-info mt-2">
+                            <!--日期-->
                             <span class="ml-1">
                                 <i class="icon-calendar mr-2" aria-hidden="true"></i>
                                 <a title="<?php _e('Publication Date', 'facile'); ?>" data-toggle="tooltip" data-placement="top" href="<?php echo esc_url(get_day_link(get_the_time('Y'), get_the_time('m'), get_the_time('d'))); ?>">
                                     <?php posted_on(); ?>
                                 </a>
                             </span>
+                            <!--作者-->
                             <span class="ml-2">
                                 <i class="icon-user mr-2" aria-hidden="true"></i>
                                 <a title="<?php _e('Author', 'facile'); ?>" data-toggle="tooltip" data-placement="top" href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
                                     <?php the_author(); ?>
                                 </a>
                             </span>
+                            <!--阅读量-->
                             <?php if (get_theme_mod('enable_post_view_count', false)): ?>
                                 <span class="ml-2" title="<?php _e('Views', 'facile'); ?>" data-toggle="tooltip" data-placement="top">
                                     <i class="icon-eye mr-2"></i>

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Facile\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-22 10:28+0000\n"
+"POT-Creation-Date: 2026-10-01 09:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -92,7 +92,7 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: content.php:40 page.php:35 single.php:53 inc/comments.php:25
+#: content.php:40 page.php:35 single.php:55 inc/comments.php:25
 msgid "Author"
 msgstr ""
 
@@ -316,7 +316,7 @@ msgid ""
 "disabled, no featured images will be shown on post pages."
 msgstr ""
 
-#: 404.php:31
+#: 404.php:22
 msgid "Go back to homepage"
 msgstr ""
 
@@ -415,7 +415,7 @@ msgstr ""
 msgid "Next Page (Right Arrow Key)"
 msgstr ""
 
-#: single.php:109
+#: single.php:112
 msgid "Next Post"
 msgstr ""
 
@@ -436,7 +436,7 @@ msgstr ""
 msgid "No tags added"
 msgstr ""
 
-#: single.php:104 single.php:117
+#: single.php:107 single.php:120
 msgid "None"
 msgstr ""
 
@@ -453,7 +453,7 @@ msgstr ""
 msgid "Open Submenu"
 msgstr ""
 
-#: single.php:71 inc/comments.php:164 inc/post.php:131
+#: single.php:74 inc/comments.php:164 inc/post.php:131
 msgid "Pagination"
 msgstr ""
 
@@ -465,7 +465,7 @@ msgstr ""
 msgid "Pending Review"
 msgstr ""
 
-#: single.php:82
+#: single.php:85
 msgid "Post Categories"
 msgstr ""
 
@@ -526,7 +526,7 @@ msgstr ""
 msgid "Previous Page (Left Arrow Key)"
 msgstr ""
 
-#: single.php:96
+#: single.php:99
 msgid "Previous Post"
 msgstr ""
 
@@ -534,7 +534,7 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: content.php:34 page.php:29 single.php:47
+#: content.php:34 page.php:29 single.php:48
 msgid "Publication Date"
 msgstr ""
 
@@ -566,7 +566,7 @@ msgstr ""
 msgid "Scroll to Top"
 msgstr ""
 
-#: 404.php:20 404.php:22 404.php:22 header.php:62 header.php:64 header.php:64
+#: 404.php:18 header.php:60
 msgid "Search"
 msgstr ""
 
@@ -581,9 +581,9 @@ msgstr ""
 #: inc/customizer.php:125
 msgid ""
 "Sets the number of characters or words for post excerpts in the list. If "
-"WordPress is in Chinese, it will count characters; if in English, it will "
-"count words. Manually set excerpts on the post edit page are not affected by "
-"this limit."
+"WordPress is in Chinese or Japanese, it will count characters; if in English,"
+" it will count words. Manually set excerpts on the post edit page are not "
+"affected by this limit."
 msgstr ""
 
 #: inc/customizer.php:239
@@ -632,7 +632,7 @@ msgstr ""
 msgid "Tag: "
 msgstr ""
 
-#: single.php:86
+#: single.php:89
 msgid "Tags"
 msgstr ""
 
@@ -709,7 +709,7 @@ msgstr ""
 msgid "View Documentation"
 msgstr ""
 
-#: content.php:45 single.php:58
+#: content.php:45 single.php:61
 msgid "Views"
 msgstr ""
 

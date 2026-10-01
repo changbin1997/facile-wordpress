@@ -122,7 +122,7 @@ function mytheme_customize_register($wp_customize) {
         'section'  => 'post_options_section',
         'settings' => 'post_excerpt_count',
         'type'     => 'number',
-        'description' => __('Sets the number of characters or words for post excerpts in the list. If WordPress is in Chinese, it will count characters; if in English, it will count words. Manually set excerpts on the post edit page are not affected by this limit.', 'facile')
+        'description' => __('Sets the number of characters or words for post excerpts in the list. If WordPress is in Chinese or Japanese, it will count characters; if in English, it will count words. Manually set excerpts on the post edit page are not affected by this limit.', 'facile')
     ));
 
     // 文章列表文章头图开关
