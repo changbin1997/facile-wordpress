@@ -1,6 +1,6 @@
 # Facile-WordPress
 
-[English](README.md) | **简体中文** | [日本語](README.ja.md)
+[English](README.md) | **简体中文** | [日本語](README.ja.md) | [Español](README.es.md)
 
 Facile 是一套简洁的 WordPress 和 Typecho 博客主题，也是我正在使用的博客主题。
 

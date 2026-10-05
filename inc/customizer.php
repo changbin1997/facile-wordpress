@@ -254,6 +254,7 @@ function mytheme_customize_register($wp_customize) {
             'format_standard' => __('2020年04月23日 13:09', 'facile'),
             'format_iso'     => __('2020-04-23 13:09', 'facile'),
             'format_english' => __('April 23rd, 2020 at 01:09 pm', 'facile'),
+            'format_es'      => __('23 de abril de 2020, 13:09', 'facile'),
             'format_time_ago' => __('Time Ago (3 days ago)', 'facile')
         ),
         'description' => __('The "Time Ago" format will dynamically update based on the elapsed time: for under a minute, it will show seconds; for under an hour, it will show minutes; for under a day, it will show hours; and for over a day, it will show days.', 'facile')

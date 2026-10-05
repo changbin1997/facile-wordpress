@@ -1,6 +1,6 @@
 # Facile-WordPress
 
-[English](README.md) | [简体中文](README.zh.md) | **日本語**
+[English](README.md) | [简体中文](README.zh.md) | **日本語** | [Español](README.es.md)
 
 Facile は、WordPress と Typecho の両方に対応した、シンプルでミニマルなブログテーマです。私自身のブログでも使用しています。
 

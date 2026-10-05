@@ -64,6 +64,10 @@ msgstr ""
 msgid "2020年04月23日 13:09"
 msgstr ""
 
+#: inc/customizer.php:257
+msgid "23 de abril de 2020, 13:09"
+msgstr ""
+
 #: inc/setup.php:37
 msgid "Add widgets to the sidebar"
 msgstr ""
@@ -669,7 +673,7 @@ msgstr ""
 msgid "This post is password protected. Enter the password to view it."
 msgstr ""
 
-#: inc/customizer.php:257
+#: inc/customizer.php:258
 msgid "Time Ago (3 days ago)"
 msgstr ""
 

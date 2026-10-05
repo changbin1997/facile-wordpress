@@ -22,6 +22,9 @@ function format_comment_date($option, $timestamp) {
         case 'format_english':
             return date_i18n('F jS, Y \a\t h:i a', $timestamp);
 
+        case 'format_es':
+            return date_i18n('j \d\e F \d\e Y, H:i', $timestamp);
+
         case 'format_time_ago':
             $current_time = current_time('timestamp');
             $diff = $current_time - $timestamp;
@@ -161,7 +164,8 @@ function custom_breadcrumbs() {
  *
  * 根据当前网站语言设置输出相应格式的文章发布日期。
  * 中文和日文站点显示 "Y年n月j日" 格式，英文站点显示 "j M Y" 格式，
- * 其他语言显示 "Y-m-d" 通用格式。输出的是语义化的 HTML time 标签。
+ * 西班牙语站点显示 "j de F de Y" 格式，其他语言显示 "Y-m-d" 通用格式。
+ * 输出的是语义化的 HTML time 标签。
  *
  * @return void
  */
@@ -177,6 +181,9 @@ function posted_on() {
     } elseif (strpos($locale, 'en') === 0) {
         // 英文日期格式
         $date_format = 'j M Y';
+    } elseif (strpos($locale, 'es') === 0) {
+        // 西班牙语日期格式
+        $date_format = 'j \d\e F \d\e Y';
     } else {
         // 其他语言使用国际通用格式
         $date_format = 'Y-m-d';

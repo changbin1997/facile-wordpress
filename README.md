@@ -1,6 +1,6 @@
 # Facile-WordPress
 
-**English** | [简体中文](README.zh.md) | [日本語](README.ja.md)
+**English** | [简体中文](README.zh.md) | [日本語](README.ja.md) | [Español](README.es.md)
 
 Facile is a clean and minimalist blog theme designed for both WordPress and Typecho. It is also the theme I currently use for my own blog.
 
